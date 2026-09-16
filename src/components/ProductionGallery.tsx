@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Camera, X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Maximize2, Eye } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Maximize2, Eye } from "lucide-react";
 
 interface ProductionGalleryProps {
   onOpenQuote: () => void;
@@ -151,24 +151,13 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
   return (
     <section className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-14">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
-        <div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 tracking-tight">
-            Kompaniyamiz ishlab chiqarishi
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-500 mt-1.5 max-w-xl">
-            Karton Works Factory zavodining haqiqiy foto va texnologik jarayonlari
-          </p>
-        </div>
-
-        {/* View All Button in Header */}
-        <button
-          onClick={() => openViewer(selectedIdx)}
-          className="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold text-[#C6893F] hover:text-[#B37830] transition-colors self-start sm:self-end cursor-pointer"
-        >
-          <Camera className="w-4 h-4" />
-          <span>Barcha 6 ta fotosuratni ko'rish</span>
-        </button>
+      <div className="mb-6 sm:mb-8">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 tracking-tight">
+          Kompaniyamiz ishlab chiqarishi
+        </h2>
+        <p className="text-xs sm:text-sm text-slate-500 mt-1.5 max-w-xl">
+          Karton Works Factory zavodining haqiqiy foto va texnologik jarayonlari
+        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
@@ -295,22 +284,6 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
             </p>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3">
-            <button
-              onClick={() => openViewer(selectedIdx)}
-              className="flex-1 bg-[#C6893F] hover:bg-[#B37830] text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl inline-flex items-center justify-center space-x-2 shadow-sm hover:shadow-md transition-all cursor-pointer active:scale-95"
-            >
-              <Camera className="w-4 h-4" />
-              <span>Galereyani ochish</span>
-            </button>
-            <button
-              onClick={onOpenQuote}
-              className="border-2 border-slate-200 hover:border-[#C6893F] text-slate-800 hover:text-[#C6893F] font-bold text-xs sm:text-sm px-5 py-3 rounded-xl inline-flex items-center justify-center transition-all cursor-pointer active:scale-95"
-            >
-              <span>Zavodga tashrif</span>
-            </button>
-          </div>
 
         </div>
 
