@@ -20,22 +20,8 @@ export default function CallbackContact() {
         {/* Subtle decorative glow */}
         <div className="absolute -left-20 -top-20 w-80 h-80 bg-[#C6893F]/15 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
-          
-          {/* Left Column: 3D Boxes Image */}
-          <div className="lg:col-span-6 flex items-center justify-center">
-            <div className="relative group max-w-md w-full">
-              <img
-                src="/assets/upaksnab/feedback_boxes.png"
-                alt="Karton Works Factory karton qutilar va O'zbekistonda brendlash"
-                className="w-full h-auto object-contain rounded-xl drop-shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-            </div>
-          </div>
-
-          {/* Right Column: Callback Request Form */}
-          <div className="lg:col-span-6 flex justify-center">
-            <div className="bg-white rounded-xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-slate-200 text-slate-900">
+        <div className="flex justify-center relative z-10">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 max-w-lg w-full shadow-2xl border border-slate-200 text-slate-900">
               
               <h2 className="text-xl sm:text-2xl font-black text-neutral-900 text-center tracking-tight mb-2">
                 Izlagan narsangizni topa olmadingizmi?
@@ -120,10 +106,7 @@ export default function CallbackContact() {
 
             </div>
           </div>
-
         </div>
-
-      </div>
     </section>
   );
 }
