@@ -93,7 +93,7 @@ export default function Partners() {
               <img
                 src={partner.logo}
                 alt={`${partner.name} logotipi`}
-                className="max-h-12 sm:max-h-14 w-auto max-w-[115px] sm:max-w-[135px] object-contain transition-all duration-300 group-hover:scale-108 select-none"
+                className="max-h-14 sm:max-h-16 w-auto max-w-[130px] sm:max-w-[155px] object-contain transition-all duration-300 group-hover:scale-108 select-none"
                 loading="lazy"
               />
             </div>

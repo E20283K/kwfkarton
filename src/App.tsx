@@ -3,10 +3,8 @@ import Navbar from './components/Navbar';
 import HeroBanner from './components/HeroBanner';
 import ProductCatalog from './components/ProductCatalog';
 import Advantages from './components/Advantages';
-import DeliveryGeography from './components/DeliveryGeography';
 import WorkProcess from './components/WorkProcess';
 import ProductionGallery from './components/ProductionGallery';
-import CustomerReviews from './components/CustomerReviews';
 import NewsSection from './components/NewsSection';
 import Partners from './components/Partners';
 import CallbackContact from './components/CallbackContact';
@@ -32,19 +30,13 @@ function App() {
           {/* 3. Our Advantages */}
           <Advantages onOpenQuote={handleOpenQuote} />
 
-          {/* 4. Delivery Geography */}
-          <DeliveryGeography onOpenQuote={handleOpenQuote} />
-
-          {/* 5. Work Process / Scheme */}
+          {/* 4. Work Process / Scheme */}
           <WorkProcess onOpenQuote={handleOpenQuote} />
 
-          {/* 6. Production Gallery */}
+          {/* 5. Production Gallery */}
           <ProductionGallery onOpenQuote={handleOpenQuote} />
 
-          {/* 7. Customer Reviews */}
-          <CustomerReviews onOpenQuote={handleOpenQuote} />
-
-          {/* 8. Yangiliklar (News & Instagram Feed) */}
+          {/* 6. Yangiliklar (News & Instagram Feed) */}
           <NewsSection />
 
           {/* 9. Brand Partners */}

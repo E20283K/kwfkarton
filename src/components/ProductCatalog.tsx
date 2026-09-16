@@ -2,82 +2,81 @@ interface ProductCatalogProps {
   onOpenQuote: () => void;
 }
 
-const PRODUCTS = [
+interface ProductItem {
+  title: string;
+  img: string;
+}
+
+const PRODUCTS: ProductItem[] = [
   {
-    title: "SANOAT SOHALARI UCHUN QADOQLAR",
-    count: "121 TA MAHSULOT",
-    img: "/assets/upaksnab/cat_1_otrasi.png",
+    title: "Transportirovka (tashish) uchun",
+    img: "/catalog/1_transportirovka.png",
   },
   {
-    title: "KARTON QUTILAR",
-    count: "68 TA MAHSULOT",
-    img: "/assets/upaksnab/cat_2_korobki.png",
+    title: "Meva-sabzavot eksporti uchun",
+    img: "/catalog/2_meva_sabzavot.png",
   },
   {
-    title: "GOFROQADOQLAR",
-    count: "5 TA MAHSULOT",
-    img: "/assets/upaksnab/cat_3_gofroupakovka.png",
+    title: "Qandolat va shirinliklar uchun",
+    img: "/catalog/3_qandolat.png",
   },
   {
-    title: "GOFROLOTOKLAR",
-    count: "58 TA MAHSULOT",
-    img: "/assets/upaksnab/cat_4_lotki.png",
+    title: "Ovqat yetkazish uchun",
+    img: "/catalog/4_ovqat_yetkazish.png",
   },
   {
-    title: "VAROQLI GOFROKARTON",
-    count: "34 TA MAHSULOT",
-    img: "/assets/upaksnab/cat_5_listovoy.png",
+    title: "Ichimliklar uchun",
+    img: "/catalog/5_ichimliklar.png",
   },
   {
-    title: "YORDAMCHI MATERIAL VA ORALIQLAR",
-    count: "42 TA MAHSULOT",
-    img: "/assets/upaksnab/cat_6_vspomogatelnye.png",
+    title: "Sanoat mahsulotlari uchun",
+    img: "/catalog/6_sanoat.png",
   },
   {
-    title: "YIRIK O'LCHAMLI QADOQLAR",
-    count: "19 TA MAHSULOT",
-    img: "/assets/upaksnab/cat_7_krupnogabarit.png",
+    title: "Qalin kartonli qadoqlar",
+    img: "/catalog/7_qalin_karton.png",
   },
   {
-    title: "FEFCO KATALOGI",
-    count: "STANDARTLAR",
-    img: "/assets/upaksnab/cat_8_fefco.png",
+    title: "Karton sumkalar",
+    img: "/catalog/8_karton_sumkalar.png",
   },
 ];
 
 export default function ProductCatalog({ onOpenQuote }: ProductCatalogProps) {
   return (
-    <section id="catalog" className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-12">
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 tracking-tight mb-6 sm:mb-8">
-        Mahsulotlar katalogi
-      </h2>
+    <section id="catalog" className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-14">
+      {/* Header */}
+      <div className="mb-6 sm:mb-8">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 tracking-tight">
+          Mahsulotlar katalogi
+        </h2>
+        <p className="text-xs sm:text-sm text-slate-500 mt-1.5 max-w-xl">
+          Biznesingiz uchun har xil turdagi sifatli gofrokarton va qadoqlash mahsulotlari
+        </p>
+      </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      {/* 8-Card Grid matching design reference */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
         {PRODUCTS.map((prod, idx) => (
           <div
             key={idx}
             onClick={onOpenQuote}
-            className="group relative rounded-xl overflow-hidden border border-slate-200/90 shadow-xs hover:shadow-lg transition-all duration-300 cursor-pointer bg-slate-100 aspect-4/3 flex flex-col justify-end"
+            className="group cursor-pointer flex flex-col transition-all duration-300 active:scale-[0.99]"
           >
-            {/* Card Background Photo */}
-            <img
-              src={prod.img}
-              alt={prod.title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-108"
-            />
-
-            {/* Subtle Gradient Backdrop for Label Contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-
-            {/* Floating White Banner Box matching screenshot */}
-            <div className="relative z-10 m-2 sm:m-3 bg-white/92 backdrop-blur-xs py-2 px-2.5 sm:px-3 rounded-lg border border-white/80 shadow-xs text-center transition-all group-hover:bg-white group-hover:shadow-md">
-              <h3 className="text-xs sm:text-[13px] font-black text-neutral-900 tracking-tight uppercase leading-tight line-clamp-1">
-                {prod.title}
-              </h3>
-              <p className="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wider mt-0.5">
-                {prod.count}
-              </p>
+            {/* Image Card Container */}
+            <div className="relative w-full aspect-4/3 bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-[#C6893F]/50 transition-all duration-300 overflow-hidden flex items-center justify-center p-3 sm:p-4">
+              <img
+                src={prod.img}
+                alt={prod.title}
+                className="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105 select-none"
+                loading="lazy"
+              />
             </div>
+
+            {/* Title Underneath Card */}
+            <h3 className="mt-3 sm:mt-3.5 text-base sm:text-lg font-bold text-neutral-900 group-hover:text-[#C6893F] transition-colors leading-snug">
+              {prod.title}
+            </h3>
           </div>
         ))}
       </div>

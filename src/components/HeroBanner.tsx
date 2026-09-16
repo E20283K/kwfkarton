@@ -7,7 +7,7 @@ export default function HeroBanner({ onOpenQuote }: HeroBannerProps) {
     <section className="relative w-full overflow-hidden min-h-[420px] sm:min-h-[480px] lg:min-h-[520px] flex items-center bg-neutral-950">
       {/* Factory Background Photo spanning 100% full width */}
       <img
-        src="/assets/upaksnab/hero_banner.png"
+        src="/hero.png"
         alt="Karton Works Factory qadoqlash materiallari ishlab chiqarish zavodi (O'zbekiston)"
         className="absolute inset-0 w-full h-full object-cover object-center lg:object-right select-none"
       />
