@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --color-kwf-brown: #00A3E0; /* Electric Blue CTA accent */
+  --color-kwf-charcoal: #002549; /* DS Smith Deep Navy */
+  --color-kwf-gray: #64748B; /* DS Smith Muted Slate */
+  --color-kwf-offwhite: #F8FAFC; /* Clean surface */
+  --color-dssmith-navy: #002549;
+  --color-dssmith-navy-dark: #001A35;
+  --color-dssmith-blue: #00A3E0;
+  --color-dssmith-blue-hover: #0082C8;
+  --color-dssmith-green: #00875A;
+  --color-dssmith-amber: #C6934B;
+  --color-dssmith-slate: #0F172A;
+  --color-dssmith-surface: #F8FAFC;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  scrollbar-color: #C6893F #F1F3F5;
+  scrollbar-width: thin;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  color: #0F172A;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar with brand accent color */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F3F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #C6893F;
+  border-radius: 9999px;
+  border: 2px solid #F1F3F5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B37830;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #9E6422;
+}
+
+/* DS Smith subtle background grid pattern */
+.industrial-grid {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+}
+
+.dssmith-grid-dark {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Glassmorphism effects */
+.dssmith-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.dssmith-glass-dark {
+  background: rgba(0, 37, 73, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 30px -5px rgba(0, 163, 224, 0.25);
+}
+

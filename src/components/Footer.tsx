@@ -1,0 +1,274 @@
+import { Mail, Phone, MapPin } from "lucide-react";
+
+interface FooterProps {
+  onOpenQuote?: () => void;
+}
+
+const SOCIAL = [
+  {
+    label: "YouTube",
+    href: "https://youtube.com",
+    path: "M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com",
+    path: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z",
+  },
+  {
+    label: "Facebook",
+    href: "https://facebook.com",
+    path: "M9 8H7v3h2v9h4v-9h3.61l.39-3H13V6c0-.88.45-1 1-1h2V1h-3c-2.9 0-5 1.88-5 5v2z",
+  },
+  {
+    label: "X",
+    href: "https://x.com",
+    path: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z",
+  },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/kwf_uz",
+    path: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z",
+  },
+  {
+    label: "Telegram",
+    href: "https://t.me/kwf_uz",
+    path: "M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.717-.98 4.793-1.386 6.812-.172.853-.51 1.14-.836 1.168-.71.063-1.25-.427-1.938-.838-1.077-.645-1.686-1.045-2.733-1.674-1.21-.726-.426-1.127.264-1.785.18-.172 3.324-2.812 3.385-3.048.007-.033.014-.157-.063-.223-.078-.066-.192-.043-.275-.026-.118.025-2.003 1.178-5.655 3.486-.535.337-1.02.503-1.455.49-.48-.014-1.402-.256-2.087-.463-.84-.253-1.507-.387-1.45-.817.03-.224.364-.454 1.002-.693 3.93-1.597 6.55-2.65 7.86-3.16 3.743-1.45 4.52-1.702 5.027-1.71.112-.002.362.023.524.145.137.103.175.247.19.352.015.106.033.325.018.491z",
+  },
+];
+
+export default function Footer(_props?: FooterProps) {
+  return (
+    <footer id="footer" className="bg-[#3D4046] text-white font-sans">
+      
+      {/* Upper Footer Container: 5 Columns matching screenshot */}
+      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pt-12 pb-14">
+        
+        {/* Social Network Icons Bar at the top of the footer */}
+        <div className="flex flex-col sm:flex-row items-center justify-between pb-8 mb-10 border-b border-white/10 gap-4">
+          <div className="flex items-center space-x-3">
+            <img
+              src="/kwf_footer.svg"
+              alt="Karton Works Factory"
+              className="h-[60px] sm:h-[66px] w-auto object-contain"
+            />
+            <span className="text-xs text-slate-400 font-medium hidden sm:inline border-l border-white/15 pl-3 py-1">
+              Gofroqadoq ishlab chiqarish zavodi
+            </span>
+          </div>
+
+          {/* Social Network Icons */}
+          <div className="flex items-center space-x-2">
+            {SOCIAL.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#C6893F]/20 border border-white/10 hover:border-[#C6893F] flex items-center justify-center text-slate-300 hover:text-white transition-all duration-200"
+              >
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d={s.path} />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* 5 Columns Layout */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6 text-xs sm:text-[13px]">
+          
+          {/* Column 1: KATALOG */}
+          <div className="space-y-3">
+            <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
+              KATALOG
+            </h3>
+            <ul className="space-y-2 text-slate-300 font-normal">
+              <li>
+                <a href="#catalog" className="hover:text-white transition-colors">
+                  Sabzavotlar uchun gofrolotoklar
+                </a>
+              </li>
+              <li>
+                <a href="#catalog" className="hover:text-white transition-colors">
+                  Shaftoli uchun gofrolotoklar
+                </a>
+              </li>
+              <li>
+                <a href="#catalog" className="hover:text-white transition-colors">
+                  Olma uchun gofrolotoklar
+                </a>
+              </li>
+              <li>
+                <a href="#catalog" className="hover:text-white transition-colors">
+                  Rezavor mevalar uchun lotoklar
+                </a>
+              </li>
+              <li>
+                <a href="#catalog" className="hover:text-white transition-colors">
+                  Go'sht va parranda uchun lotoklar
+                </a>
+              </li>
+              <li>
+                <a href="#catalog" className="hover:text-white transition-colors">
+                  Gofroqutilar
+                </a>
+              </li>
+              <li className="pt-1">
+                <a href="#catalog" className="text-slate-400 hover:text-white transition-colors">
+                  Barcha katalog ...
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 2: BO'LIMLAR */}
+          <div className="space-y-3">
+            <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
+              BO'LIMLAR
+            </h3>
+            <ul className="space-y-2 text-slate-300 font-normal">
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Bosh sahifa
+                </a>
+              </li>
+              <li>
+                <a href="#delivery" className="hover:text-white transition-colors">
+                  Yetkazib berish
+                </a>
+              </li>
+              <li>
+                <a href="#pillars" className="hover:text-white transition-colors">
+                  Kafolat
+                </a>
+              </li>
+              <li>
+                <a href="#scheme" className="hover:text-white transition-colors">
+                  Ish tartibi
+                </a>
+              </li>
+              <li>
+                <a href="#overview" className="hover:text-white transition-colors">
+                  Kompaniya haqida
+                </a>
+              </li>
+              <li>
+                <a href="#specs" className="hover:text-white transition-colors">
+                  Bog'lanish
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: XAVFSIZLIK */}
+          <div className="space-y-3">
+            <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
+              XAVFSIZLIK
+            </h3>
+            <ul className="space-y-2 text-slate-300 font-normal">
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Maxfiylik siyosati
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Foydalanuvchi shartnomasi
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: BOG'LANISH */}
+          <div className="space-y-3">
+            <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
+              BOG'LANISH
+            </h3>
+            <div className="space-y-3 text-slate-300 font-normal">
+              
+              {/* Address */}
+              <div className="flex items-start space-x-2.5">
+                <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
+                <div className="leading-snug">
+                  Toshkent sh.,<br />
+                  Sergeli tumani,<br />
+                  Yangi Sergeli ko'chasi, Sanoat hududi
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-center space-x-2.5 pt-1">
+                <Phone className="w-4 h-4 text-slate-400 shrink-0" />
+                <a
+                  href="tel:+998712003250"
+                  className="font-bold text-white hover:text-[#C6893F] transition-colors"
+                >
+                  +998 71 200-32-50
+                </a>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-center space-x-2.5">
+                <Mail className="w-4 h-4 text-slate-400 shrink-0" />
+                <a
+                  href="mailto:info@kwf.uz"
+                  className="hover:text-white transition-colors"
+                >
+                  info@kwf.uz
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Column 5: KOMPANIYA */}
+          <div className="space-y-3">
+            <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
+              KOMPANIYA
+            </h3>
+            <div className="space-y-1.5 text-slate-300 font-normal leading-relaxed">
+              <div className="font-semibold text-white">
+                "KARTON WORKS" MCHJ
+              </div>
+              <div>STIR (INN): 309814814</div>
+              <div>IFUT (OKED): 17210</div>
+              <div>Ro'yxat raqami: 00921480</div>
+              <div className="pt-1">
+                <a href="#overview" className="text-slate-400 hover:text-white transition-colors">
+                  Batafsil ma'lumot ...
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* Lower Copyright & Legal Disclaimer Bar */}
+      <div className="border-t border-white/10 py-6 bg-[#34373D]">
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+          
+          {/* Copyright text on the left */}
+          <div className="space-y-1">
+            <p className="font-medium text-slate-300">
+              © 2025-2026 - "KARTON WORKS" MCHJ
+            </p>
+            <p className="text-[10px] text-slate-400">
+              Barcha huquqlar O'zbekiston Respublikasi qonunchiligiga muvofiq himoyalangan
+            </p>
+          </div>
+
+          {/* Legal public offer notice on the right */}
+          <div className="max-w-2xl text-[10px] text-slate-400 leading-relaxed lg:text-right">
+            E'tiboringizni qaratamiz: ushbu internet-sayt faqat ma'lumot beruvchi xususiyatga ega bo'lib, O'zbekiston Respublikasi Fuqarolik kodeksining 369-moddasi qoidalariga muvofiq ommaviy oferta hisoblanmaydi.
+          </div>
+
+        </div>
+      </div>
+
+    </footer>
+  );
+}
