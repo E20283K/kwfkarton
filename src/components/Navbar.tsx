@@ -92,28 +92,28 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
 
           {/* 2. Phone & Working Hours Block (Original Style) */}
           <div className="hidden sm:flex items-center space-x-3 shrink-0 select-none">
-            <div className="text-slate-400">
-              <Phone className="w-7 h-7 stroke-[1.5] -rotate-12" />
+            <div className="text-[#C6893F]">
+              <Phone className="w-7 h-7 stroke-[1.8] -rotate-12 drop-shadow-xs" />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center space-x-2">
                 <a
                   href="tel:+998712003250"
-                  className="text-lg font-extrabold text-neutral-900 leading-tight hover:text-[#C6893F] transition-colors tracking-tight whitespace-nowrap"
+                  className="text-lg font-extrabold shine-number leading-tight tracking-tight whitespace-nowrap"
                 >
                   +998 71 200-32-50
                 </a>
                 <span className="text-slate-300 font-normal">/</span>
                 <a
                   href="tel:+998901233250"
-                  className="text-lg font-extrabold text-neutral-900 leading-tight hover:text-[#C6893F] transition-colors tracking-tight whitespace-nowrap"
+                  className="text-lg font-extrabold shine-number leading-tight tracking-tight whitespace-nowrap"
                 >
                   +998 90 123-32-50
                 </a>
                 <span className="text-slate-300 font-normal">/</span>
                 <a
                   href="tel:+998931233250"
-                  className="text-lg font-extrabold text-neutral-900 leading-tight hover:text-[#C6893F] transition-colors tracking-tight whitespace-nowrap"
+                  className="text-lg font-extrabold shine-number leading-tight tracking-tight whitespace-nowrap"
                 >
                   +998 93 123-32-50
                 </a>
@@ -352,7 +352,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               <div key={idx} className="flex items-center justify-between py-1 border-b border-slate-100 last:border-0">
                 <div>
                   <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">{c.role}</div>
-                  <a href={`tel:${c.tel}`} className="text-sm font-extrabold text-neutral-900 hover:text-[#C6893F]">
+                  <a href={`tel:${c.tel}`} className="text-sm font-extrabold shine-number">
                     {c.phone}
                   </a>
                 </div>
