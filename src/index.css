@@ -3,10 +3,14 @@
 
 @theme {
   --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
-  --color-kwf-brown: #00A3E0; /* Electric Blue CTA accent */
-  --color-kwf-charcoal: #002549; /* DS Smith Deep Navy */
-  --color-kwf-gray: #64748B; /* DS Smith Muted Slate */
-  --color-kwf-offwhite: #F8FAFC; /* Clean surface */
+  --color-kwf-brown: #00A3E0;
+  /* Electric Blue CTA accent */
+  --color-kwf-charcoal: #002549;
+  /* DS Smith Deep Navy */
+  --color-kwf-gray: #64748B;
+  /* DS Smith Muted Slate */
+  --color-kwf-offwhite: #F8FAFC;
+  /* Clean surface */
   --color-dssmith-navy: #002549;
   --color-dssmith-navy-dark: #001A35;
   --color-dssmith-blue: #00A3E0;
@@ -37,17 +41,21 @@ body {
   width: 10px;
   height: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: #F1F3F5;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #C6893F;
   border-radius: 9999px;
   border: 2px solid #F1F3F5;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #B37830;
 }
+
 ::-webkit-scrollbar-thumb:active {
   background: #9E6422;
 }
@@ -55,14 +63,14 @@ body {
 /* DS Smith subtle background grid pattern */
 .industrial-grid {
   background-size: 60px 60px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
 }
 
 .dssmith-grid-dark {
   background-size: 60px 60px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
@@ -90,22 +98,21 @@ body {
   0% {
     background-position: 250% 0;
   }
+
   100% {
     background-position: -150% 0;
   }
 }
 
 .shine-number {
-  background: linear-gradient(
-    115deg,
-    #0f172a 0%,
-    #1e293b 25%,
-    #C6893F 42%,
-    #fff176 50%,
-    #C6893F 58%,
-    #1e293b 75%,
-    #0f172a 100%
-  );
+  background: linear-gradient(115deg,
+      #0f172a 0%,
+      #1e293b 25%,
+      #C6893F 42%,
+      #fff176 50%,
+      #C6893F 58%,
+      #1e293b 75%,
+      #0f172a 100%);
   background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -119,5 +126,3 @@ body {
   filter: drop-shadow(0 0 6px rgba(198, 137, 63, 0.5));
   transform: translateY(-1px);
 }
-
-

@@ -141,18 +141,18 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
       </div>
 
       {/* ================= TIER 2: MAIN NAVIGATION ROW ================= */}
-      <nav className="border-t border-slate-200/90 hidden lg:block">
+      <nav className="border-t border-slate-200/80 bg-white hidden lg:block">
         <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
-          <ul className="flex items-center justify-between text-sm font-bold tracking-wide uppercase py-2.5 select-none">
+          <ul className="flex items-center justify-between text-sm font-bold tracking-wide uppercase py-1 select-none">
             
-            {/* BOSH SAHIFA (Active Link) */}
+            {/* BOSH SAHIFA (Active Link with Gold Accent Underline) */}
             <li>
               <a
                 href="#"
-                className={`transition-colors py-1 ${
+                className={`relative py-3 px-3.5 transition-colors block ${
                   activeSection === 'home'
-                    ? 'text-[#C6893F] hover:text-[#B37830] font-extrabold'
-                    : 'text-neutral-900 hover:text-[#C6893F]'
+                    ? 'text-[#C6893F] font-extrabold after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-0.5 after:bg-[#C6893F]'
+                    : 'text-slate-800 hover:text-[#C6893F]'
                 }`}
               >
                 BOSH SAHIFA
@@ -164,17 +164,17 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               <button
                 onClick={() => setIsCatalogOpen(!isCatalogOpen)}
                 onMouseEnter={() => setIsCatalogOpen(true)}
-                className="flex items-center space-x-1.5 text-neutral-900 hover:text-[#C6893F] font-bold transition-colors py-1 cursor-pointer"
+                className="flex items-center space-x-1.5 text-slate-800 hover:text-[#C6893F] font-bold transition-colors py-3 px-3.5 cursor-pointer group"
               >
                 <span>KATALOG</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCatalogOpen ? 'rotate-180 text-[#C6893F]' : ''}`} />
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCatalogOpen ? 'rotate-180 text-[#C6893F]' : 'text-slate-400 group-hover:text-[#C6893F]'}`} />
               </button>
 
               {/* Catalog Dropdown Panel */}
               {isCatalogOpen && (
                 <div
                   onMouseLeave={() => setIsCatalogOpen(false)}
-                  className="absolute left-0 top-full mt-2 w-80 bg-white rounded-xl shadow-2xl border border-slate-200/90 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+                  className="absolute left-0 top-full mt-1 w-80 bg-white rounded-xl shadow-2xl border border-slate-200/90 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150 text-slate-900"
                 >
                   <div className="px-4 py-2 border-b border-slate-100 bg-slate-50/70">
                     <span className="text-xs font-extrabold uppercase tracking-wider text-slate-500">
@@ -214,7 +214,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <li>
               <a
                 href="#values"
-                className="text-neutral-900 hover:text-[#C6893F] transition-colors py-1"
+                className="text-slate-800 hover:text-[#C6893F] transition-colors py-3 px-3.5 block"
               >
                 XIZMATLAR
               </a>
@@ -224,7 +224,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <li>
               <a
                 href="#pillars"
-                className="text-neutral-900 hover:text-[#C6893F] transition-colors py-1"
+                className="text-slate-800 hover:text-[#C6893F] transition-colors py-3 px-3.5 block"
               >
                 KAFOLAT
               </a>
@@ -234,7 +234,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <li>
               <a
                 href="#overview"
-                className="text-neutral-900 hover:text-[#C6893F] transition-colors py-1"
+                className="text-slate-800 hover:text-[#C6893F] transition-colors py-3 px-3.5 block"
               >
                 KOMPANIYA HAQIDA
               </a>
@@ -244,7 +244,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <li>
               <a
                 href="#news"
-                className="text-neutral-900 hover:text-[#C6893F] transition-colors py-1"
+                className="text-slate-800 hover:text-[#C6893F] transition-colors py-3 px-3.5 block"
               >
                 YANGILIKLAR
               </a>
@@ -254,7 +254,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <li>
               <a
                 href="#specs"
-                className="text-neutral-900 hover:text-[#C6893F] transition-colors py-1"
+                className="text-slate-800 hover:text-[#C6893F] transition-colors py-3 px-3.5 block"
               >
                 BOG'LANISH
               </a>
@@ -281,13 +281,13 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <div>
               <button
                 onClick={() => setIsCatalogOpen(!isCatalogOpen)}
-                className="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-neutral-900 hover:bg-slate-50 transition-colors text-left"
+                className="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-slate-800 hover:bg-slate-50 transition-colors text-left cursor-pointer"
               >
                 <span>KATALOG</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${isCatalogOpen ? 'rotate-180 text-[#C6893F]' : ''}`} />
+                <ChevronDown className={`w-4 h-4 transition-transform ${isCatalogOpen ? 'rotate-180 text-[#C6893F]' : 'text-slate-400'}`} />
               </button>
               {isCatalogOpen && (
-                <div className="pl-4 pr-2 py-1 space-y-1 bg-slate-50/60 rounded-lg my-1">
+                <div className="pl-4 pr-2 py-1.5 space-y-1 bg-slate-50/80 rounded-lg my-1 text-slate-900 border border-slate-100">
                   {CATALOG_ITEMS.map((item, idx) => (
                     <a
                       key={idx}
@@ -305,7 +305,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <a
               href="#values"
               onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-neutral-900 hover:bg-slate-50 transition-colors"
+              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
             >
               XIZMATLAR
             </a>
@@ -313,7 +313,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <a
               href="#pillars"
               onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-neutral-900 hover:bg-slate-50 transition-colors"
+              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
             >
               KAFOLAT
             </a>
@@ -321,7 +321,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <a
               href="#overview"
               onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-neutral-900 hover:bg-slate-50 transition-colors"
+              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
             >
               KOMPANIYA HAQIDA
             </a>
@@ -329,7 +329,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <a
               href="#news"
               onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-neutral-900 hover:bg-slate-50 transition-colors"
+              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
             >
               YANGILIKLAR
             </a>
@@ -337,7 +337,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <a
               href="#specs"
               onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-neutral-900 hover:bg-slate-50 transition-colors"
+              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
             >
               BOG'LANISH
             </a>
@@ -358,7 +358,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
                 </div>
                 <a
                   href={`tel:${c.tel}`}
-                  className="w-8 h-8 rounded-full bg-[#C6893F]/15 text-[#C6893F] flex items-center justify-center"
+                  className="w-8 h-8 rounded-full bg-[#C6893F]/15 text-[#C6893F] flex items-center justify-center hover:bg-[#C6893F]/25 transition-colors"
                   aria-label={c.phone}
                 >
                   <Phone className="w-4 h-4" />
