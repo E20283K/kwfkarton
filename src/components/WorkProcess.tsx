@@ -6,55 +6,23 @@ export default function WorkProcess({ onOpenQuote }: WorkProcessProps) {
   const steps = [
     {
       num: "1",
-      title: "Sayt yoki telefon orqali ariza qoldirish",
-      p1: "Buyurtma berish sayt orqali ariza yuborish yoki telefon orqali boshlanadi.",
-      p2: "Siz qayta aloqa shaklida so'rov qoldirishingiz yoki mutaxassisimiz bilan bevosita bog'lanib dastlabki maslahat olishingiz mumkin.",
-      listHeader: "Ushbu bosqichda quyidagilar aniqlanadi:",
-      bullets: [
-        "mahsulot turi va sohasi;",
-        "ishlab chiqarish hajmi (tiraj);",
-        "qadoqqa qo'yiladigan maxsus talablar;",
-        "tayyorlash va yetkazib berish muddatlari.",
-      ],
+      title: "Buyurtma berish",
+      p1: "Telefon yoki telegram orqali biz bilan bog'lanib, o'z buyurtmangizni qoldirasiz.",
     },
     {
       num: "2",
-      title: "Narxni hisoblash va tijorat taklifi",
-      p1: "Ariza qabul qilingach, texnik ko'rsatkichlar hisoblanadi va tijorat taklifi shakllantiriladi.",
-      p2: "Hisob-kitob konstruksiya, dizayn, tiraj, materiallar va logistika inobatga olingan holda amalga oshiriladi.",
-      listHeader: "Mijoz quyidagilarni oladi:",
-      bullets: [
-        "batafsil narxlar smetasi;",
-        "texnik tavsifnoma va chizma;",
-        "ishlab chiqarishning aniq muddatlari;",
-        "yetkazib berish va to'lov shartlari.",
-      ],
+      title: "Hisob-kitob va taklif",
+      p1: "So'rovingiz asosida mahsulot narxi hisoblanib, sizga batafsil tijorat taklifi taqdim etiladi.",
     },
     {
       num: "3",
-      title: "Ishlab chiqarish va sifat nazorati",
-      p1: "Tasdiqlangan partiyani avtomatlashtirilgan liniyalarda ishlab chiqarishga yo'naltirish.",
-      p2: "Xomashyo sifati, geometrik aniqlik va GOST/FEFCO standartlariga qat'iy rioya etilishini nazorat qilish.",
-      listHeader: "Majburiy laboratoriya sinovlari:",
-      bullets: [
-        "qirralarning siqilishga chidamliligi (ECT);",
-        "yorilishga va bosimga qarshilik (Burst);",
-        "yelimlash va bukilish chiziqlari mustahkamligi;",
-        "flekso-bosma sifatining vizual nazorati.",
-      ],
+      title: "Ishlab chiqarish va nazorat",
+      p1: "Kelishuvga asosan (100% yoki ishlab chiqarishdan oldin 50% to'lov) mahsulot tayyorlanadi va qat'iy sifat nazoratidan o'tkaziladi.",
     },
     {
       num: "4",
-      title: "Yetkazib berish va yuklash",
-      p1: "Tayyor mahsulotlarni streych-plyonka bilan zich o'rab, tagliklarga (palet) joylash.",
-      p2: "Ombordan qat'iy kelishilgan vaqtda, kechikishlarsiz yuklab jo'natish.",
-      listHeader: "Qulay qabul qilib olish variantlari:",
-      bullets: [
-        "Toshkent shahri va O'zbekistonning barcha viloyatlariga o'z avtotransportimizda yetkazib berish;",
-        "ishonchli logistika hamkorlari orqali yuborish;",
-        "zavod omboridan o'zi olib ketish (samovivoz);",
-        "barcha yopuvchi hujjatlar to'plami (elektron hisob-faktura (ESF), nakladnoy, sertifikatlar).",
-      ],
+      title: "Yetkazib berish",
+      p1: "Tayyor mahsulot manzilingizga yetkazib beriladi (agar 50% to'lov qilingan bo'lsa, qolgan qismi to'langandan so'ng).",
     },
   ];
 
@@ -76,30 +44,12 @@ export default function WorkProcess({ onOpenQuote }: WorkProcessProps) {
                   {s.num}
                 </div>
 
-                <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-3 leading-snug">
+                <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-2 leading-snug">
                   {s.title}
                 </h3>
-
-                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed mb-2 font-normal">
+                <p className="text-sm text-slate-600 leading-relaxed font-normal">
                   {s.p1}
                 </p>
-                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed mb-3 font-normal">
-                  {s.p2}
-                </p>
-
-                <div className="pt-1">
-                  <p className="text-xs font-bold text-neutral-800 mb-1.5">
-                    {s.listHeader}
-                  </p>
-                  <ul className="text-xs sm:text-[13px] text-slate-500 space-y-1 pl-1">
-                    {s.bullets.map((b, bIdx) => (
-                      <li key={bIdx} className="flex items-start space-x-1.5">
-                        <span className="text-[#C6893F] font-bold">•</span>
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             ))}
           </div>
@@ -113,30 +63,12 @@ export default function WorkProcess({ onOpenQuote }: WorkProcessProps) {
                   {s.num}
                 </div>
 
-                <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-3 leading-snug">
+                <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-2 leading-snug">
                   {s.title}
                 </h3>
-
-                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed mb-2 font-normal">
+                <p className="text-sm text-slate-600 leading-relaxed font-normal">
                   {s.p1}
                 </p>
-                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed mb-3 font-normal">
-                  {s.p2}
-                </p>
-
-                <div className="pt-1">
-                  <p className="text-xs font-bold text-neutral-800 mb-1.5">
-                    {s.listHeader}
-                  </p>
-                  <ul className="text-xs sm:text-[13px] text-slate-500 space-y-1 pl-1">
-                    {s.bullets.map((b, bIdx) => (
-                      <li key={bIdx} className="flex items-start space-x-1.5">
-                        <span className="text-[#C6893F] font-bold">•</span>
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             ))}
           </div>

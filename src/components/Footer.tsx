@@ -76,8 +76,8 @@ export default function Footer(_props?: FooterProps) {
           </div>
         </div>
 
-        {/* 5 Columns Layout */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6 text-xs sm:text-[13px]">
+        {/* 4 Columns Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8 text-xs sm:text-[13px]">
 
           {/* Column 1: KATALOG */}
           <div className="space-y-3">
@@ -87,37 +87,42 @@ export default function Footer(_props?: FooterProps) {
             <ul className="space-y-2 text-slate-300 font-normal">
               <li>
                 <a href="#catalog" className="hover:text-white transition-colors">
-                  Sabzavotlar uchun gofrolotoklar
+                  Transportirovka (tashish) uchun
                 </a>
               </li>
               <li>
                 <a href="#catalog" className="hover:text-white transition-colors">
-                  Shaftoli uchun gofrolotoklar
+                  Meva-sabzavot eksporti uchun
                 </a>
               </li>
               <li>
                 <a href="#catalog" className="hover:text-white transition-colors">
-                  Olma uchun gofrolotoklar
+                  Qandolat va shirinliklar uchun
                 </a>
               </li>
               <li>
                 <a href="#catalog" className="hover:text-white transition-colors">
-                  Rezavor mevalar uchun lotoklar
+                  Ovqat yetkazish uchun
                 </a>
               </li>
               <li>
                 <a href="#catalog" className="hover:text-white transition-colors">
-                  Go'sht va parranda uchun lotoklar
+                  Ichimliklar uchun
                 </a>
               </li>
               <li>
                 <a href="#catalog" className="hover:text-white transition-colors">
-                  Gofroqutilar
+                  Sanoat mahsulotlari uchun
                 </a>
               </li>
-              <li className="pt-1">
-                <a href="#catalog" className="text-slate-400 hover:text-white transition-colors">
-                  Barcha katalog ...
+              <li>
+                <a href="#catalog" className="hover:text-white transition-colors">
+                  Qalin kartonli qadoqlar
+                </a>
+              </li>
+              <li>
+                <a href="#catalog" className="hover:text-white transition-colors">
+                  Karton sumkalar
                 </a>
               </li>
             </ul>
@@ -135,13 +140,13 @@ export default function Footer(_props?: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="#delivery" className="hover:text-white transition-colors">
-                  Yetkazib berish
+                <a href="#catalog" className="hover:text-white transition-colors">
+                  Mahsulotlar katalogi
                 </a>
               </li>
               <li>
-                <a href="#pillars" className="hover:text-white transition-colors">
-                  Kafolat
+                <a href="#advantages" className="hover:text-white transition-colors">
+                  Afzalliklar
                 </a>
               </li>
               <li>
@@ -150,38 +155,19 @@ export default function Footer(_props?: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="#overview" className="hover:text-white transition-colors">
-                  Kompaniya haqida
+                <a href="#gallery" className="hover:text-white transition-colors">
+                  Ishlab chiqarish
                 </a>
               </li>
               <li>
-                <a href="#specs" className="hover:text-white transition-colors">
-                  Bog'lanish
+                <a href="#contact" className="hover:text-white transition-colors">
+                  Zavod manzili va aloqa
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: XAVFSIZLIK */}
-          <div className="space-y-3">
-            <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
-              XAVFSIZLIK
-            </h3>
-            <ul className="space-y-2 text-slate-300 font-normal">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Maxfiylik siyosati
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Foydalanuvchi shartnomasi
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4: BOG'LANISH */}
+          {/* Column 3: BOG'LANISH */}
           <div className="space-y-3">
             <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
               BOG'LANISH
@@ -190,56 +176,51 @@ export default function Footer(_props?: FooterProps) {
 
               {/* Address */}
               <div className="flex items-start space-x-2.5">
-                <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#C6893F] shrink-0 mt-0.5" />
                 <div className="leading-snug">
-                  Toshkent sh.,<br />
-                  Sergeli tumani,<br />
-                  Yangi Sergeli ko'chasi, Sanoat hududi
+                  Xorazm viloyati, Urganch sh.,<br />
+                  Ashxobod MFY, Sanoatchilar ko'chasi,<br />
+                  19/2-uy, A-korpus
                 </div>
               </div>
 
               {/* Phone */}
               <div className="flex items-center space-x-2.5 pt-1">
-                <Phone className="w-4 h-4 text-slate-400 shrink-0" />
+                <Phone className="w-4 h-4 text-[#C6893F] shrink-0" />
                 <a
-                  href="tel:+998712003250"
+                  href="tel:+998995601666"
                   className="font-bold text-white hover:text-[#C6893F] transition-colors"
                 >
-                  +998 71 200-32-50
+                  +998 (99) 560-16-66
                 </a>
               </div>
 
               {/* Email */}
               <div className="flex items-center space-x-2.5">
-                <Mail className="w-4 h-4 text-slate-400 shrink-0" />
+                <Mail className="w-4 h-4 text-[#C6893F] shrink-0" />
                 <a
-                  href="mailto:info@kwf.uz"
+                  href="mailto:no.name@gmail.com"
                   className="hover:text-white transition-colors"
                 >
-                  info@kwf.uz
+                  no.name@gmail.com
                 </a>
               </div>
 
             </div>
           </div>
 
-          {/* Column 5: KOMPANIYA */}
+          {/* Column 4: REKVIZITLAR */}
           <div className="space-y-3">
             <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
-              KOMPANIYA
+              REKVIZITLAR
             </h3>
             <div className="space-y-1.5 text-slate-300 font-normal leading-relaxed">
               <div className="font-semibold text-white">
                 "KARTON WORKS" MCHJ
               </div>
-              <div>STIR (INN): 309814814</div>
-              <div>IFUT (OKED): 17210</div>
-              <div>Ro'yxat raqami: 00921480</div>
-              <div className="pt-1">
-                <a href="#overview" className="text-slate-400 hover:text-white transition-colors">
-                  Batafsil ma'lumot ...
-                </a>
-              </div>
+              <div>STIR (INN): <span className="text-white font-medium">300472900</span></div>
+              <div>IFUT (OKED): <span className="text-white font-medium">17210</span></div>
+              <div>SOATO: <span className="text-white font-medium">1733401</span></div>
             </div>
           </div>
 
@@ -247,25 +228,15 @@ export default function Footer(_props?: FooterProps) {
 
       </div>
 
-      {/* Lower Copyright & Legal Disclaimer Bar */}
-      <div className="border-t border-white/10 py-6 bg-[#C6893F]">
-        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
-
-          {/* Copyright text on the left */}
-          <div className="space-y-1">
-            <p className="font-semibold text-white">
-              © 2025-2026 - "KARTON WORKS" MCHJ
-            </p>
-            <p className="text-[10px] text-white/80">
-              Barcha huquqlar O'zbekiston Respublikasi qonunchiligiga muvofiq himoyalangan
-            </p>
-          </div>
-
-          {/* Legal public offer notice on the right */}
-          <div className="max-w-2xl text-[10px] text-white/80 leading-relaxed lg:text-right">
-            E'tiboringizni qaratamiz: ushbu internet-sayt faqat ma'lumot beruvchi xususiyatga ega bo'lib, O'zbekiston Respublikasi Fuqarolik kodeksining 369-moddasi qoidalariga muvofiq ommaviy oferta hisoblanmaydi.
-          </div>
-
+      {/* Lower Copyright Bar */}
+      <div className="border-t border-white/10 py-3.5 sm:py-4 bg-[#2B2E33]">
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
+          <p className="font-medium text-slate-300">
+            © 2025-2026 - "KARTON WORKS" MCHJ
+          </p>
+          <p className="text-[11px] text-slate-400">
+            Barcha huquqlar himoyalangan
+          </p>
         </div>
       </div>
 

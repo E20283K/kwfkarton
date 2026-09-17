@@ -153,7 +153,7 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
       {/* Header */}
       <div className="mb-6 sm:mb-8">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight">
-          Kompaniyamiz ishlab chiqarishi
+          Fotogalereya
         </h2>
       </div>
 
@@ -202,15 +202,6 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
           
           {/* Secondary 4-Photo Preview Grid */}
           <div>
-            <div className="flex items-center justify-between mb-2 px-0.5">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                Sex maydonlaridan kadrlar
-              </span>
-              <span className="text-xs font-semibold text-slate-400">
-                6 ta fotosurat
-              </span>
-            </div>
-
             <div className="grid grid-cols-2 gap-2.5">
               {GALLERY_PHOTOS.slice(1, 5).map((photo, idx) => {
                 const realIndex = idx + 1;
@@ -237,10 +228,9 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
 
           {/* Technology Description Text */}
           <div className="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed bg-white p-4 sm:p-5 rounded-xl border border-slate-200/80 shadow-xs">
-            <div className="flex items-center space-x-2 text-neutral-900 font-bold text-sm">
-              <span className="w-2 h-2 rounded-full bg-[#C6893F]" />
-              <h4>Uzluksiz siklli zamonaviy quvvatlar</h4>
-            </div>
+            <h4 className="text-neutral-900 font-bold text-sm">
+              Uzluksiz siklli zamonaviy quvvatlar
+            </h4>
             <p>
               Zavod 3 va 5 qatlamli gofrokarton ishlab chiqarish uchun yuqori aniqlikdagi avtomatlashtirilgan agregatlar, lazerli qirqish va ko'p rangli flekso-bosma uskunalari bilan jihozlangan.
             </p>

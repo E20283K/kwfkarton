@@ -1,36 +1,23 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, MapPin, Send } from 'lucide-react';
 
 interface NavbarProps {
   onOpenQuote: () => void;
 }
 
-const SALES_CONTACTS = [
-  {
-    role: "Sotuv bo'limi (Ofis)",
-    phone: '+998 71 200-32-50',
-    tel: '+998712003250',
-  },
-  {
-    role: 'Sotuv menejeri',
-    phone: '+998 90 123-32-50',
-    tel: '+998901233250',
-  },
-  {
-    role: 'Sotuv menejeri',
-    phone: '+998 93 123-32-50',
-    tel: '+998931233250',
-  },
-];
-
 export default function Navbar({ onOpenQuote }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   // Update active section on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPos = window.scrollY + 150;
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      setScrollProgress(docHeight > 0 ? (scrollY / docHeight) * 100 : 0);
+
+      const scrollPos = scrollY + 150;
       if (scrollPos < 500) {
         setActiveSection('home');
       } else {
@@ -67,38 +54,56 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             />
           </a>
 
-          {/* 2. Phone & Working Hours Block */}
-          <div className="hidden sm:flex items-center space-x-3 shrink-0 select-none">
-            <div className="text-[#C6893F]">
-              <Phone className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.8] -rotate-12 drop-shadow-xs" />
+          {/* 2. Contacts Block */}
+          <div className="hidden sm:flex items-center space-x-5 shrink-0 select-none">
+            {/* Minimal Language Switcher */}
+            <div className="flex items-center space-x-3 text-[11px] font-black tracking-widest text-slate-400 mt-0.5">
+              <button className="text-[#C6893F] cursor-default flex items-center gap-1.5">
+                <img src="https://flagcdn.com/w20/uz.png" alt="UZ" className="w-4 h-auto rounded-[2px]" />
+                UZ
+              </button>
+              <span>/</span>
+              <button className="hover:text-slate-800 transition-colors cursor-pointer flex items-center gap-1.5">
+                <img src="https://flagcdn.com/w20/ru.png" alt="RU" className="w-4 h-auto rounded-[2px]" />
+                RU
+              </button>
+              <span>/</span>
+              <button className="hover:text-slate-800 transition-colors cursor-pointer flex items-center gap-1.5">
+                <img src="https://flagcdn.com/w20/gb.png" alt="EN" className="w-4 h-auto rounded-[2px]" />
+                EN
+              </button>
             </div>
-            <div className="flex flex-col">
-              <div className="flex items-center space-x-2">
-                <a
-                  href="tel:+998712003250"
-                  className="text-base sm:text-[17px] font-extrabold shine-number leading-tight tracking-tight whitespace-nowrap"
-                >
-                  +998 71 200-32-50
-                </a>
-                <span className="text-slate-300 font-normal">/</span>
-                <a
-                  href="tel:+998901233250"
-                  className="text-base sm:text-[17px] font-extrabold shine-number leading-tight tracking-tight whitespace-nowrap"
-                >
-                  +998 90 123-32-50
-                </a>
-                <span className="text-slate-300 font-normal">/</span>
-                <a
-                  href="tel:+998931233250"
-                  className="text-base sm:text-[17px] font-extrabold shine-number leading-tight tracking-tight whitespace-nowrap"
-                >
-                  +998 93 123-32-50
-                </a>
-              </div>
 
-              <span className="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">
-                Sotuv bo'limi • Ish vaqti: Dush-Jum 09:00-18:00
-              </span>
+            {/* Socials & Address */}
+            <div className="flex items-center space-x-3 text-slate-600">
+              <a href="https://maps.app.goo.gl/qLtyXVBd8t14qiSz8" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title="Manzil: Urganch sh., Ashxobod MFY">
+                <img src="/google-maps.png" alt="Xarita" className="w-6 h-6 object-contain" />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title="Telegram">
+                <img src="/telegram.png" alt="Telegram" className="w-6 h-6 object-contain" />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title="Instagram">
+                <img src="/instagram.png" alt="Instagram" className="w-6 h-6 object-contain" />
+              </a>
+            </div>
+
+            <div className="w-[1px] h-6 bg-slate-200"></div>
+
+            <div className="flex items-center space-x-2">
+              <div className="text-[#C6893F]">
+                <Phone className="w-5 h-5 stroke-[1.8] -rotate-12 drop-shadow-xs" />
+              </div>
+              <div className="flex flex-col">
+                <a
+                  href="tel:+998995601666"
+                  className="text-base sm:text-[17px] font-extrabold shine-number leading-tight tracking-tight whitespace-nowrap"
+                >
+                  +998 99 560-16-66
+                </a>
+                <span className="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">
+                  Dush-Shan 09:00-18:00
+                </span>
+              </div>
             </div>
           </div>
 
@@ -119,7 +124,6 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
         <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
           <ul className="flex items-center justify-between text-xs sm:text-sm font-bold tracking-wide uppercase select-none">
             
-            {/* BOSH SAHIFA (Active Link) */}
             <li>
               <a
                 href="#"
@@ -133,7 +137,6 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               </a>
             </li>
 
-            {/* KATALOG */}
             <li>
               <a
                 href="#catalog"
@@ -147,7 +150,6 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               </a>
             </li>
 
-            {/* XIZMATLAR */}
             <li>
               <a
                 href="#values"
@@ -157,7 +159,6 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               </a>
             </li>
 
-            {/* KOMPANIYA HAQIDA */}
             <li>
               <a
                 href="#overview"
@@ -167,7 +168,6 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               </a>
             </li>
 
-            {/* YANGILIKLAR */}
             <li>
               <a
                 href="#news"
@@ -177,7 +177,6 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               </a>
             </li>
 
-            {/* BOG'LANISH */}
             <li>
               <a
                 href="#specs"
@@ -191,95 +190,119 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
         </div>
       </nav>
 
+      {/* Scroll Progress Bar */}
+      <div className="h-[2px] w-full bg-transparent z-50">
+        <div 
+          className="h-full bg-[#C6893F] transition-all duration-75 ease-out"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
       {/* ================= MOBILE & TABLET DRAWER ================= */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t border-slate-200 px-4 pt-4 pb-6 shadow-xl animate-in slide-in-from-top-3 duration-200">
-          {/* Navigation Links List */}
           <div className="flex flex-col space-y-1 font-bold text-sm uppercase">
-            <a
-              href="#"
-              onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-[#C6893F] bg-[#C6893F]/10 font-extrabold"
-            >
+            <a href="#" onClick={() => setIsMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-[#C6893F] bg-[#C6893F]/10 font-extrabold">
               BOSH SAHIFA
             </a>
-
-            <a
-              href="#catalog"
-              onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
-            >
+            <a href="#catalog" onClick={() => setIsMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors">
               KATALOG
             </a>
-
-            <a
-              href="#values"
-              onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
-            >
+            <a href="#values" onClick={() => setIsMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors">
               XIZMATLAR
             </a>
-
-            <a
-              href="#overview"
-              onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
-            >
+            <a href="#overview" onClick={() => setIsMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors">
               KOMPANIYA HAQIDA
             </a>
-
-            <a
-              href="#news"
-              onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
-            >
+            <a href="#news" onClick={() => setIsMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors">
               YANGILIKLAR
             </a>
-
-            <a
-              href="#specs"
-              onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
-            >
+            <a href="#specs" onClick={() => setIsMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors">
               BOG'LANISH
             </a>
           </div>
 
-          {/* Mobile Sales Managers Contacts */}
-          <div className="mt-4 pt-4 border-t border-slate-200/80 space-y-2.5">
-            <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
-              Sotuv bo'limi kontaktlari:
+          {/* Mobile Language Switcher */}
+          <div className="mt-4 pt-4 border-t border-slate-200/80">
+            <div className="flex items-center space-x-6 text-[11px] font-black tracking-widest text-slate-400">
+              <button className="text-[#C6893F] cursor-default border-b-2 border-[#C6893F] pb-1 flex items-center gap-1.5">
+                <img src="https://flagcdn.com/w20/uz.png" alt="UZ" className="w-4 h-auto rounded-[2px]" />
+                UZB
+              </button>
+              <button className="hover:text-slate-800 transition-colors pb-1 cursor-pointer flex items-center gap-1.5">
+                <img src="https://flagcdn.com/w20/ru.png" alt="RU" className="w-4 h-auto rounded-[2px]" />
+                RUS
+              </button>
+              <button className="hover:text-slate-800 transition-colors pb-1 cursor-pointer flex items-center gap-1.5">
+                <img src="https://flagcdn.com/w20/gb.png" alt="EN" className="w-4 h-auto rounded-[2px]" />
+                ENG
+              </button>
             </div>
-            {SALES_CONTACTS.map((c, idx) => (
-              <div key={idx} className="flex items-center justify-between py-1 border-b border-slate-100 last:border-0">
-                <div>
-                  <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">{c.role}</div>
-                  <a href={`tel:${c.tel}`} className="text-sm font-extrabold shine-number">
-                    {c.phone}
-                  </a>
-                </div>
-                <a
-                  href={`tel:${c.tel}`}
-                  className="w-8 h-8 rounded-full bg-[#C6893F]/15 text-[#C6893F] flex items-center justify-center hover:bg-[#C6893F]/25 transition-colors"
-                  aria-label={c.phone}
-                >
-                  <Phone className="w-4 h-4" />
-                </a>
-              </div>
-            ))}
           </div>
 
-          {/* Mobile Quote Button */}
+          {/* Mobile Contacts */}
+          <div className="mt-4 pt-4 border-t border-slate-200/80 space-y-3">
+            <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
+              Biz bilan bog'lanish:
+            </div>
+            
+            <div className="flex items-center justify-between py-1 border-b border-slate-100">
+              <div>
+                <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">Telefon</div>
+                <a href="tel:+998995601666" className="text-sm font-extrabold shine-number">
+                  +998 99 560-16-66
+                </a>
+              </div>
+              <a href="tel:+998995601666" className="w-8 h-8 rounded-full bg-[#C6893F]/15 text-[#C6893F] flex items-center justify-center hover:bg-[#C6893F]/25 transition-colors">
+                <Phone className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="flex items-center justify-between py-1 border-b border-slate-100">
+              <div>
+                <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">Telegram</div>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-slate-700">
+                  Bizning kanal
+                </a>
+              </div>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                <img src="/telegram.png" alt="Telegram" className="w-7 h-7 object-contain" />
+              </a>
+            </div>
+
+            <div className="flex items-center justify-between py-1 border-b border-slate-100">
+              <div>
+                <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">Instagram</div>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-slate-700">
+                  Bizning sahifa
+                </a>
+              </div>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                <img src="/instagram.png" alt="Instagram" className="w-7 h-7 object-contain" />
+              </a>
+            </div>
+
+            <div className="flex items-center justify-between py-1">
+              <div className="pr-4">
+                <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">Manzil</div>
+                <a href="https://maps.app.goo.gl/qLtyXVBd8t14qiSz8" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-600 leading-tight block mt-0.5">
+                  Xorazm vil., Urganch sh., Ashxobod MFY, Sanoatchilar ko'chasi
+                </a>
+              </div>
+              <a href="https://maps.app.goo.gl/qLtyXVBd8t14qiSz8" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity shrink-0">
+                <img src="/google-maps.png" alt="Xarita" className="w-7 h-7 object-contain" />
+              </a>
+            </div>
+          </div>
+
           <button
             onClick={() => { setIsMenuOpen(false); onOpenQuote(); }}
             className="w-full mt-4 bg-[#C6893F] hover:bg-[#B37830] text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 cursor-pointer"
           >
             <span>Ariza qoldirish</span>
           </button>
-
         </div>
       )}
     </header>
   );
 }
-

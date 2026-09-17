@@ -11,42 +11,42 @@ interface ProductItem {
 const PRODUCTS: ProductItem[] = [
   {
     title: "Transportirovka (tashish) uchun",
-    kraftImg: "/boxes/rsc_box_kraft.jpg",
-    whiteImg: "/boxes/rsc_box_white.jpg",
+    kraftImg: "/boxes/rsc_box_kraft.png",
+    whiteImg: "/boxes/rsc_box_white.png",
   },
   {
     title: "Meva-sabzavot eksporti uchun",
-    kraftImg: "/boxes/frut_box_kraft.jpg",
-    whiteImg: "/boxes/fruit_box_white.jpg",
+    kraftImg: "/boxes/frut_box_kraft.png",
+    whiteImg: "/boxes/fruit_box_white.png",
   },
   {
     title: "Qandolat va shirinliklar uchun",
-    kraftImg: "/boxes/cake_box_kraft.jpg",
-    whiteImg: "/boxes/cake_box_white.jpg",
+    kraftImg: "/boxes/cake_box_kraft.png",
+    whiteImg: "/boxes/cake_box_white.png",
   },
   {
     title: "Ovqat yetkazish uchun",
-    kraftImg: "/boxes/pizza_box_kraft.jpg",
-    whiteImg: "/boxes/pizza_box_whte.jpg",
+    kraftImg: "/boxes/pizza_box_kraft.png",
+    whiteImg: "/boxes/pizza_box_whte.png",
   },
   {
     title: "Ichimliklar uchun",
-    kraftImg: "/boxes/drink_box_kraft.jpg",
-    whiteImg: "/boxes/drink_box_white.jpg",
+    kraftImg: "/boxes/drink_box_kraft.png",
+    whiteImg: "/boxes/drink_box_white.png",
   },
   {
     title: "Sanoat mahsulotlari uchun",
-    kraftImg: "/boxes/industry_box_kraft.jpg",
-    whiteImg: "/boxes/industry_box_white.jpg",
+    kraftImg: "/boxes/industry_box_kraft.png",
+    whiteImg: "/boxes/industry_box_white.png",
   },
   {
     title: "Qalin kartonli qadoqlar",
-    kraftImg: "/boxes/thick_box.jpg",
+    kraftImg: "/boxes/thick_box.png",
   },
   {
     title: "Karton sumkalar",
-    kraftImg: "/boxes/bag_kraft.jpg",
-    whiteImg: "/boxes/bag_white.jpg",
+    kraftImg: "/boxes/bag_kraft.png",
+    whiteImg: "/boxes/bag_white.png",
   },
 ];
 
