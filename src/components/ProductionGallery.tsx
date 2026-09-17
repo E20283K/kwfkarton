@@ -152,12 +152,9 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
     <section className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-14">
       {/* Header */}
       <div className="mb-6 sm:mb-8">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 tracking-tight">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight">
           Kompaniyamiz ishlab chiqarishi
         </h2>
-        <p className="text-xs sm:text-sm text-slate-500 mt-1.5 max-w-xl">
-          Karton Works Factory zavodining haqiqiy foto va texnologik jarayonlari
-        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
@@ -199,9 +196,6 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
               <h3 className="text-base sm:text-lg font-black tracking-tight leading-snug">
                 {currentPhoto.title}
               </h3>
-              <p className="text-xs text-white/80 mt-1 line-clamp-2 hidden sm:block">
-                {currentPhoto.desc}
-              </p>
             </div>
           </div>
 
@@ -311,9 +305,6 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
                 <h4 className="text-xs sm:text-sm font-bold truncate">
                   {activeViewerPhoto.title}
                 </h4>
-                <p className="text-[11px] text-slate-400 truncate hidden sm:block">
-                  {activeViewerPhoto.desc}
-                </p>
               </div>
             </div>
 

@@ -73,7 +73,7 @@ export default function Partners() {
     <section className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-14">
       {/* Header */}
       <div className="mb-8">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 tracking-tight">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight">
           Hamkorlarimiz
         </h2>
       </div>

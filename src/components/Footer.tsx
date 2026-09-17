@@ -40,10 +40,10 @@ const SOCIAL = [
 export default function Footer(_props?: FooterProps) {
   return (
     <footer id="footer" className="bg-[#3D4046] text-white font-sans">
-      
+
       {/* Upper Footer Container: 5 Columns matching screenshot */}
       <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pt-12 pb-14">
-        
+
         {/* Social Network Icons Bar at the top of the footer */}
         <div className="flex flex-col sm:flex-row items-center justify-between pb-8 mb-10 border-b border-white/10 gap-4">
           <div className="flex items-center space-x-3">
@@ -78,7 +78,7 @@ export default function Footer(_props?: FooterProps) {
 
         {/* 5 Columns Layout */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6 text-xs sm:text-[13px]">
-          
+
           {/* Column 1: KATALOG */}
           <div className="space-y-3">
             <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
@@ -187,7 +187,7 @@ export default function Footer(_props?: FooterProps) {
               BOG'LANISH
             </h3>
             <div className="space-y-3 text-slate-300 font-normal">
-              
+
               {/* Address */}
               <div className="flex items-start space-x-2.5">
                 <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
@@ -248,21 +248,21 @@ export default function Footer(_props?: FooterProps) {
       </div>
 
       {/* Lower Copyright & Legal Disclaimer Bar */}
-      <div className="border-t border-white/10 py-6 bg-[#34373D]">
+      <div className="border-t border-white/10 py-6 bg-[#C6893F]">
         <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
-          
+
           {/* Copyright text on the left */}
           <div className="space-y-1">
-            <p className="font-medium text-slate-300">
+            <p className="font-semibold text-white">
               © 2025-2026 - "KARTON WORKS" MCHJ
             </p>
-            <p className="text-[10px] text-slate-400">
+            <p className="text-[10px] text-white/80">
               Barcha huquqlar O'zbekiston Respublikasi qonunchiligiga muvofiq himoyalangan
             </p>
           </div>
 
           {/* Legal public offer notice on the right */}
-          <div className="max-w-2xl text-[10px] text-slate-400 leading-relaxed lg:text-right">
+          <div className="max-w-2xl text-[10px] text-white/80 leading-relaxed lg:text-right">
             E'tiboringizni qaratamiz: ushbu internet-sayt faqat ma'lumot beruvchi xususiyatga ega bo'lib, O'zbekiston Respublikasi Fuqarolik kodeksining 369-moddasi qoidalariga muvofiq ommaviy oferta hisoblanmaydi.
           </div>
 

@@ -4,41 +4,49 @@ interface ProductCatalogProps {
 
 interface ProductItem {
   title: string;
-  img: string;
+  kraftImg: string;
+  whiteImg?: string;
 }
 
 const PRODUCTS: ProductItem[] = [
   {
     title: "Transportirovka (tashish) uchun",
-    img: "/catalog/1_transportirovka.png",
+    kraftImg: "/boxes/rsc_box_kraft.jpg",
+    whiteImg: "/boxes/rsc_box_white.jpg",
   },
   {
     title: "Meva-sabzavot eksporti uchun",
-    img: "/catalog/2_meva_sabzavot.png",
+    kraftImg: "/boxes/frut_box_kraft.jpg",
+    whiteImg: "/boxes/fruit_box_white.jpg",
   },
   {
     title: "Qandolat va shirinliklar uchun",
-    img: "/catalog/3_qandolat.png",
+    kraftImg: "/boxes/cake_box_kraft.jpg",
+    whiteImg: "/boxes/cake_box_white.jpg",
   },
   {
     title: "Ovqat yetkazish uchun",
-    img: "/catalog/4_ovqat_yetkazish.png",
+    kraftImg: "/boxes/pizza_box_kraft.jpg",
+    whiteImg: "/boxes/pizza_box_whte.jpg",
   },
   {
     title: "Ichimliklar uchun",
-    img: "/catalog/5_ichimliklar.png",
+    kraftImg: "/boxes/drink_box_kraft.jpg",
+    whiteImg: "/boxes/drink_box_white.jpg",
   },
   {
     title: "Sanoat mahsulotlari uchun",
-    img: "/catalog/6_sanoat.png",
+    kraftImg: "/boxes/industry_box_kraft.jpg",
+    whiteImg: "/boxes/industry_box_white.jpg",
   },
   {
     title: "Qalin kartonli qadoqlar",
-    img: "/catalog/7_qalin_karton.png",
+    kraftImg: "/boxes/thick_box.jpg",
   },
   {
     title: "Karton sumkalar",
-    img: "/catalog/8_karton_sumkalar.png",
+    kraftImg: "/boxes/bag_kraft.jpg",
+    whiteImg: "/boxes/bag_white.jpg",
   },
 ];
 
@@ -47,12 +55,9 @@ export default function ProductCatalog({ onOpenQuote }: ProductCatalogProps) {
     <section id="catalog" className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-14">
       {/* Header */}
       <div className="mb-6 sm:mb-8">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 tracking-tight">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight">
           Mahsulotlar katalogi
         </h2>
-        <p className="text-xs sm:text-sm text-slate-500 mt-1.5 max-w-xl">
-          Biznesingiz uchun har xil turdagi sifatli gofrokarton va qadoqlash mahsulotlari
-        </p>
       </div>
 
       {/* 8-Card Grid matching design reference */}
@@ -65,12 +70,25 @@ export default function ProductCatalog({ onOpenQuote }: ProductCatalogProps) {
           >
             {/* Image Card Container */}
             <div className="relative w-full aspect-4/3 bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-[#C6893F]/50 transition-all duration-300 overflow-hidden flex items-center justify-center p-3 sm:p-4">
+              {/* Default Kraft Image */}
               <img
-                src={prod.img}
+                src={prod.kraftImg}
                 alt={prod.title}
-                className="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105 select-none"
+                className={`w-full h-full object-contain transition-all duration-500 ease-out group-hover:scale-105 select-none ${
+                  prod.whiteImg ? 'group-hover:opacity-0' : ''
+                }`}
                 loading="lazy"
               />
+
+              {/* White Version shown on Mouse Hover */}
+              {prod.whiteImg && (
+                <img
+                  src={prod.whiteImg}
+                  alt={`${prod.title} - oq`}
+                  className="absolute inset-0 w-full h-full object-contain p-3 sm:p-4 transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 group-hover:scale-105 select-none"
+                  loading="lazy"
+                />
+              )}
             </div>
 
             {/* Title Underneath Card */}

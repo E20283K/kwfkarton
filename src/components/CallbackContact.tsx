@@ -23,13 +23,9 @@ export default function CallbackContact() {
         <div className="flex justify-center relative z-10">
           <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 max-w-lg w-full shadow-2xl border border-slate-200 text-slate-900">
               
-              <h2 className="text-xl sm:text-2xl font-black text-neutral-900 text-center tracking-tight mb-2">
+              <h2 className="text-xl sm:text-2xl font-black text-[#C6893F] text-center tracking-tight mb-6">
                 Izlagan narsangizni topa olmadingizmi?
               </h2>
-              
-              <p className="text-xs sm:text-[13px] text-slate-500 text-center mb-6 leading-relaxed">
-                Aloqa ma'lumotlaringizni qoldiring va mutaxassisimiz sizga yordam berish uchun albatta bog'lanadi!
-              </p>
 
               {isSent ? (
                 <div className="text-center py-8">

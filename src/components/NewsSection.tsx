@@ -159,12 +159,9 @@ export default function NewsSection() {
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
         <div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight">
             Yangiliklar
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 mt-1.5 max-w-xl">
-            Karton Works Factory hayotidagi so'nggi yangiliklar, ishlab chiqarish jarayonlari va yangi mahsulotlarimiz
-          </p>
         </div>
 
         <div className="flex items-center space-x-3 shrink-0">
@@ -212,16 +209,16 @@ export default function NewsSection() {
         </div>
       </div>
 
-      {/* Horizontal Scroll Carousel (3-4 posts visible on screen, larger size) */}
+      {/* Horizontal Scroll Carousel */}
       <div
         ref={scrollRef}
         onScroll={checkScroll}
-        className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex gap-3.5 sm:gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {posts.map((post) => (
           <article
             key={post.id}
-            className="snap-start shrink-0 w-[270px] sm:w-[300px] lg:w-[325px] bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+            className="snap-start shrink-0 w-[215px] sm:w-[240px] lg:w-[260px] bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
           >
             {/* Post Image Container (1080x1440 = 3:4 portrait ratio) */}
             <div className="relative aspect-[3/4] overflow-hidden bg-slate-100 select-none">
@@ -233,8 +230,8 @@ export default function NewsSection() {
               />
 
               {/* Instagram Floating Icon Badge */}
-              <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center shadow-md">
-                <InstagramIcon className="w-4 h-4" />
+              <div className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center shadow-md">
+                <InstagramIcon className="w-3.5 h-3.5" />
               </div>
 
               {/* Hover Overlay with engagement metrics */}
@@ -242,18 +239,18 @@ export default function NewsSection() {
                 href={post.permalink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center text-white space-x-4"
+                className="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center text-white space-x-3"
                 aria-label="Instagram'da ochish"
               >
                 {post.likes !== undefined && (
-                  <div className="flex items-center space-x-1.5 font-bold text-sm">
-                    <Heart className="w-4 h-4 fill-white" />
+                  <div className="flex items-center space-x-1 font-bold text-xs">
+                    <Heart className="w-3.5 h-3.5 fill-white" />
                     <span>{post.likes}</span>
                   </div>
                 )}
                 {post.comments !== undefined && (
-                  <div className="flex items-center space-x-1.5 font-bold text-sm">
-                    <MessageCircle className="w-4 h-4 fill-white" />
+                  <div className="flex items-center space-x-1 font-bold text-xs">
+                    <MessageCircle className="w-3.5 h-3.5 fill-white" />
                     <span>{post.comments}</span>
                   </div>
                 )}
@@ -261,20 +258,20 @@ export default function NewsSection() {
             </div>
 
             {/* Post Caption & Details */}
-            <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between">
+            <div className="p-3.5 sm:p-4 flex flex-col flex-1 justify-between">
               <div>
                 {post.timestamp && (
-                  <div className="flex items-center space-x-1.5 text-[11px] font-semibold text-slate-400 mb-2">
+                  <div className="flex items-center space-x-1.5 text-[10px] sm:text-[11px] font-semibold text-slate-400 mb-1.5">
                     <Calendar className="w-3 h-3" />
                     <span>{post.timestamp}</span>
                   </div>
                 )}
-                <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed line-clamp-3 font-medium">
+                <p className="text-xs text-slate-700 leading-relaxed line-clamp-3 font-medium">
                   {post.caption}
                 </p>
               </div>
 
-              <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between">
+              <div className="pt-2.5 mt-2.5 border-t border-slate-100 flex items-center justify-between">
                 <a
                   href={post.permalink}
                   target="_blank"

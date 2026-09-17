@@ -60,7 +60,7 @@ export default function WorkProcess({ onOpenQuote }: WorkProcessProps) {
 
   return (
     <section className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-14">
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 tracking-tight mb-6 sm:mb-8">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight mb-6 sm:mb-8">
         Ishlash tartibi
       </h2>
 
