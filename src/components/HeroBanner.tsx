@@ -27,11 +27,9 @@ export default function HeroBanner({ onOpenQuote }: HeroBannerProps) {
             </span>
           </h1>
 
-          <div className="bg-black/50 backdrop-blur-xs border border-white/20 px-3.5 py-2 rounded-lg mb-7 mt-2 shadow-xs">
-            <p className="text-white/95 text-xs sm:text-sm font-medium leading-relaxed">
-              Individual o'lchamlar bo'yicha har qanday murakkablikdagi qadoqlarni tayyorlash
-            </p>
-          </div>
+          <p className="text-white/90 text-sm sm:text-base lg:text-lg font-normal mb-8 max-w-xl leading-relaxed">
+            Individual o'lchamlar bo'yicha qadoqlar tayyorlash
+          </p>
 
           <button
             onClick={onOpenQuote}

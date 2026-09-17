@@ -7,7 +7,7 @@ import WorkProcess from './components/WorkProcess';
 import ProductionGallery from './components/ProductionGallery';
 import NewsSection from './components/NewsSection';
 import Partners from './components/Partners';
-import CallbackContact from './components/CallbackContact';
+import FactoryLocationSection from './components/FactoryLocationSection';
 import Footer from './components/Footer';
 
 function App() {
@@ -42,8 +42,8 @@ function App() {
           {/* 9. Brand Partners */}
           <Partners />
 
-          {/* 10. Callback Request Contact Section */}
-          <CallbackContact />
+          {/* 10. Gofroqadoq ishlab chiqarish zavodi & Action / Location Map */}
+          <FactoryLocationSection />
         </main>
 
         <Footer onOpenQuote={handleOpenQuote} />

@@ -78,13 +78,13 @@ export default function Partners() {
         </h2>
       </div>
 
-      {/* Logos 10-item Responsive Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-5">
+      {/* Logos 10-item Responsive Grid (4-column layout) */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
         {PARTNERS.map((partner) => (
           <div
             key={partner.id}
             title={`${partner.name} - ${partner.category}`}
-            className="group relative bg-white border border-slate-200/90 hover:border-[#C6893F]/50 rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center h-28 sm:h-32 shadow-xs hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden"
+            className="group relative bg-white border border-slate-200/90 hover:border-[#C6893F]/50 rounded-2xl p-5 sm:p-6 lg:p-7 flex flex-col items-center justify-center h-32 sm:h-38 lg:h-42 shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
           >
             {/* Ambient hover background glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#C6893F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -93,13 +93,13 @@ export default function Partners() {
               <img
                 src={partner.logo}
                 alt={`${partner.name} logotipi`}
-                className="max-h-14 sm:max-h-16 w-auto max-w-[130px] sm:max-w-[155px] object-contain transition-all duration-300 group-hover:scale-108 select-none"
+                className="max-h-16 sm:max-h-20 lg:max-h-24 w-auto max-w-[140px] sm:max-w-[170px] lg:max-w-[190px] object-contain transition-all duration-300 group-hover:scale-108 select-none"
                 loading="lazy"
               />
             </div>
 
             {/* Subtle bottom indicator badge */}
-            <div className="absolute bottom-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-[10px] font-bold text-slate-500 truncate max-w-[90%] pointer-events-none">
+            <div className="absolute bottom-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs font-bold text-slate-500 truncate max-w-[90%] pointer-events-none">
               {partner.name}
             </div>
           </div>

@@ -34,7 +34,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
       if (scrollPos < 500) {
         setActiveSection('home');
       } else {
-        const sections = ['catalog', 'overview', 'values', 'pillars', 'specs'];
+        const sections = ['catalog', 'overview', 'values', 'specs'];
         for (const sec of sections) {
           const el = document.getElementById(sec);
           if (el) {
@@ -157,16 +157,6 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               </a>
             </li>
 
-            {/* KAFOLAT */}
-            <li>
-              <a
-                href="#pillars"
-                className="text-slate-800 hover:text-[#C6893F] transition-colors py-1.5 px-3 block"
-              >
-                KAFOLAT
-              </a>
-            </li>
-
             {/* KOMPANIYA HAQIDA */}
             <li>
               <a
@@ -228,14 +218,6 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
             >
               XIZMATLAR
-            </a>
-
-            <a
-              href="#pillars"
-              onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
-            >
-              KAFOLAT
             </a>
 
             <a

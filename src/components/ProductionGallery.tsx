@@ -171,32 +171,6 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
               className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 select-none"
               loading="lazy"
             />
-
-            {/* Top Badge */}
-            <div className="absolute top-4 left-4 z-10 flex items-center space-x-2">
-              <span className="bg-black/60 backdrop-blur-md text-white text-[11px] sm:text-xs font-semibold px-3 py-1.5 rounded-full flex items-center space-x-1.5 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Haqiqiy ishlab chiqarish</span>
-              </span>
-            </div>
-
-            {/* Click to zoom overlay hint */}
-            <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center space-x-1.5 shadow-sm">
-                <Eye className="w-3.5 h-3.5" />
-                <span>Kattalashtirish</span>
-              </span>
-            </div>
-
-            {/* Bottom Caption Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-5 sm:p-6 text-white">
-              <span className="text-[11px] uppercase tracking-wider font-bold text-[#F4C582] mb-1">
-                {currentPhoto.category}
-              </span>
-              <h3 className="text-base sm:text-lg font-black tracking-tight leading-snug">
-                {currentPhoto.title}
-              </h3>
-            </div>
           </div>
 
           {/* Interactive Thumbnails Selector Strip */}
@@ -254,9 +228,6 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                       <Eye className="w-5 h-5 drop-shadow-md" />
-                    </div>
-                    <div className="absolute bottom-1.5 left-2 right-2 text-[10px] font-bold text-white bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded truncate">
-                      {photo.category}
                     </div>
                   </div>
                 );

@@ -1,8 +1,36 @@
-import { ClockCheck, Truck, PackageCheck } from "lucide-react";
+import { Wrench, TrendingDown, Zap, Sparkles, ShoppingCart } from "lucide-react";
 
 interface AdvantagesProps {
   onOpenQuote: () => void;
 }
+
+const advantages = [
+  {
+    icon: Wrench,
+    title: "Muhandislik yondashuvi",
+    desc: "Har bir quti mahsulot, logistika va laboratoriya ma'lumotlari asosida loyihalanadi.",
+  },
+  {
+    icon: TrendingDown,
+    title: "Iqtisodiy yechim",
+    desc: "Material, logistika va shikastlanish xarajatlarini minimallashtiramiz.",
+  },
+  {
+    icon: Zap,
+    title: "Tez ishlab chiqarish",
+    desc: "50 000 tagacha qutini 2–3 ish kunida. Takroriy buyurtmalar — 24 soat ichida.",
+  },
+  {
+    icon: Sparkles,
+    title: "Premium oq qadoqlash",
+    desc: "Oq liner bilan yorqin CMYK bosma. Brend qiymatini oshiradi.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "Shelf Ready Packaging",
+    desc: "Ombordan to'g'ridan-to'g'ri peshtaxtaga — tez merchandising.",
+  },
+];
 
 export default function Advantages({ onOpenQuote }: AdvantagesProps) {
   return (
@@ -11,68 +39,32 @@ export default function Advantages({ onOpenQuote }: AdvantagesProps) {
         Bizning afzalliklarimiz
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
-        
-        {/* Advantage 1: Fast lead time */}
-        <div className="bg-white border border-slate-200/90 rounded-xl p-6 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between">
-          <div className="flex items-start space-x-4 mb-4">
-            <div className="w-12 h-12 rounded-lg bg-[#C6893F]/10 border border-[#C6893F]/25 flex items-center justify-center shrink-0 text-[#C6893F]">
-              <ClockCheck className="w-6 h-6 stroke-[1.75]" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+        {advantages.map(({ icon: Icon, title, desc }) => (
+          <div
+            key={title}
+            className="bg-white border border-slate-200/90 rounded-xl p-6 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col gap-3"
+          >
+            <div className="w-11 h-11 rounded-lg bg-[#C6893F]/10 border border-[#C6893F]/25 flex items-center justify-center shrink-0 text-[#C6893F]">
+              <Icon className="w-5 h-5 stroke-[1.75]" />
             </div>
-            <h3 className="text-base sm:text-lg font-bold text-neutral-900 leading-snug pt-0.5">
-              Tezkor ishlab chiqarish muddati
-            </h3>
+            <h3 className="text-base font-bold text-neutral-900 leading-snug">{title}</h3>
+            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{desc}</p>
           </div>
-          <div>
-            <p className="text-xs sm:text-sm text-slate-500 font-medium">
-              3 kundan boshlab.
-            </p>
-          </div>
-        </div>
+        ))}
 
-        {/* Advantage 2: Small batch runs */}
-        <div className="bg-white border border-slate-200/90 rounded-xl p-6 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between">
-          <div className="flex items-start space-x-4 mb-4">
-            <div className="w-12 h-12 rounded-lg bg-[#C6893F]/10 border border-[#C6893F]/25 flex items-center justify-center shrink-0 text-[#C6893F]">
-              <Truck className="w-6 h-6 stroke-[1.75]" />
-            </div>
-            <h3 className="text-base sm:text-lg font-bold text-neutral-900 leading-snug pt-0.5">
-              Kichik partiyalarda ishlab chiqarish
-            </h3>
-          </div>
-          <div>
-            <p className="text-xs sm:text-sm text-slate-700 font-semibold mb-1">
-              500* donadan boshlab.
-            </p>
-            <p className="text-[11px] text-slate-400">
-              * Quti o'lchamiga qarab.{" "}
-              <button
-                onClick={onOpenQuote}
-                className="text-[#C6893F] hover:underline cursor-pointer font-medium"
-              >
-                Batafsil
-              </button>
-            </p>
-          </div>
+        {/* CTA card */}
+        <div className="bg-[#C6893F]/8 border border-[#C6893F]/30 rounded-xl p-6 flex flex-col justify-center gap-3">
+          <p className="text-sm font-semibold text-neutral-800 leading-snug">
+            Mahsulotingiz uchun optimal qadoq yechimini tayyorlaymiz.
+          </p>
+          <button
+            onClick={onOpenQuote}
+            className="self-start text-sm font-semibold text-[#C6893F] border border-[#C6893F]/50 rounded-lg px-4 py-2 hover:bg-[#C6893F] hover:text-white transition-colors duration-200"
+          >
+            So'rov yuborish
+          </button>
         </div>
-
-        {/* Advantage 3: Wide assortment */}
-        <div className="bg-white border border-slate-200/90 rounded-xl p-6 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between">
-          <div className="flex items-start space-x-4 mb-4">
-            <div className="w-12 h-12 rounded-lg bg-[#C6893F]/10 border border-[#C6893F]/25 flex items-center justify-center shrink-0 text-[#C6893F]">
-              <PackageCheck className="w-6 h-6 stroke-[1.75]" />
-            </div>
-            <h3 className="text-base sm:text-lg font-bold text-neutral-900 leading-snug pt-0.5">
-              Gofroqadoqlarning keng assortimenti
-            </h3>
-          </div>
-          <div>
-            <p className="text-xs text-slate-500 leading-relaxed">
-              Formatlar, karton turlari va tayyorlash variantlari. Har qanday mahsulot uchun optimal qadoq yechimi.
-            </p>
-          </div>
-        </div>
-
       </div>
     </section>
   );
