@@ -145,13 +145,13 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
         <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
           <ul className="flex items-center justify-between text-sm font-bold tracking-wide uppercase py-1 select-none">
             
-            {/* BOSH SAHIFA (Active Link with Gold Accent Underline) */}
+            {/* BOSH SAHIFA (Active Link) */}
             <li>
               <a
                 href="#"
-                className={`relative py-3 px-3.5 transition-colors block ${
+                className={`py-3 px-3.5 transition-colors block ${
                   activeSection === 'home'
-                    ? 'text-[#C6893F] font-extrabold after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-0.5 after:bg-[#C6893F]'
+                    ? 'text-[#C6893F] font-extrabold'
                     : 'text-slate-800 hover:text-[#C6893F]'
                 }`}
               >
