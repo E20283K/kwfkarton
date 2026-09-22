@@ -1,16 +1,28 @@
 import { useState } from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Loader2 } from "lucide-react";
+import { sendLeadToTelegram } from "../services/telegram";
 
 export default function FactoryLocationSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSent, setIsSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!phone.trim()) return;
+    if (!phone.trim() || isSubmitting) return;
+
+    setIsSubmitting(true);
+    await sendLeadToTelegram({
+      name,
+      phone,
+      email,
+      message,
+      source: "Bosh sahifa (Xarita yonidagi forma)",
+    });
+    setIsSubmitting(false);
     setIsSent(true);
   };
 
@@ -115,9 +127,17 @@ export default function FactoryLocationSection() {
               <div>
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-3.5 bg-[#C6893F] hover:bg-[#B37830] text-white font-bold text-xs sm:text-sm tracking-wider uppercase rounded-lg shadow-md hover:shadow-[#C6893F]/30 transition-all cursor-pointer active:scale-98"
+                  disabled={isSubmitting}
+                  className="w-full sm:w-auto px-8 py-3.5 bg-[#C6893F] hover:bg-[#B37830] disabled:opacity-75 disabled:cursor-not-allowed text-white font-bold text-xs sm:text-sm tracking-wider uppercase rounded-lg shadow-md hover:shadow-[#C6893F]/30 transition-all cursor-pointer active:scale-98 flex items-center justify-center gap-2"
                 >
-                  Xabar yuborish
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Yuborilmoqda...</span>
+                    </>
+                  ) : (
+                    <span>Xabar yuborish</span>
+                  )}
                 </button>
               </div>
             </form>

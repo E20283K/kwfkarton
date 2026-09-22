@@ -50,7 +50,7 @@ const PARTNERS: Partner[] = [
   },
   {
     id: "jazz",
-    name: "Jazz",
+    name: "JAZ Battery",
     logo: "/companies/jazz.png",
     category: "Iste'mol tovarlari",
   },

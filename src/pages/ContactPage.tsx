@@ -1,31 +1,40 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { CheckCircle2, Phone, Mail } from 'lucide-react';
+import { CheckCircle2, Phone, Mail, Send, Loader2 } from 'lucide-react';
+import { sendLeadToTelegram } from '../services/telegram';
 
 const MANAGERS = [
   {
     role: "Sotuv bo'limi boshlig'i",
     phone: "+998 99 560-16-66",
     email: "sales.head@kwf.uz",
+    telegram: "@kwf_sales_head",
+    telegramUrl: "https://t.me/kwf_uz",
     isHead: true,
   },
   {
     role: "Sotuv menejeri",
     phone: "+998 99 560-16-67",
     email: "sales1@kwf.uz",
+    telegram: "@kwf_sales1",
+    telegramUrl: "https://t.me/kwf_uz",
     isHead: false,
   },
   {
     role: "Sotuv menejeri",
     phone: "+998 99 560-16-68",
     email: "sales2@kwf.uz",
+    telegram: "@kwf_sales2",
+    telegramUrl: "https://t.me/kwf_uz",
     isHead: false,
   },
   {
     role: "Sotuv menejeri",
     phone: "+998 99 560-16-69",
     email: "sales3@kwf.uz",
+    telegram: "@kwf_sales3",
+    telegramUrl: "https://t.me/kwf_uz",
     isHead: false,
   },
 ];
@@ -35,15 +44,26 @@ export default function ContactPage() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSent, setIsSent] = useState(false);
 
   const handleOpenQuote = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!phone.trim()) return;
+    if (!phone.trim() || isSubmitting) return;
+
+    setIsSubmitting(true);
+    await sendLeadToTelegram({
+      name,
+      phone,
+      email,
+      message,
+      source: "Bog'lanish sahifasi",
+    });
+    setIsSubmitting(false);
     setIsSent(true);
   };
 
@@ -55,7 +75,7 @@ export default function ContactPage() {
       <section className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-10 sm:py-14">
           <div className="max-w-3xl">
-            <span className="text-xs font-bold text-[#C6893F] uppercase tracking-wider block mb-1 font-mono">
+            <span className="text-xs font-bold text-[#C6893F] uppercase tracking-wider block mb-2 font-sans">
               ALOQA VA MUROJAAT
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight leading-tight mb-3">
@@ -95,6 +115,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-1.5 pt-1">
+                  {/* Phone */}
                   <a
                     href={`tel:${mgr.phone.replace(/\s+/g, '')}`}
                     className="text-sm sm:text-base font-extrabold text-neutral-900 hover:text-[#C6893F] transition-colors flex items-center gap-2"
@@ -102,12 +123,25 @@ export default function ContactPage() {
                     <Phone className="w-3.5 h-3.5 text-[#C6893F] shrink-0" />
                     <span className="whitespace-nowrap">{mgr.phone}</span>
                   </a>
+
+                  {/* Email */}
                   <a
                     href={`mailto:${mgr.email}`}
                     className="text-xs text-slate-500 hover:text-neutral-900 transition-colors flex items-center gap-2"
                   >
                     <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                     <span className="truncate">{mgr.email}</span>
+                  </a>
+
+                  {/* Telegram */}
+                  <a
+                    href={mgr.telegramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-slate-500 hover:text-[#229ED9] transition-colors flex items-center gap-2"
+                  >
+                    <Send className="w-3.5 h-3.5 text-[#229ED9] shrink-0" />
+                    <span className="truncate font-medium">{mgr.telegram}</span>
                   </a>
                 </div>
               </div>
@@ -214,9 +248,17 @@ export default function ContactPage() {
                 <div>
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-8 py-3.5 bg-[#C6893F] hover:bg-[#B37830] text-white font-bold text-xs sm:text-sm tracking-wider uppercase rounded-lg shadow-md hover:shadow-[#C6893F]/30 transition-all cursor-pointer active:scale-98"
+                    disabled={isSubmitting}
+                    className="w-full sm:w-auto px-8 py-3.5 bg-[#C6893F] hover:bg-[#B37830] disabled:opacity-75 disabled:cursor-not-allowed text-white font-bold text-xs sm:text-sm tracking-wider uppercase rounded-lg shadow-md hover:shadow-[#C6893F]/30 transition-all cursor-pointer active:scale-98 flex items-center justify-center gap-2"
                   >
-                    Xabar yuborish
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Yuborilmoqda...</span>
+                      </>
+                    ) : (
+                      <span>Xabar yuborish</span>
+                    )}
                   </button>
                 </div>
               </form>
