@@ -228,18 +228,18 @@ export default function AboutPage() {
         </div>
 
         {/* Section 4: Quality Control */}
-        <div className="bg-white border border-slate-200/90 rounded-xl p-6 sm:p-8 shadow-xs">
-          <h2 className="text-xl sm:text-2xl font-black text-[#C6893F] tracking-tight mb-2">
+        <div>
+          <h2 className="text-2xl sm:text-3xl font-black text-[#C6893F] tracking-tight mb-3">
             Sifat nazorati va laboratoriya
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-8">
             Barcha qadoqlarimiz eng zamonaviy maxsus sifat nazorati qurilmalarida sinovdan o'tkaziladi. Bu mahsulotlaringiz xavfsiz va mustahkam yetib borishini ta'minlaydi.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {QUALITY_CONTROL.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-slate-100 rounded-xl p-5 shadow-xs hover:shadow-md hover:border-[#C6893F]/30 transition-all flex flex-col items-center text-center"
+                className="bg-white border border-slate-200/90 rounded-xl p-5 sm:p-6 shadow-xs hover:shadow-md hover:border-[#C6893F]/40 transition-all flex flex-col items-center text-center"
               >
                 <div className="w-full h-48 sm:h-56 mb-5 flex items-center justify-center bg-[#F8F9FA] rounded-lg border border-slate-100 overflow-hidden p-4 group">
                   <img
