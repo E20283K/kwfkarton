@@ -66,6 +66,12 @@ const PARTNERS: Partner[] = [
     logo: "/companies/artboard-1.png",
     category: "Tekstil mahsulotlari",
   },
+  {
+    id: "silver-green",
+    name: "Silver Green Tea",
+    logo: "/companies/silver_green.png",
+    category: "Choy va oziq-ovqat mahsulotlari",
+  },
 ];
 
 export default function Partners() {

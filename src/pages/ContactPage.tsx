@@ -1,40 +1,36 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { CheckCircle2, Phone, Mail, Send, Loader2 } from 'lucide-react';
+import { CheckCircle2, Phone, Send, Loader2 } from 'lucide-react';
 import { sendLeadToTelegram } from '../services/telegram';
 
 const MANAGERS = [
   {
-    role: "Sotuv bo'limi boshlig'i",
-    phone: "+998 99 560-16-66",
-    email: "sales.head@kwf.uz",
-    telegram: "@kwf_sales_head",
-    telegramUrl: "https://t.me/kwf_uz",
+    role: "Tijorat bo'limi boshlig'i",
+    phone: "+998 99 560-61-66",
+    telegram: "@manager_kwf",
+    telegramUrl: "https://t.me/manager_kwf",
     isHead: true,
   },
   {
     role: "Sotuv menejeri",
-    phone: "+998 99 560-16-67",
-    email: "sales1@kwf.uz",
-    telegram: "@kwf_sales1",
-    telegramUrl: "https://t.me/kwf_uz",
+    phone: "+998 99 560-00-96",
+    telegram: "@KWF_sales_manager",
+    telegramUrl: "https://t.me/KWF_sales_manager",
     isHead: false,
   },
   {
     role: "Sotuv menejeri",
-    phone: "+998 99 560-16-68",
-    email: "sales2@kwf.uz",
-    telegram: "@kwf_sales2",
-    telegramUrl: "https://t.me/kwf_uz",
+    phone: "+998 99 560-66-11",
+    telegram: "@Manager_SnP_KWF",
+    telegramUrl: "https://t.me/Manager_SnP_KWF",
     isHead: false,
   },
   {
     role: "Sotuv menejeri",
-    phone: "+998 99 560-16-69",
-    email: "sales3@kwf.uz",
-    telegram: "@kwf_sales3",
-    telegramUrl: "https://t.me/kwf_uz",
+    phone: "+998 99 560-03-06",
+    telegram: "@sharifa_kwf1",
+    telegramUrl: "https://t.me/sharifa_kwf1",
     isHead: false,
   },
 ];
@@ -95,42 +91,35 @@ export default function ContactPage() {
             {MANAGERS.map((mgr, idx) => (
               <div
                 key={idx}
-                className={`rounded-xl p-4 sm:p-5 border transition-all ${
+                className={`group rounded-xl p-4 sm:p-5 border transition-all duration-300 hover:bg-[#C6893F] hover:border-[#C6893F] hover:shadow-lg cursor-pointer ${
                   mgr.isHead
-                    ? "bg-[#FDFBF7] border-[#C6893F]/40 shadow-xs ring-1 ring-[#C6893F]/10"
-                    : "bg-white border-slate-200/80 hover:border-slate-300 shadow-xs"
+                    ? "bg-[#FDFBF7] border-[#C6893F]/40 shadow-xs ring-1 ring-[#C6893F]/10 hover:ring-0"
+                    : "bg-white border-slate-200/80 shadow-xs"
                 }`}
               >
                 <div className="flex items-center justify-between gap-2 mb-2.5">
                   <span
-                    className={`text-[11px] font-bold uppercase tracking-wider ${
-                      mgr.isHead ? "text-[#C6893F]" : "text-slate-500"
+                    className={`text-[11px] font-bold uppercase tracking-wider transition-colors duration-200 ${
+                      mgr.isHead
+                        ? "text-[#C6893F] group-hover:text-white"
+                        : "text-slate-500 group-hover:text-white/90"
                     }`}
                   >
                     {mgr.role}
                   </span>
                   {mgr.isHead && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C6893F]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C6893F] group-hover:bg-white transition-colors duration-200" />
                   )}
                 </div>
 
-                <div className="space-y-1.5 pt-1">
+                <div className="space-y-2 pt-1">
                   {/* Phone */}
                   <a
                     href={`tel:${mgr.phone.replace(/\s+/g, '')}`}
-                    className="text-sm sm:text-base font-extrabold text-neutral-900 hover:text-[#C6893F] transition-colors flex items-center gap-2"
+                    className="text-sm sm:text-base font-extrabold text-neutral-900 group-hover:text-white transition-colors duration-200 flex items-center gap-2 hover:underline"
                   >
-                    <Phone className="w-3.5 h-3.5 text-[#C6893F] shrink-0" />
+                    <Phone className="w-3.5 h-3.5 text-[#C6893F] group-hover:text-white transition-colors duration-200 shrink-0" />
                     <span className="whitespace-nowrap">{mgr.phone}</span>
-                  </a>
-
-                  {/* Email */}
-                  <a
-                    href={`mailto:${mgr.email}`}
-                    className="text-xs text-slate-500 hover:text-neutral-900 transition-colors flex items-center gap-2"
-                  >
-                    <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                    <span className="truncate">{mgr.email}</span>
                   </a>
 
                   {/* Telegram */}
@@ -138,9 +127,9 @@ export default function ContactPage() {
                     href={mgr.telegramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-slate-500 hover:text-[#229ED9] transition-colors flex items-center gap-2"
+                    className="text-xs text-slate-500 group-hover:text-white/90 transition-colors duration-200 flex items-center gap-2 hover:underline"
                   >
-                    <Send className="w-3.5 h-3.5 text-[#229ED9] shrink-0" />
+                    <Send className="w-3.5 h-3.5 text-[#229ED9] group-hover:text-white transition-colors duration-200 shrink-0" />
                     <span className="truncate font-medium">{mgr.telegram}</span>
                   </a>
                 </div>

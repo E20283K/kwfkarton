@@ -6,6 +6,7 @@ import ScrollToTop from './components/ScrollToTop';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+import PortfolioPage from './pages/PortfolioPage';
 
 // Home page components
 import Navbar from './components/Navbar';
@@ -74,6 +75,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>

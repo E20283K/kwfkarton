@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import { ExternalLink, Calendar, Heart, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
 function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -158,10 +159,17 @@ export default function NewsSection() {
     <section id="news" className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-14 scroll-mt-24">
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
-        <div>
+        <div className="flex flex-wrap items-center gap-3">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight">
             Yangiliklar
           </h2>
+          <Link
+            to="/portfolio"
+            className="text-xs sm:text-sm font-extrabold text-slate-500 hover:text-[#C6893F] transition-colors inline-flex items-center gap-1 border-l border-slate-300 pl-3 ml-1"
+          >
+            <span>Barcha namunalar (Portfolio)</span>
+            <ChevronRight className="w-4 h-4 text-[#C6893F]" />
+          </Link>
         </div>
 
         <div className="flex items-center space-x-3 shrink-0">

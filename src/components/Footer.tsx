@@ -7,34 +7,24 @@ interface FooterProps {
 
 const SOCIAL = [
   {
-    label: "YouTube",
-    href: "https://youtube.com",
-    path: "M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com",
-    path: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z",
-  },
-  {
-    label: "Facebook",
-    href: "https://facebook.com",
-    path: "M9 8H7v3h2v9h4v-9h3.61l.39-3H13V6c0-.88.45-1 1-1h2V1h-3c-2.9 0-5 1.88-5 5v2z",
-  },
-  {
-    label: "X",
-    href: "https://x.com",
-    path: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z",
-  },
-  {
-    label: "Instagram",
-    href: "https://instagram.com/kwf_uz",
-    path: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z",
-  },
-  {
     label: "Telegram",
     href: "https://t.me/kwf_uz",
     path: "M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.717-.98 4.793-1.386 6.812-.172.853-.51 1.14-.836 1.168-.71.063-1.25-.427-1.938-.838-1.077-.645-1.686-1.045-2.733-1.674-1.21-.726-.426-1.127.264-1.785.18-.172 3.324-2.812 3.385-3.048.007-.033.014-.157-.063-.223-.078-.066-.192-.043-.275-.026-.118.025-2.003 1.178-5.655 3.486-.535.337-1.02.503-1.455.49-.48-.014-1.402-.256-2.087-.463-.84-.253-1.507-.387-1.45-.817.03-.224.364-.454 1.002-.693 3.93-1.597 6.55-2.65 7.86-3.16 3.743-1.45 4.52-1.702 5.027-1.71.112-.002.362.023.524.145.137.103.175.247.19.352.015.106.033.325.018.491z",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/kwf_uz",
+    path: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z",
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/kwf.uz",
+    path: "M9 8H7v3h2v9h4v-9h3.61l.39-3H13V6c0-.88.45-1 1-1h2V1h-3c-2.9 0-5 1.88-5 5v2z",
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@KWF_Packaging",
+    path: "M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z",
   },
 ];
 
@@ -77,59 +67,10 @@ export default function Footer(_props?: FooterProps) {
           </div>
         </div>
 
-        {/* 4 Columns Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8 text-xs sm:text-[13px]">
+        {/* 3 Columns Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 text-xs sm:text-[13px]">
 
-          {/* Column 1: KATALOG */}
-          <div className="space-y-3">
-            <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
-              KATALOG
-            </h3>
-            <ul className="space-y-2 text-slate-300 font-normal">
-              <li>
-                <a href="#catalog" className="hover:text-white transition-colors">
-                  Transportirovka (tashish) uchun
-                </a>
-              </li>
-              <li>
-                <a href="#catalog" className="hover:text-white transition-colors">
-                  Meva-sabzavot eksporti uchun
-                </a>
-              </li>
-              <li>
-                <a href="#catalog" className="hover:text-white transition-colors">
-                  Qandolat va shirinliklar uchun
-                </a>
-              </li>
-              <li>
-                <a href="#catalog" className="hover:text-white transition-colors">
-                  Ovqat yetkazish uchun
-                </a>
-              </li>
-              <li>
-                <a href="#catalog" className="hover:text-white transition-colors">
-                  Ichimliklar uchun
-                </a>
-              </li>
-              <li>
-                <a href="#catalog" className="hover:text-white transition-colors">
-                  Sanoat mahsulotlari uchun
-                </a>
-              </li>
-              <li>
-                <a href="#catalog" className="hover:text-white transition-colors">
-                  Qalin kartonli qadoqlar
-                </a>
-              </li>
-              <li>
-                <a href="#catalog" className="hover:text-white transition-colors">
-                  Karton sumkalar
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 2: BO'LIMLAR */}
+          {/* Column 1: BO'LIMLAR */}
           <div className="space-y-3">
             <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
               BO'LIMLAR
@@ -138,11 +79,6 @@ export default function Footer(_props?: FooterProps) {
               <li>
                 <Link to="/" className="hover:text-white transition-colors">
                   Bosh sahifa
-                </Link>
-              </li>
-              <li>
-                <Link to="/#catalog" className="hover:text-white transition-colors">
-                  Mahsulotlar katalogi
                 </Link>
               </li>
               <li>
@@ -158,6 +94,11 @@ export default function Footer(_props?: FooterProps) {
               <li>
                 <Link to="/#gallery" className="hover:text-white transition-colors">
                   Ishlab chiqarish
+                </Link>
+              </li>
+              <li>
+                <Link to="/portfolio" className="hover:text-white transition-colors">
+                  Portfolio
                 </Link>
               </li>
               <li>
@@ -189,10 +130,10 @@ export default function Footer(_props?: FooterProps) {
               <div className="flex items-center space-x-2.5 pt-1">
                 <Phone className="w-4 h-4 text-[#C6893F] shrink-0" />
                 <a
-                  href="tel:+998995601666"
+                  href="tel:+998995606166"
                   className="font-bold text-white hover:text-[#C6893F] transition-colors"
                 >
-                  +998 (99) 560-16-66
+                  +998 (99) 560-61-66
                 </a>
               </div>
 
@@ -200,10 +141,10 @@ export default function Footer(_props?: FooterProps) {
               <div className="flex items-center space-x-2.5">
                 <Mail className="w-4 h-4 text-[#C6893F] shrink-0" />
                 <a
-                  href="mailto:no.name@gmail.com"
+                  href="mailto:kwf.sales1@matpap.uz"
                   className="hover:text-white transition-colors"
                 >
-                  no.name@gmail.com
+                  kwf.sales1@matpap.uz
                 </a>
               </div>
 

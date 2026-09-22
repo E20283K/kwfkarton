@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
+import Logo from './Logo';
 
 interface NavbarProps {
   onOpenQuote: () => void;
@@ -29,11 +30,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
           
           {/* 1. Brand Logo: Karton Works Factory */}
           <Link to="/" className="flex items-center shrink-0 group select-none py-0.5" aria-label="Karton Works Factory">
-            <img
-              src="/kwf_navbar.svg"
-              alt="Karton Works Factory"
-              className="h-[56px] sm:h-[68px] w-auto object-contain transition-transform duration-200 group-hover:scale-105"
-            />
+            <Logo className="h-[56px] sm:h-[68px] w-auto transition-transform duration-200 group-hover:scale-105" />
           </Link>
 
           {/* 2. Contacts Block */}
@@ -61,10 +58,10 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               <a href="https://maps.app.goo.gl/qLtyXVBd8t14qiSz8" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title="Manzil: Urganch sh., Ashxobod MFY">
                 <img src="/google-maps.png" alt="Xarita" className="w-6 h-6 object-contain" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title="Telegram">
+              <a href="https://t.me/kwf_uz" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title="Telegram">
                 <img src="/telegram.png" alt="Telegram" className="w-6 h-6 object-contain" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title="Instagram">
+              <a href="https://www.instagram.com/kwf_uz" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title="Instagram">
                 <img src="/instagram.png" alt="Instagram" className="w-6 h-6 object-contain" />
               </a>
             </div>
@@ -77,10 +74,10 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               </div>
               <div className="flex flex-col">
                 <a
-                  href="tel:+998995601666"
+                  href="tel:+998995606166"
                   className="text-base sm:text-[17px] font-extrabold shine-number leading-tight tracking-tight whitespace-nowrap"
                 >
-                  +998 99 560-16-66
+                  +998 99 560-61-66
                 </a>
                 <span className="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">
                   Dush-Shan 09:00-18:00
@@ -119,14 +116,6 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               </Link>
             </li>
 
-            <li>
-              <Link
-                to="/#catalog"
-                className="text-slate-800 hover:text-[#C6893F] transition-colors py-1.5 px-3 block"
-              >
-                KATALOG
-              </Link>
-            </li>
 
             <li>
               <Link
@@ -156,10 +145,14 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
 
             <li>
               <Link
-                to="/#news"
-                className="text-slate-800 hover:text-[#C6893F] transition-colors py-1.5 px-3 block"
+                to="/portfolio"
+                className={`py-1.5 px-3 transition-colors block ${
+                  location.pathname === '/portfolio'
+                    ? 'text-[#C6893F] font-extrabold'
+                    : 'text-slate-800 hover:text-[#C6893F]'
+                }`}
               >
-                YANGILIKLAR
+                PORTFOLIO
               </Link>
             </li>
 
@@ -199,13 +192,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             >
               BOSH SAHIFA
             </Link>
-            <Link
-              to="/#catalog"
-              onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
-            >
-              KATALOG
-            </Link>
+
             <Link
               to="/services"
               onClick={() => setIsMenuOpen(false)}
@@ -221,11 +208,11 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               KOMPANIYA HAQIDA
             </Link>
             <Link
-              to="/#news"
+              to="/portfolio"
               onClick={() => setIsMenuOpen(false)}
-              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
+              className={`py-2.5 px-3 rounded-lg font-extrabold ${location.pathname === '/portfolio' ? 'text-[#C6893F] bg-[#C6893F]/10' : 'text-slate-800 hover:text-[#C6893F] hover:bg-slate-50'} transition-colors`}
             >
-              YANGILIKLAR
+              PORTFOLIO
             </Link>
             <Link
               to="/contact"
@@ -263,11 +250,11 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <div className="flex items-center justify-between py-1 border-b border-slate-100">
               <div>
                 <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">Telefon</div>
-                <a href="tel:+998995601666" className="text-sm font-extrabold shine-number">
-                  +998 99 560-16-66
+                <a href="tel:+998995606166" className="text-sm font-extrabold shine-number">
+                  +998 99 560-61-66
                 </a>
               </div>
-              <a href="tel:+998995601666" className="w-8 h-8 rounded-full bg-[#C6893F]/15 text-[#C6893F] flex items-center justify-center hover:bg-[#C6893F]/25 transition-colors">
+              <a href="tel:+998995606166" className="w-8 h-8 rounded-full bg-[#C6893F]/15 text-[#C6893F] flex items-center justify-center hover:bg-[#C6893F]/25 transition-colors">
                 <Phone className="w-4 h-4" />
               </a>
             </div>
@@ -275,11 +262,11 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <div className="flex items-center justify-between py-1 border-b border-slate-100">
               <div>
                 <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">Telegram</div>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-slate-700">
+                <a href="https://t.me/kwf_uz" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-slate-700 hover:text-[#C6893F]">
                   Bizning kanal
                 </a>
               </div>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://t.me/kwf_uz" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
                 <img src="/telegram.png" alt="Telegram" className="w-7 h-7 object-contain" />
               </a>
             </div>
@@ -287,11 +274,11 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             <div className="flex items-center justify-between py-1 border-b border-slate-100">
               <div>
                 <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">Instagram</div>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-slate-700">
+                <a href="https://www.instagram.com/kwf_uz" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-slate-700 hover:text-[#C6893F]">
                   Bizning sahifa
                 </a>
               </div>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://www.instagram.com/kwf_uz" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
                 <img src="/instagram.png" alt="Instagram" className="w-7 h-7 object-contain" />
               </a>
             </div>
