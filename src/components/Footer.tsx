@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState, useRef } from "react";
 
 interface FooterProps {
   onOpenQuote?: () => void;
@@ -29,21 +30,54 @@ const SOCIAL = [
 ];
 
 export default function Footer(_props?: FooterProps) {
+  const [clickCount, setClickCount] = useState(0);
+  const [showEasterEgg, setShowEasterEgg] = useState(false);
+  const clickTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleLogoClick = () => {
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+    }
+
+    if (newCount >= 5) {
+      setShowEasterEgg(true);
+      setClickCount(0);
+      setTimeout(() => {
+        setShowEasterEgg(false);
+      }, 1000);
+    } else {
+      clickTimeoutRef.current = setTimeout(() => {
+        setClickCount(0);
+      }, 600);
+    }
+  };
+
   return (
     <footer id="footer" className="bg-[#3D4046] text-white font-sans">
+      {/* Easter Egg Overlay */}
+      {showEasterEgg && (
+        <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/90 transition-opacity duration-300 select-none pointer-events-none">
+          <img src="/mky.png" alt="Easter Egg" className="w-80 h-80 object-contain drop-shadow-2xl select-none" draggable="false" />
+        </div>
+      )}
 
       {/* Upper Footer Container: 5 Columns matching screenshot */}
       <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pt-12 pb-14">
 
         {/* Social Network Icons Bar at the top of the footer */}
-        <div className="flex flex-col sm:flex-row items-center justify-between pb-8 mb-10 border-b border-white/10 gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between pb-8 mb-10 border-b border-white/10 gap-4 select-none">
           <div className="flex items-center space-x-3">
             <img
               src="/kwf_footer.svg"
               alt="Karton Works Factory"
-              className="h-[60px] sm:h-[66px] w-auto object-contain"
+              className="h-[60px] sm:h-[66px] w-auto object-contain select-none"
+              onClick={handleLogoClick}
+              draggable="false"
             />
-            <span className="text-xs text-slate-400 font-medium hidden sm:inline border-l border-white/15 pl-3 py-1">
+            <span className="text-xs text-slate-400 font-medium hidden sm:inline border-l border-white/15 pl-3 py-1 select-none">
               Gofroqadoq ishlab chiqarish zavodi
             </span>
           </div>

@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import { LanguageProvider } from './i18n/LanguageContext';
 import ScrollToTop from './components/ScrollToTop';
+import LoadingScreen from './components/LoadingScreen';
 
 // Pages
 import AboutPage from './pages/AboutPage';
@@ -67,18 +69,24 @@ function HomePage() {
 }
 
 function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <LanguageProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-      </BrowserRouter>
+      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
+      
+      <div className={!isLoaded ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100 transition-opacity duration-700 ease-in-out'}>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </LanguageProvider>
   );
 }
