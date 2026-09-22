@@ -7,67 +7,112 @@ const advantages = [
     keyword: "ENGINEERING",
     title: "Muhandislik yondashuvi",
     desc: "Har bir quti mahsulot, logistika va laboratoriya ma'lumotlari asosida loyihalanadi.",
+    icon: "/values/engineering.svg",
   },
   {
     keyword: "ECONOMY",
     title: "Iqtisodiy yechim",
     desc: "Material, logistika va shikastlanish xarajatlarini minimallashtiramiz.",
+    icon: "/values/economy.svg",
   },
   {
     keyword: "SPEED",
     title: "Tez ishlab chiqarish",
     desc: "50 000 tagacha qutini 2–3 ish kunida. Takroriy buyurtmalar — 24 soat ichida.",
+    icon: "/values/speed.svg",
   },
   {
     keyword: "WHITE",
     title: "Premium oq qadoqlash",
     desc: "Oq liner bilan yorqin CMYK bosma. Brend qiymatini oshiradi.",
+    icon: "/values/white.svg",
   },
   {
     keyword: "SRP",
     title: "Shelf Ready Packaging",
     desc: "Ombordan to'g'ridan-to'g'ri peshtaxtaga — tez merchandising.",
+    icon: "/values/srp.svg",
   },
 ];
 
 export default function Advantages({ onOpenQuote }: AdvantagesProps) {
   return (
-    <section id="advantages" className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-12 scroll-mt-20">
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight mb-6 sm:mb-8">
+    <section id="advantages" className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-14 scroll-mt-20">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight mb-6 sm:mb-10">
         Bizning afzalliklarimiz
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-        {advantages.map(({ keyword, title, desc }) => (
+        {advantages.map(({ keyword, title, desc, icon }) => (
           <div
             key={keyword}
-            className="bg-white border border-slate-200/90 rounded-xl p-5 sm:p-6 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between gap-3"
+            className="group relative bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-xs hover:shadow-xl hover:border-[#C6893F]/50 transition-all duration-300 flex flex-col justify-between overflow-hidden min-h-[260px] sm:min-h-[290px]"
           >
-            <div>
-              <span className="text-lg sm:text-xl lg:text-2xl font-black tracking-tight text-[#C6893F] block mb-2">
-                {keyword}
-              </span>
-              <h3 className="text-sm sm:text-base font-bold text-neutral-800 leading-snug mb-1.5">
+            {/* Ambient Watermark Icon (faint huge graphic in the bottom-right corner) */}
+            <div className="absolute -bottom-6 -right-6 w-36 h-36 sm:w-44 sm:h-44 pointer-events-none select-none opacity-10 group-hover:opacity-20 group-hover:scale-110 transition-all duration-500 ease-out z-0">
+              <img
+                src={icon}
+                alt=""
+                aria-hidden="true"
+                className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
+
+            {/* Foreground Content */}
+            <div className="relative z-10">
+              {/* Top Row: Clean Big Icon (No border, no box) + Keyword Tag */}
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 select-none group-hover:scale-110 transition-transform duration-300">
+                  <img
+                    src={icon}
+                    alt={`${keyword} - ${title}`}
+                    className="w-full h-full object-contain drop-shadow-xs"
+                    loading="lazy"
+                  />
+                </div>
+                <span className="text-xs sm:text-sm font-black tracking-wider text-[#C6893F] uppercase font-mono">
+                  {keyword}
+                </span>
+              </div>
+
+              {/* Big Bold Title */}
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-neutral-900 leading-snug tracking-tight mb-2.5 group-hover:text-[#C6893F] transition-colors">
                 {title}
               </h3>
-              <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+
+              {/* Description */}
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                 {desc}
               </p>
             </div>
           </div>
         ))}
 
-        {/* CTA card */}
-        <div className="bg-[#C6893F] rounded-xl p-5 sm:p-6 flex flex-col justify-between gap-4">
-          <p className="text-sm sm:text-base font-semibold text-white/95 leading-snug">
-            Mahsulotingiz uchun optimal qadoq yechimini tayyorlaymiz.
-          </p>
-          <button
-            onClick={onOpenQuote}
-            className="self-start text-xs sm:text-sm font-bold text-[#C6893F] bg-white rounded-lg px-4 py-2 sm:px-5 sm:py-2.5 hover:bg-white/90 transition-colors duration-200 cursor-pointer shadow-xs"
-          >
-            So'rov yuborish
-          </button>
+        {/* CTA Card */}
+        <div className="relative bg-[#C6893F] rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-md shadow-[#C6893F]/25 overflow-hidden min-h-[260px] sm:min-h-[290px]">
+          {/* Subtle background industrial pattern */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/20 pointer-events-none" />
+
+          <div className="relative z-10">
+            <span className="text-xs font-black uppercase tracking-widest text-white/75 block mb-3 font-mono">
+              INDIVIDUAL BUYURTMA
+            </span>
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white leading-tight mb-3 tracking-tight">
+              Optimal qadoq yechimini tayyorlaymiz
+            </h3>
+            <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
+              O'lchamlar, qalinlik va logistika talablari bo'yicha mutaxassislarimiz bepul konsultatsiya beradi.
+            </p>
+          </div>
+
+          <div className="relative z-10 pt-4">
+            <button
+              onClick={onOpenQuote}
+              className="w-full sm:w-auto text-xs sm:text-sm font-bold text-[#C6893F] bg-white rounded-xl px-6 py-3.5 hover:bg-white/95 transition-all duration-200 cursor-pointer shadow-sm active:scale-95 uppercase tracking-wider text-center"
+            >
+              So'rov yuborish
+            </button>
+          </div>
         </div>
       </div>
     </section>

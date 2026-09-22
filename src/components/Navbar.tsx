@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 
 interface NavbarProps {
@@ -7,33 +8,14 @@ interface NavbarProps {
 
 export default function Navbar({ onOpenQuote }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  // Update active section on scroll
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       setScrollProgress(docHeight > 0 ? (scrollY / docHeight) * 100 : 0);
-
-      const scrollPos = scrollY + 150;
-      if (scrollPos < 500) {
-        setActiveSection('home');
-      } else {
-        const sections = ['catalog', 'overview', 'values', 'specs'];
-        for (const sec of sections) {
-          const el = document.getElementById(sec);
-          if (el) {
-            const top = el.offsetTop;
-            const height = el.offsetHeight;
-            if (scrollPos >= top && scrollPos < top + height) {
-              setActiveSection(sec);
-              break;
-            }
-          }
-        }
-      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -46,13 +28,13 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
         <div className="flex items-center justify-between gap-4 lg:gap-8">
           
           {/* 1. Brand Logo: Karton Works Factory */}
-          <a href="#" className="flex items-center shrink-0 group select-none py-0.5" aria-label="Karton Works Factory">
+          <Link to="/" className="flex items-center shrink-0 group select-none py-0.5" aria-label="Karton Works Factory">
             <img
               src="/kwf_navbar.svg"
               alt="Karton Works Factory"
               className="h-[56px] sm:h-[68px] w-auto object-contain transition-transform duration-200 group-hover:scale-105"
             />
-          </a>
+          </Link>
 
           {/* 2. Contacts Block */}
           <div className="hidden sm:flex items-center space-x-5 shrink-0 select-none">
@@ -125,65 +107,73 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
           <ul className="flex items-center justify-between text-xs sm:text-sm font-bold tracking-wide uppercase select-none">
             
             <li>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className={`py-1.5 px-3 transition-colors block ${
-                  activeSection === 'home'
+                  location.pathname === '/'
                     ? 'text-[#C6893F] font-extrabold'
                     : 'text-slate-800 hover:text-[#C6893F]'
                 }`}
               >
                 BOSH SAHIFA
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href="#catalog"
+              <Link
+                to="/#catalog"
+                className="text-slate-800 hover:text-[#C6893F] transition-colors py-1.5 px-3 block"
+              >
+                KATALOG
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/services"
                 className={`py-1.5 px-3 transition-colors block ${
-                  activeSection === 'catalog'
+                  location.pathname === '/services'
                     ? 'text-[#C6893F] font-extrabold'
                     : 'text-slate-800 hover:text-[#C6893F]'
                 }`}
               >
-                KATALOG
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#values"
-                className="text-slate-800 hover:text-[#C6893F] transition-colors py-1.5 px-3 block"
-              >
                 XIZMATLAR
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href="#overview"
-                className="text-slate-800 hover:text-[#C6893F] transition-colors py-1.5 px-3 block"
+              <Link
+                to="/about"
+                className={`py-1.5 px-3 transition-colors block ${
+                  location.pathname === '/about'
+                    ? 'text-[#C6893F] font-extrabold'
+                    : 'text-slate-800 hover:text-[#C6893F]'
+                }`}
               >
                 KOMPANIYA HAQIDA
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href="#news"
+              <Link
+                to="/#news"
                 className="text-slate-800 hover:text-[#C6893F] transition-colors py-1.5 px-3 block"
               >
                 YANGILIKLAR
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href="#specs"
-                className="text-slate-800 hover:text-[#C6893F] transition-colors py-1.5 px-3 block"
+              <Link
+                to="/contact"
+                className={`py-1.5 px-3 transition-colors block ${
+                  location.pathname === '/contact'
+                    ? 'text-[#C6893F] font-extrabold'
+                    : 'text-slate-800 hover:text-[#C6893F]'
+                }`}
               >
                 BOG'LANISH
-              </a>
+              </Link>
             </li>
 
           </ul>
@@ -202,24 +192,48 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t border-slate-200 px-4 pt-4 pb-6 shadow-xl animate-in slide-in-from-top-3 duration-200">
           <div className="flex flex-col space-y-1 font-bold text-sm uppercase">
-            <a href="#" onClick={() => setIsMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-[#C6893F] bg-[#C6893F]/10 font-extrabold">
+            <Link
+              to="/"
+              onClick={() => setIsMenuOpen(false)}
+              className={`py-2.5 px-3 rounded-lg font-extrabold ${location.pathname === '/' ? 'text-[#C6893F] bg-[#C6893F]/10' : 'text-slate-800 hover:text-[#C6893F] hover:bg-slate-50'} transition-colors`}
+            >
               BOSH SAHIFA
-            </a>
-            <a href="#catalog" onClick={() => setIsMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors">
+            </Link>
+            <Link
+              to="/#catalog"
+              onClick={() => setIsMenuOpen(false)}
+              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
+            >
               KATALOG
-            </a>
-            <a href="#values" onClick={() => setIsMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors">
+            </Link>
+            <Link
+              to="/services"
+              onClick={() => setIsMenuOpen(false)}
+              className={`py-2.5 px-3 rounded-lg font-extrabold ${location.pathname === '/services' ? 'text-[#C6893F] bg-[#C6893F]/10' : 'text-slate-800 hover:text-[#C6893F] hover:bg-slate-50'} transition-colors`}
+            >
               XIZMATLAR
-            </a>
-            <a href="#overview" onClick={() => setIsMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors">
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => setIsMenuOpen(false)}
+              className={`py-2.5 px-3 rounded-lg font-extrabold ${location.pathname === '/about' ? 'text-[#C6893F] bg-[#C6893F]/10' : 'text-slate-800 hover:text-[#C6893F] hover:bg-slate-50'} transition-colors`}
+            >
               KOMPANIYA HAQIDA
-            </a>
-            <a href="#news" onClick={() => setIsMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors">
+            </Link>
+            <Link
+              to="/#news"
+              onClick={() => setIsMenuOpen(false)}
+              className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors"
+            >
               YANGILIKLAR
-            </a>
-            <a href="#specs" onClick={() => setIsMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-slate-800 hover:text-[#C6893F] hover:bg-slate-50 transition-colors">
+            </Link>
+            <Link
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className={`py-2.5 px-3 rounded-lg font-extrabold ${location.pathname === '/contact' ? 'text-[#C6893F] bg-[#C6893F]/10' : 'text-slate-800 hover:text-[#C6893F] hover:bg-slate-50'} transition-colors`}
+            >
               BOG'LANISH
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Language Switcher */}

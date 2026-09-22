@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface FooterProps {
   onOpenQuote?: () => void;
@@ -135,34 +136,34 @@ export default function Footer(_props?: FooterProps) {
             </h3>
             <ul className="space-y-2 text-slate-300 font-normal">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link to="/" className="hover:text-white transition-colors">
                   Bosh sahifa
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#catalog" className="hover:text-white transition-colors">
+                <Link to="/#catalog" className="hover:text-white transition-colors">
                   Mahsulotlar katalogi
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#advantages" className="hover:text-white transition-colors">
-                  Afzalliklar
-                </a>
+                <Link to="/services" className="hover:text-white transition-colors">
+                  Xizmatlar
+                </Link>
               </li>
               <li>
-                <a href="#scheme" className="hover:text-white transition-colors">
-                  Ish tartibi
-                </a>
+                <Link to="/about" className="hover:text-white transition-colors">
+                  Kompaniya haqida
+                </Link>
               </li>
               <li>
-                <a href="#gallery" className="hover:text-white transition-colors">
+                <Link to="/#gallery" className="hover:text-white transition-colors">
                   Ishlab chiqarish
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="hover:text-white transition-colors">
-                  Zavod manzili va aloqa
-                </a>
+                <Link to="/contact" className="hover:text-white transition-colors">
+                  Bog'lanish va aloqa
+                </Link>
               </li>
             </ul>
           </div>
