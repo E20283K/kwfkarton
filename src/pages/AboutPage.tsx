@@ -39,6 +39,24 @@ const SPECS_TABLE = [
   { property: "Minimal partiya", spec: "1 000 donadan boshlab ulgurji partiyalar" },
 ];
 
+const QUALITY_CONTROL = [
+  {
+    name: "Runhu RH-P5600",
+    type: "Bursting Strength Tester",
+    image: "/quality/Runhu RH-P5600.png",
+  },
+  {
+    name: "Runhu RH-3000",
+    type: "Crush tester",
+    image: "/quality/Runhu RH-3000.png",
+  },
+  {
+    name: "Runhu RH-KY10",
+    type: "Box Compression Tester",
+    image: "/quality/Runhu RH-KY10.png",
+  }
+];
+
 export default function AboutPage() {
   const navigate = useNavigate();
 
@@ -209,7 +227,39 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Section 4: Partners */}
+        {/* Section 4: Quality Control */}
+        <div className="bg-white border border-slate-200/90 rounded-xl p-6 sm:p-8 shadow-xs">
+          <h2 className="text-xl sm:text-2xl font-black text-[#C6893F] tracking-tight mb-2">
+            Sifat nazorati va laboratoriya
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-8">
+            Barcha qadoqlarimiz eng zamonaviy maxsus sifat nazorati qurilmalarida sinovdan o'tkaziladi. Bu mahsulotlaringiz xavfsiz va mustahkam yetib borishini ta'minlaydi.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {QUALITY_CONTROL.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-white border border-slate-100 rounded-xl p-5 shadow-xs hover:shadow-md hover:border-[#C6893F]/30 transition-all flex flex-col items-center text-center"
+              >
+                <div className="w-full h-48 sm:h-56 mb-5 flex items-center justify-center bg-[#F8F9FA] rounded-lg border border-slate-100 overflow-hidden p-4 group">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="text-base font-bold text-neutral-900 mb-1.5">
+                  {item.name}
+                </h3>
+                <p className="text-xs text-[#C6893F] font-bold tracking-wide uppercase">
+                  {item.type}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Section 5: Partners */}
         <Partners />
       </main>
 
