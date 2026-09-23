@@ -1,68 +1,46 @@
+import { useTranslation } from 'react-i18next';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Partners from '../components/Partners';
 import { useNavigate } from 'react-router-dom';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 
-const STATS = [
-  { value: "5 Qatlam", label: "Maxsus gofroliniya", desc: "Mintaqadagi yagona 5 qavatli ishlab chiqarish" },
-  { value: "50 000", label: "Quti / 48 soatda", desc: "Yirik partiyalarni qisqa muddatda bajarish" },
-  { value: "100%", label: "Lab nazorati", desc: "BCT va ECT standartlari bo'yicha sinov" },
-  { value: "0%", label: "Tranzit defekti", desc: "Logistika va mustahkamlik kafolati" },
-];
-
-const ADVANTAGES = [
-  {
-    title: "Mintaqaviy logistika afzalligi",
-    desc: "Yirik transport va savdo yo'llariga yaqin joylashuv mahsulotni minimal vaqt va optimal logistika narxida yetkazib berish imkonini beradi.",
-  },
-  {
-    title: "To'liq avtomatlashtirilgan agregatlar",
-    desc: "Zamonaviy gofroagregat va lazerli formatlash tizimlari orqali xatolik ehtimoli minimallashtirilgan va o'lchamlar aniqligi kafolatlangan.",
-  },
-  {
-    title: "100% Ekologik va qayta ishlanuvchi",
-    desc: "Tabiiy xomashyo va ekologik xavfsiz kraxmallı yelimlar qo'llaniladi. Barcha mahsulotlar to'liq utilizatsiya qilinishi mumkin.",
-  },
-  {
-    title: "Individual muhandislik yondashuvi",
-    desc: "Mahsulot og'irligi, transport turi va saqlash sharoitlariga mos holda qog'oz zichligi (GSM) hamda to'lqin turi tanlanadi.",
-  },
-];
-
-const SPECS_TABLE = [
-  { property: "Gofrokarton turi", spec: "3 qatlamli (T-toifa) va 5 qatlamli (P-toifa)" },
-  { property: "To'lqin profillari", spec: "A-Flute (baland), B-Flute (o'rta), C-Flute" },
-  { property: "Liner turlari", spec: "Tabiiy Kraftliner va Premium oq OqLayner" },
-  { property: "Siqilishga chidamlilik (BCT)", spec: "4.8 kN dan 6.2 kN gacha (laboratoriya sertifikatlangan)" },
-  { property: "Flekso-bosma imkoniyati", spec: "1 dan 4 ranggacha yuqori aniqlikdagi bosma" },
-  { property: "Minimal partiya", spec: "1 000 donadan boshlab ulgurji partiyalar" },
-];
-
-const QUALITY_CONTROL = [
-  {
-    name: "Runhu RH-P5600",
-    type: "Bursting Strength Tester",
-    image: "/quality/Runhu RH-P5600.png",
-  },
-  {
-    name: "Runhu RH-3000",
-    type: "Crush tester",
-    image: "/quality/Runhu RH-3000.png",
-  },
-  {
-    name: "Runhu RH-KY10",
-    type: "Box Compression Tester",
-    image: "/quality/Runhu RH-KY10.png",
-  }
-];
-
 export default function AboutPage() {
+  const { t } = useTranslation('about');
   const navigate = useNavigate();
 
   const handleOpenQuote = () => {
     navigate('/contact');
   };
+
+  const STATS = [
+    { value: t('stats.0.value'), label: t('stats.0.label'), desc: t('stats.0.desc') },
+    { value: t('stats.1.value'), label: t('stats.1.label'), desc: t('stats.1.desc') },
+    { value: t('stats.2.value'), label: t('stats.2.label'), desc: t('stats.2.desc') },
+    { value: t('stats.3.value'), label: t('stats.3.label'), desc: t('stats.3.desc') },
+  ];
+
+  const ADVANTAGES = [
+    { title: t('advantages.0.title'), desc: t('advantages.0.desc') },
+    { title: t('advantages.1.title'), desc: t('advantages.1.desc') },
+    { title: t('advantages.2.title'), desc: t('advantages.2.desc') },
+    { title: t('advantages.3.title'), desc: t('advantages.3.desc') },
+  ];
+
+  const SPECS_TABLE = [
+    { property: t('specsTable.0.property'), spec: t('specsTable.0.spec') },
+    { property: t('specsTable.1.property'), spec: t('specsTable.1.spec') },
+    { property: t('specsTable.2.property'), spec: t('specsTable.2.spec') },
+    { property: t('specsTable.3.property'), spec: t('specsTable.3.spec') },
+    { property: t('specsTable.4.property'), spec: t('specsTable.4.spec') },
+    { property: t('specsTable.5.property'), spec: t('specsTable.5.spec') },
+  ];
+
+  const QUALITY_CONTROL = [
+    { name: "Runhu RH-P5600", type: t('qualityControl.0.type'), image: "/quality/Runhu RH-P5600.png" },
+    { name: "Runhu RH-3000", type: t('qualityControl.1.type'), image: "/quality/Runhu RH-3000.png" },
+    { name: "Runhu RH-KY10", type: t('qualityControl.2.type'), image: "/quality/Runhu RH-KY10.png" }
+  ];
 
   return (
     <div className="min-h-screen bg-[#F8F9FA] text-neutral-900 font-sans antialiased">
@@ -72,16 +50,11 @@ export default function AboutPage() {
       <section className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-12 sm:py-16">
           <div className="max-w-3xl">
-            <span className="text-xs font-bold text-[#C6893F] uppercase tracking-wider block mb-2">
-              Karton Works Factory
-            </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight leading-tight mb-4">
-              Kompaniya haqida
+              {t('hero.title')}
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-              Karton Works Factory (KWF) — Xorazm viloyatida joylashgan zamonaviy gofroqadoq ishlab chiqarish korxonasi.
-              Biz yirik ishlab chiqaruvchilar, eksportchilar va distribyutorlar uchun yuqori sifatli 3 va 5 qatlamli
-              gofrokarton qutilarni loyihalashtiramiz va ishlab chiqaramiz.
+              {t('hero.description')}
             </p>
           </div>
         </div>
@@ -115,23 +88,20 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-neutral-900 tracking-tight">
-                Ishlab chiqarish quvvati va missiyamiz
+                {t('mission.title')}
               </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Biz nafaqat quti ishlab chiqaramiz, balki mijozlarimizning ta'minot zanjiri xavfsizligini ta'minlaymiz.
-                Har bir mahsulot tashish jarayonida shikastlanmasligi, yuk ortish standartlariga to'liq javob berishi
-                uchun muhandislik hisob-kitoblari asosida tayyorlanadi.
+                {t('mission.p1')}
               </p>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Zavodimizda oziq-ovqat, to'qimachilik, qishloq xo'jaligi mahsulotlari (meva-sabzavot eksporti), kimyo
-                va og'ir sanoat korxonalari uchun qadoqlar ishlab chiqarilmoqda.
+                {t('mission.p2')}
               </p>
               <div className="pt-2">
                 <button
                   onClick={handleOpenQuote}
                   className="inline-flex items-center gap-2 bg-[#C6893F] hover:bg-[#B37830] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-lg shadow-sm transition-all duration-200 cursor-pointer active:scale-95"
                 >
-                  <span>Bog'lanish va buyurtma</span>
+                  <span>{t('mission.cta')}</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -142,31 +112,31 @@ export default function AboutPage() {
               <div className="relative rounded-xl overflow-hidden border border-slate-200 aspect-4/3 bg-slate-100 shadow-xs group">
                 <img
                   src="/gallery/photo_2026-09-16_15-28-44.jpg"
-                  alt="Ishlab chiqarish sexining umumiy ko'rinishi"
+                  alt={t('images.mainAlt')}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               {/* 3 Real Gallery Sub-photos Strip */}
               <div className="grid grid-cols-3 gap-2">
-                <div className="relative rounded-lg overflow-hidden border border-slate-200 aspect-4/3 bg-slate-100 group" title="Avtomatlashtirilgan gofroagregat">
+                <div className="relative rounded-lg overflow-hidden border border-slate-200 aspect-4/3 bg-slate-100 group" title={t('images.sub1Title')}>
                   <img
                     src="/gallery/photo_2026-09-16_15-28-37.jpg"
-                    alt="Avtomatlashtirilgan gofroagregat"
+                    alt={t('images.sub1Alt')}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="relative rounded-lg overflow-hidden border border-slate-200 aspect-4/3 bg-slate-100 group" title="Formatlash va kesish uchastkasi">
+                <div className="relative rounded-lg overflow-hidden border border-slate-200 aspect-4/3 bg-slate-100 group" title={t('images.sub2Title')}>
                   <img
                     src="/gallery/photo_2026-09-16_15-28-40.jpg"
-                    alt="Formatlash va kesish uchastkasi"
+                    alt={t('images.sub2Alt')}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="relative rounded-lg overflow-hidden border border-slate-200 aspect-4/3 bg-slate-100 group" title="Tayyor gofroqutilarni palletlash">
+                <div className="relative rounded-lg overflow-hidden border border-slate-200 aspect-4/3 bg-slate-100 group" title={t('images.sub3Title')}>
                   <img
                     src="/gallery/photo_2026-09-16_15-28-48.jpg"
-                    alt="Tayyor gofroqutilarni palletlash"
+                    alt={t('images.sub3Alt')}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -178,7 +148,7 @@ export default function AboutPage() {
         {/* Section 2: Core Advantages Grid */}
         <div>
           <h2 className="text-2xl sm:text-3xl font-black text-[#C6893F] tracking-tight mb-6">
-            Nega aynan Karton Works Factory?
+            {t('advantagesSection.title')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {ADVANTAGES.map((adv, idx) => (
@@ -207,10 +177,10 @@ export default function AboutPage() {
         {/* Section 3: Technical Specifications Table */}
         <div className="bg-white border border-slate-200/90 rounded-xl p-6 sm:p-8 shadow-xs">
           <h2 className="text-xl sm:text-2xl font-black text-neutral-900 tracking-tight mb-2">
-            Ishlab chiqarish va texnik parametrlari
+            {t('specsSection.title')}
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mb-6">
-            B2B mijozlar uchun tasdiqlangan sanoat standartlari
+            {t('specsSection.subtitle')}
           </p>
 
           <div className="divide-y divide-slate-100 border-t border-slate-100">
@@ -230,10 +200,10 @@ export default function AboutPage() {
         {/* Section 4: Quality Control */}
         <div>
           <h2 className="text-2xl sm:text-3xl font-black text-[#C6893F] tracking-tight mb-3">
-            Sifat nazorati va laboratoriya
+            {t('qualitySection.title')}
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-8">
-            Barcha qadoqlarimiz eng zamonaviy maxsus sifat nazorati qurilmalarida sinovdan o'tkaziladi. Bu mahsulotlaringiz xavfsiz va mustahkam yetib borishini ta'minlaydi.
+            {t('qualitySection.description')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {QUALITY_CONTROL.map((item, idx) => (
@@ -260,7 +230,7 @@ export default function AboutPage() {
         </div>
 
         {/* Section 5: Partners */}
-        <Partners />
+        <Partners onOpenQuote={handleOpenQuote} />
       </main>
 
       <Footer onOpenQuote={handleOpenQuote} />

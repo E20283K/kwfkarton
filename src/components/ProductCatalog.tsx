@@ -1,62 +1,66 @@
+import { useTranslation } from 'react-i18next';
+
 interface ProductCatalogProps {
   onOpenQuote: () => void;
 }
 
 interface ProductItem {
-  title: string;
+  id: string; // Add ID for translation lookup
   kraftImg: string;
   whiteImg?: string;
 }
 
 const PRODUCTS: ProductItem[] = [
   {
-    title: "Transportirovka (tashish) uchun",
+    id: "transport",
     kraftImg: "/boxes/rsc_box_kraft.png",
     whiteImg: "/boxes/rsc_box_white.png",
   },
   {
-    title: "Meva-sabzavot eksporti uchun",
+    id: "fruits",
     kraftImg: "/boxes/frut_box_kraft.png",
     whiteImg: "/boxes/fruit_box_white.png",
   },
   {
-    title: "Qandolat va shirinliklar uchun",
+    id: "confectionery",
     kraftImg: "/boxes/cake_box_kraft.png",
     whiteImg: "/boxes/cake_box_white.png",
   },
   {
-    title: "Ovqat yetkazish uchun",
+    id: "food",
     kraftImg: "/boxes/pizza_box_kraft.png",
     whiteImg: "/boxes/pizza_box_whte.png",
   },
   {
-    title: "Ichimliklar uchun",
+    id: "drinks",
     kraftImg: "/boxes/drink_box_kraft.png",
     whiteImg: "/boxes/drink_box_white.png",
   },
   {
-    title: "Sanoat mahsulotlari uchun",
+    id: "industrial",
     kraftImg: "/boxes/industry_box_kraft.png",
     whiteImg: "/boxes/industry_box_white.png",
   },
   {
-    title: "Qalin kartonli qadoqlar",
+    id: "thick",
     kraftImg: "/boxes/thick_box.png",
   },
   {
-    title: "Karton sumkalar",
+    id: "bags",
     kraftImg: "/boxes/bag_kraft.png",
     whiteImg: "/boxes/bag_white.png",
   },
 ];
 
 export default function ProductCatalog({ onOpenQuote }: ProductCatalogProps) {
+  const { t } = useTranslation();
+
   return (
     <section id="catalog" className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-14">
       {/* Header */}
       <div className="mb-6 sm:mb-8">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight">
-          Mahsulotlar katalogi
+          {t('productCatalog.sectionTitle')}
         </h2>
       </div>
 
@@ -73,7 +77,7 @@ export default function ProductCatalog({ onOpenQuote }: ProductCatalogProps) {
               {/* Default Kraft Image */}
               <img
                 src={prod.kraftImg}
-                alt={prod.title}
+                alt={t(`productCatalog.products.${prod.id}`)}
                 className={`w-full h-full object-contain transition-all duration-500 ease-out group-hover:scale-105 select-none ${
                   prod.whiteImg ? 'group-hover:opacity-0' : ''
                 }`}
@@ -84,7 +88,7 @@ export default function ProductCatalog({ onOpenQuote }: ProductCatalogProps) {
               {prod.whiteImg && (
                 <img
                   src={prod.whiteImg}
-                  alt={`${prod.title} - oq`}
+                  alt={`${t(`productCatalog.products.${prod.id}`)} ${t('productCatalog.whiteSuffix')}`}
                   className="absolute inset-0 w-full h-full object-contain p-3 sm:p-4 transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 group-hover:scale-105 select-none"
                   loading="lazy"
                 />
@@ -93,7 +97,7 @@ export default function ProductCatalog({ onOpenQuote }: ProductCatalogProps) {
 
             {/* Title Underneath Card */}
             <h3 className="mt-3 sm:mt-3.5 text-base sm:text-lg font-bold text-neutral-900 group-hover:text-[#C6893F] transition-colors leading-snug">
-              {prod.title}
+              {t(`productCatalog.products.${prod.id}`)}
             </h3>
           </div>
         ))}

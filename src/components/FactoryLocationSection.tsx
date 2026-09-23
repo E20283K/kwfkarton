@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { sendLeadToTelegram } from "../services/telegram";
+import { useTranslation } from "react-i18next";
 
 export default function FactoryLocationSection() {
+  const { t } = useTranslation('factoryLocation');
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -20,7 +22,7 @@ export default function FactoryLocationSection() {
       phone,
       email,
       message,
-      source: "Bosh sahifa (Xarita yonidagi forma)",
+      source: t('form.source', "Bosh sahifa (Xarita yonidagi forma)"),
     });
     setIsSubmitting(false);
     setIsSent(true);
@@ -32,7 +34,7 @@ export default function FactoryLocationSection() {
         {/* Header */}
         <div className="mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight">
-            Zavod manzili va aloqa
+            {t('title', 'Zavod manzili va aloqa')}
           </h2>
         </div>
 
@@ -59,10 +61,10 @@ export default function FactoryLocationSection() {
                 <CheckCircle2 className="w-7 h-7" />
               </div>
               <h3 className="text-xl font-bold text-neutral-900 mb-1.5">
-                Arizangiz qabul qilindi
+                {t('success.title', 'Arizangiz qabul qilindi')}
               </h3>
               <p className="text-xs sm:text-sm text-slate-500 mb-5">
-                Mutaxassisimiz tez orada siz bilan bog'lanadi.
+                {t('success.desc', "Mutaxassisimiz tez orada siz bilan bog'lanadi.")}
               </p>
               <button
                 onClick={() => {
@@ -74,13 +76,13 @@ export default function FactoryLocationSection() {
                 }}
                 className="text-xs sm:text-sm font-bold text-[#C6893F] hover:underline cursor-pointer"
               >
-                Yangi ariza yuborish
+                {t('success.new_request', 'Yangi ariza yuborish')}
               </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <h3 className="text-2xl sm:text-3xl font-extrabold text-[#C6893F] tracking-tight mb-2">
-                Ariza qoldirish
+                {t('form.title', 'Ariza qoldirish')}
               </h3>
 
               <div>
@@ -88,7 +90,7 @@ export default function FactoryLocationSection() {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Ism"
+                  placeholder={t('form.name', 'Ism')}
                   className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#C6893F] focus:bg-white transition-all"
                 />
               </div>
@@ -98,7 +100,7 @@ export default function FactoryLocationSection() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Elektron.pochta"
+                  placeholder={t('form.email', 'Elektron.pochta')}
                   className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#C6893F] focus:bg-white transition-all"
                 />
               </div>
@@ -109,7 +111,7 @@ export default function FactoryLocationSection() {
                   required
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="Telefon *"
+                  placeholder={t('form.phone', 'Telefon *')}
                   className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#C6893F] focus:bg-white transition-all"
                 />
               </div>
@@ -119,7 +121,7 @@ export default function FactoryLocationSection() {
                   rows={4}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Xabar yoki izoh"
+                  placeholder={t('form.message', 'Xabar yoki izoh')}
                   className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#C6893F] focus:bg-white transition-all resize-none"
                 />
               </div>
@@ -133,10 +135,10 @@ export default function FactoryLocationSection() {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Yuborilmoqda...</span>
+                      <span>{t('form.submitting', 'Yuborilmoqda...')}</span>
                     </>
                   ) : (
-                    <span>Xabar yuborish</span>
+                    <span>{t('form.submit', 'Xabar yuborish')}</span>
                   )}
                 </button>
               </div>

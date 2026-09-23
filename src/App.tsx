@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
-import { LanguageProvider } from './i18n/LanguageContext';
 import ScrollToTop from './components/ScrollToTop';
 import LoadingScreen from './components/LoadingScreen';
 
@@ -57,7 +56,7 @@ function HomePage() {
         <NewsSection />
 
         {/* 9. Brand Partners */}
-        <Partners />
+        <Partners onOpenQuote={handleOpenQuote} />
 
         {/* 10. Gofroqadoq ishlab chiqarish zavodi & Action / Location Map */}
         <FactoryLocationSection />
@@ -69,10 +68,11 @@ function HomePage() {
 }
 
 function App() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const isPortfolioRoute = typeof window !== 'undefined' && window.location.pathname.startsWith('/portfolio');
+  const [isLoaded, setIsLoaded] = useState(isPortfolioRoute);
 
   return (
-    <LanguageProvider>
+    <>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
       
       <div className={!isLoaded ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100 transition-opacity duration-700 ease-in-out'}>
@@ -87,7 +87,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
-    </LanguageProvider>
+    </>
   );
 }
 

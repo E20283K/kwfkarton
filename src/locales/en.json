@@ -1,0 +1,669 @@
+{
+  "navbar": {
+    "workingHours": "Mon-Sat 09:00-18:00",
+    "openMenu": "Open menu",
+    "home": "HOME",
+    "services": "SERVICES",
+    "about": "ABOUT US",
+    "portfolio": "PORTFOLIO",
+    "contact": "CONTACT",
+    "contactUs": "Contact us:",
+    "phone": "Phone",
+    "telegram": "Telegram",
+    "ourChannel": "Our channel",
+    "instagram": "Instagram",
+    "ourPage": "Our page",
+    "address": "Address",
+    "addressFull": "Khorezm region, Urgench city, Ashgabat MCA, Sanoatchilar street",
+    "submitRequest": "Submit Request",
+    "addressShort": "Address: Urgench city, Ashgabat MCA",
+    "map": "Map"
+  },
+  "footer": {
+    "subtitle": "Corrugated packaging manufacturing plant",
+    "sections": "SECTIONS",
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "about": "About Company",
+      "production": "Production",
+      "portfolio": "Portfolio",
+      "contact": "Contact Us"
+    },
+    "contact": "CONTACT",
+    "address": {
+      "line1": "Khorezm region, Urgench city,",
+      "line2": "Ashgabat MCA, Sanoatchilar street,",
+      "line3": "house 19/2, block A"
+    },
+    "requisites": "REQUISITES",
+    "company": "\"KARTON WORKS\" LLC",
+    "inn": "TIN (INN):",
+    "oked": "NCEA (OKED):",
+    "soato": "SOATO:",
+    "copyright": "© 2025-2026 - \"KARTON WORKS\" LLC",
+    "rights": "All rights reserved"
+  },
+  "heroBanner": {
+    "title1": "PACKAGING PRODUCTS",
+    "title2": "manufacturing",
+    "subtitle": "Custom sized packaging production",
+    "cta": "Leave a request",
+    "altText": "Karton Works Factory packaging materials production plant (Uzbekistan)"
+  },
+  "productCatalog": {
+    "sectionTitle": "Product Catalog",
+    "products": {
+      "transport": "For transportation",
+      "fruits": "For fruit and vegetable export",
+      "confectionery": "For confectionery and sweets",
+      "food": "For food delivery",
+      "drinks": "For beverages",
+      "industrial": "For industrial products",
+      "thick": "Thick cardboard packaging",
+      "bags": "Cardboard bags"
+    },
+    "whiteSuffix": "- white"
+  },
+  "advantages": {
+    "sectionTitle": "Our Advantages",
+    "items": {
+      "engineering": {
+        "keyword": "ENGINEERING",
+        "title": "Engineering approach",
+        "desc": "Each box is designed based on product, logistics, and laboratory data."
+      },
+      "economy": {
+        "keyword": "ECONOMY",
+        "title": "Economic solution",
+        "desc": "We minimize material, logistics, and damage costs."
+      },
+      "speed": {
+        "keyword": "SPEED",
+        "title": "Fast production",
+        "desc": "Up to 50,000 boxes in 2–3 working days. Repeat orders — within 24 hours."
+      },
+      "white": {
+        "keyword": "WHITE",
+        "title": "Premium white packaging",
+        "desc": "Vibrant CMYK printing with white liner. Increases brand value."
+      },
+      "srp": {
+        "keyword": "SRP",
+        "title": "Shelf Ready Packaging",
+        "desc": "Directly from the warehouse to the shelf — fast merchandising."
+      }
+    },
+    "cta": {
+      "tag": "INDIVIDUAL ORDER",
+      "title": "We will prepare the optimal packaging solution",
+      "desc": "Our experts provide free consultation on dimensions, thickness, and logistics requirements.",
+      "button": "Send request"
+    }
+  },
+  "companyVideo": {
+    "defaultTitle": "Production process",
+    "iframeTitle": "Karton Works Factory - Production process",
+    "ariaLabel": "Watch video",
+    "altText": "Karton Works Factory production"
+  },
+  "workProcess": {
+    "title": "Work Process",
+    "step1": {
+      "title": "Order Placement",
+      "desc": "Contact us by phone or telegram to place your order."
+    },
+    "step2": {
+      "title": "Calculation and Proposal",
+      "desc": "Based on your request, the product price is calculated and a detailed commercial proposal is provided."
+    },
+    "step3": {
+      "title": "Production and Control",
+      "desc": "Upon agreement, the product is manufactured and undergoes strict quality control."
+    },
+    "step4": {
+      "title": "Delivery",
+      "desc": "The finished product is safely delivered to your address on time."
+    },
+    "ctaText": "Ready for a consultation on custom sizes or to calculate a batch?",
+    "ctaButton": "Submit a calculation request"
+  },
+  "productionGallery": {
+    "title": "Photo Gallery",
+    "descTitle": "Continuous cycle modern facilities",
+    "desc1": "The plant is equipped with high-precision automated units for 3 and 5-layer corrugated cardboard production, laser cutting, and multi-color flexo-printing equipment.",
+    "desc2": "Each batch of raw materials and finished boxes undergoes laboratory testing according to strict standards (ECT, BCT, moisture level).",
+    "consultationBtn": "Get a production consultation",
+    "zoomIn": "Zoom In (+)",
+    "zoomOut": "Zoom Out (-)",
+    "resetZoom": "Reset Zoom",
+    "viewOriginal": "View Original",
+    "close": "Close (Esc)",
+    "prevPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "photoCount": "Photo {{current}} / {{total}}",
+    "photos": {
+      "1": {
+        "title": "Automated corrugator line",
+        "desc": "Continuous technological process of 3 and 5-layer corrugated cardboard production",
+        "category": "Corrugator"
+      },
+      "2": {
+        "title": "Corrugated sheets formatting and cutting section",
+        "desc": "Adapting to required dimensions with high-precision blades",
+        "category": "Formatting"
+      },
+      "3": {
+        "title": "Box folding and gluing units",
+        "desc": "Automated high-speed folding and gluing machines",
+        "category": "Folding and gluing"
+      },
+      "4": {
+        "title": "General view of the production shop",
+        "desc": "Karton Works Factory modern production and technological facilities",
+        "category": "Main shop"
+      },
+      "5": {
+        "title": "Raw materials and products logistics area",
+        "desc": "Systematic warehousing of quality-controlled batches",
+        "category": "Logistics"
+      },
+      "6": {
+        "title": "Palletizing and sorting of finished corrugated boxes",
+        "desc": "Placement on standard pallets for safe delivery to customers",
+        "category": "Palletizing"
+      }
+    }
+  },
+  "newsSection": {
+    "title": "News",
+    "portfolioLink": "All samples (Portfolio)",
+    "prev": "Previous news",
+    "next": "Next news",
+    "openInstagram": "Open in Instagram",
+    "readMore": "Read more",
+    "defaultCaption": "Karton Works Factory news",
+    "posts": {
+      "1": {
+        "caption": "What factor is most important to you when choosing packaging? KartonWorks studies the unique requirements of each business. We calculate maximum strength through BCT and ECT indicators."
+      },
+      "2": {
+        "caption": "What does a product need to sell itself on the shelf? Properly designed corrugated cardboard packaging directly affects sales volume."
+      },
+      "3": {
+        "caption": "Happy 35th anniversary of Independence! 35 years — a year of independent development, labor, and creativity. The Karton Works Factory team congratulates all its partners."
+      },
+      "4": {
+        "caption": "Your competitor relies on 'luck' when choosing a packager. You — on BCT and ECT numbers. At KWF, every box undergoes laboratory testing."
+      },
+      "5": {
+        "caption": "We guarantee that your product will arrive 100% intact on long transit routes. Each pallet is tightly wrapped according to standards."
+      },
+      "6": {
+        "caption": "Fast and timely delivery of quality corrugated packaging products to all regions of Uzbekistan has been established."
+      }
+    }
+  },
+  "partners": {
+    "title": "Companies that trust us",
+    "logo_alt": "logo",
+    "become_partner": {
+      "title": "Become a partner"
+    },
+    "categories": {
+      "uztex": "Textile and weaving cluster",
+      "bahmal": "Light industry and fabrics",
+      "cotton-fabric": "Cotton and fabric production",
+      "gurlan": "Textile industry",
+      "osiyoshirin": "Confectionery and food products",
+      "tatcola": "Beverage industry",
+      "hvara": "Industrial and household products",
+      "jazz": "Consumer goods",
+      "nmt": "Production and supply",
+      "humo": "Textile products",
+      "silver-green": "Tea and food products"
+    }
+  },
+  "factoryLocation": {
+    "title": "Factory Location and Contact",
+    "success": {
+      "title": "Your request has been accepted",
+      "desc": "Our specialist will contact you shortly.",
+      "new_request": "Send a new request"
+    },
+    "form": {
+      "source": "Home page (Form next to map)",
+      "title": "Leave a request",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone *",
+      "message": "Message or comment",
+      "submitting": "Submitting...",
+      "submit": "Send message"
+    }
+  },
+  "about": {
+    "stats": [
+      {
+        "value": "5 Layers",
+        "label": "Special corrugation line",
+        "desc": "The region's only 5-layer production"
+      },
+      {
+        "value": "50,000",
+        "label": "Boxes / 48 hours",
+        "desc": "Large batches delivered in short deadlines"
+      },
+      {
+        "value": "100%",
+        "label": "Lab control",
+        "desc": "Tested according to BCT and ECT standards"
+      },
+      {
+        "value": "24–48 hours",
+        "label": "Fast logistics",
+        "desc": "Delivery across Uzbekistan with our own transport fleet"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Regional logistics advantage",
+        "desc": "Close proximity to major transport and trade routes allows minimal time and optimal cost for delivery."
+      },
+      {
+        "title": "Fully automated machinery",
+        "desc": "Modern corrugators and laser formatting systems minimize error probabilities and guarantee dimension accuracy."
+      },
+      {
+        "title": "100% Eco-friendly and recyclable",
+        "desc": "Natural raw materials and eco-safe starch glues are used. All products can be fully recycled."
+      },
+      {
+        "title": "Individual engineering approach",
+        "desc": "Paper density (GSM) and flute type are selected according to product weight, transport type, and storage conditions."
+      }
+    ],
+    "specsTable": [
+      {
+        "property": "Corrugated cardboard type",
+        "spec": "3-layer (T-type) and 5-layer (P-type)"
+      },
+      {
+        "property": "Flute profiles",
+        "spec": "A-Flute (high), B-Flute (medium), C-Flute"
+      },
+      {
+        "property": "Liner types",
+        "spec": "Natural Kraftliner and Premium white OqLayner"
+      },
+      {
+        "property": "Compression strength (BCT)",
+        "spec": "From 4.8 kN to 6.2 kN (lab certified)"
+      },
+      {
+        "property": "Flexo-printing capacity",
+        "spec": "High precision printing from 1 to 4 colors"
+      },
+      {
+        "property": "Minimum batch",
+        "spec": "Wholesale batches starting from 1,000 units"
+      }
+    ],
+    "qualityControl": [
+      {
+        "type": "Bursting Strength Tester"
+      },
+      {
+        "type": "Crush tester"
+      },
+      {
+        "type": "Box Compression Tester"
+      }
+    ],
+    "hero": {
+      "subtitle": "Karton Works Factory",
+      "title": "About the Company",
+      "description": "Karton Works Factory (KWF) is a modern corrugated packaging manufacturing plant located in the Khorezm region. We design and manufacture high-quality 3 and 5-layer corrugated cardboard boxes for major manufacturers, exporters, and distributors."
+    },
+    "mission": {
+      "title": "Production capacity and our mission",
+      "p1": "We do not just produce boxes, but ensure the supply chain security of our clients. Every product is manufactured based on engineering calculations so that it is not damaged during transport and fully complies with loading standards.",
+      "p2": "Our factory produces packaging for food, textile, agricultural (fruit and vegetable export), chemical, and heavy industry enterprises.",
+      "cta": "Contact and order"
+    },
+    "images": {
+      "mainAlt": "General view of the production shop",
+      "sub1Title": "Automated corrugator",
+      "sub1Alt": "Automated corrugator",
+      "sub2Title": "Formatting and cutting section",
+      "sub2Alt": "Formatting and cutting section",
+      "sub3Title": "Palletizing finished corrugated boxes",
+      "sub3Alt": "Palletizing finished corrugated boxes"
+    },
+    "advantagesSection": {
+      "title": "Why Karton Works Factory?"
+    },
+    "specsSection": {
+      "title": "Production and technical parameters",
+      "subtitle": "Certified industry standards for B2B clients"
+    },
+    "qualitySection": {
+      "title": "Quality control and laboratory",
+      "description": "All our packaging is tested on the most modern special quality control devices. This ensures your products arrive safe and sound."
+    }
+  },
+  "portfolio": {
+    "hero": {
+      "subtitle": "Our completed works",
+      "title": "Portfolio",
+      "description": "A gallery of 3 and 5-layer corrugated cardboard boxes manufactured by Karton Works Factory, export packaging samples, confectionery, and custom branded products."
+    },
+    "gallery": {
+      "totalLabel": "Total",
+      "totalCount": "{{count}} samples",
+      "orderCustom": "Order custom design"
+    },
+    "cta": {
+      "title": "Do you also need custom-sized packaging?",
+      "description": "Our engineers will calculate the suitable shape, flute type, and flexo-printing design for your product for free.",
+      "button": "Leave a request"
+    },
+    "lightbox": {
+      "close": "Close",
+      "prev": "Previous sample",
+      "next": "Next sample",
+      "orderThis": "Order this type of packaging"
+    },
+    "itemAlt": "KWF corrugated container and packaging sample #{{num}}",
+    "itemLabel": "KWF Sample #{{num}}"
+  },
+  "contact": {
+    "managers": [
+      {
+        "role": "Head of Commercial Department"
+      },
+      {
+        "role": "Sales Manager"
+      },
+      {
+        "role": "Sales Manager"
+      },
+      {
+        "role": "Sales Manager"
+      }
+    ],
+    "hero": {
+      "subtitle": "CONTACT AND INQUIRIES",
+      "title": "Contact us",
+      "description": "Use the direct communication channels below to get packaging advice, request a commercial quote, or place an order."
+    },
+    "info": {
+      "addressLabel": "Address",
+      "addressValue": "Khorezm region, Urgench city, Ashgabat MCA, Sanoatchilar st., 19/2",
+      "phoneLabel": "Phone",
+      "phoneValue": "(+998) 99 560-61-66",
+      "emailLabel": "Email",
+      "emailValue": "kwf.sales1@matpap.uz",
+      "socialLabel": "Social networks"
+    },
+    "main": {
+      "title": "Factory address and request submission"
+    },
+    "map": {
+      "title": "Karton Works Factory - Urgench"
+    },
+    "form": {
+      "source": "Contact page",
+      "successTitle": "Your application is accepted",
+      "successDesc": "Our specialist will contact you shortly.",
+      "sendNew": "Send new request",
+      "title": "Leave a request",
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Email address",
+      "phonePlaceholder": "Phone number *",
+      "messagePlaceholder": "Packaging parameters, volume or comments",
+      "submitBtn": "Send message",
+      "submitting": "Sending..."
+    },
+    "legal": {
+      "nameLabel": "Legal name",
+      "nameValue": "\"KARTON WORKS\" LLC",
+      "innLabel": "TIN (INN)",
+      "okedLabel": "NCEA (OKED)",
+      "okedValue": "17210 (Corrugated cardboard and paper packaging)",
+      "soatoLabel": "SOATO",
+      "soatoValue": "1733401 (Urgench city)"
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "subtitle": "Services and Solutions",
+      "title": "Corrugated Packaging Services",
+      "desc": "A full cycle from design to delivery of the finished product to your warehouse. Solutions that reduce costs and increase protection for every business sector."
+    },
+    "services_section": {
+      "title": "Our Core Services",
+      "action": "Submit a request"
+    },
+    "services": [
+      {
+        "title": "Corrugated Box Production",
+        "desc": "Standard and non-standard size boxes made of 3 and 5-layer corrugated cardboard. Structures that ensure transportation, storage, and product safety.",
+        "badge": "Main Direction"
+      },
+      {
+        "title": "Premium White Packaging (WhiteLiner)",
+        "desc": "Premium boxes with a white outer liner. Enhances branding and visual prestige with high-precision flexo printing.",
+        "badge": "Branding"
+      },
+      {
+        "title": "Shelf Ready Packaging (SRP)",
+        "desc": "Perforated boxes ready to be placed directly from the warehouse to retail shelves. Saves up to 50% merchandising time.",
+        "badge": "Retail Solution"
+      },
+      {
+        "title": "Express Batches (48 hours)",
+        "desc": "For urgent orders, production and dispatch of up to 50,000 boxes in 2-3 working days. Repeat orders in 24 hours.",
+        "badge": "Fast Delivery"
+      }
+    ],
+    "industries_section": {
+      "title": "Industries We Serve",
+      "desc": "Packaging parameters tailored to product characteristics for each industry"
+    },
+    "industries": [
+      "Fruits and vegetables (export)",
+      "Textile and clothing",
+      "Confectionery and food",
+      "Footwear and leather products",
+      "Soft drinks and juices",
+      "Construction and industrial goods",
+      "Pharmaceuticals and hygiene",
+      "Delivery (e-commerce)"
+    ]
+  },
+  "aboutPage": {
+    "stats": [
+      {
+        "value": "5 Layers",
+        "label": "Special corrugation line",
+        "desc": "The region's only 5-layer production"
+      },
+      {
+        "value": "50,000",
+        "label": "Boxes / 48 hours",
+        "desc": "Large batches delivered in short deadlines"
+      },
+      {
+        "value": "100%",
+        "label": "Lab control",
+        "desc": "Tested according to BCT and ECT standards"
+      },
+      {
+        "value": "24–48 hours",
+        "label": "Fast logistics",
+        "desc": "Delivery across Uzbekistan with our own transport fleet"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Regional logistics advantage",
+        "desc": "Close proximity to major transport and trade routes allows minimal time and optimal cost for delivery."
+      },
+      {
+        "title": "Fully automated machinery",
+        "desc": "Modern corrugators and laser formatting systems minimize error probabilities and guarantee dimension accuracy."
+      },
+      {
+        "title": "100% Eco-friendly and recyclable",
+        "desc": "Natural raw materials and eco-safe starch glues are used. All products can be fully recycled."
+      },
+      {
+        "title": "Individual engineering approach",
+        "desc": "Paper density (GSM) and flute type are selected according to product weight, transport type, and storage conditions."
+      }
+    ],
+    "specsTable": [
+      {
+        "property": "Corrugated cardboard type",
+        "spec": "3-layer (T-type) and 5-layer (P-type)"
+      },
+      {
+        "property": "Flute profiles",
+        "spec": "A-Flute (high), B-Flute (medium), C-Flute"
+      },
+      {
+        "property": "Liner types",
+        "spec": "Natural Kraftliner and Premium white OqLayner"
+      },
+      {
+        "property": "Compression strength (BCT)",
+        "spec": "From 4.8 kN to 6.2 kN (lab certified)"
+      },
+      {
+        "property": "Flexo-printing capacity",
+        "spec": "High precision printing from 1 to 4 colors"
+      },
+      {
+        "property": "Minimum batch",
+        "spec": "Wholesale batches starting from 1,000 units"
+      }
+    ],
+    "qualityControl": [
+      {
+        "type": "Bursting Strength Tester"
+      },
+      {
+        "type": "Crush tester"
+      },
+      {
+        "type": "Box Compression Tester"
+      }
+    ],
+    "hero": {
+      "subtitle": "Karton Works Factory",
+      "title": "About the Company",
+      "description": "Karton Works Factory (KWF) is a modern corrugated packaging manufacturing plant located in the Khorezm region. We design and manufacture high-quality 3 and 5-layer corrugated cardboard boxes for major manufacturers, exporters, and distributors."
+    },
+    "mission": {
+      "title": "Production capacity and our mission",
+      "p1": "We do not just produce boxes, but ensure the supply chain security of our clients. Every product is manufactured based on engineering calculations so that it is not damaged during transport and fully complies with loading standards.",
+      "p2": "Our factory produces packaging for food, textile, agricultural (fruit and vegetable export), chemical, and heavy industry enterprises.",
+      "cta": "Contact and order"
+    },
+    "images": {
+      "mainAlt": "General view of the production shop",
+      "sub1Title": "Automated corrugator",
+      "sub1Alt": "Automated corrugator",
+      "sub2Title": "Formatting and cutting section",
+      "sub2Alt": "Formatting and cutting section",
+      "sub3Title": "Palletizing finished corrugated boxes",
+      "sub3Alt": "Palletizing finished corrugated boxes"
+    },
+    "advantagesSection": {
+      "title": "Why Karton Works Factory?"
+    },
+    "specsSection": {
+      "title": "Production and technical parameters",
+      "subtitle": "Certified industry standards for B2B clients"
+    },
+    "qualitySection": {
+      "title": "Quality control and laboratory",
+      "description": "All our packaging is tested on the most modern special quality control devices. This ensures your products arrive safe and sound."
+    }
+  },
+  "portfolioPage": {
+    "hero": {
+      "subtitle": "Our completed works",
+      "title": "Portfolio",
+      "description": "A gallery of 3 and 5-layer corrugated cardboard boxes manufactured by Karton Works Factory, export packaging samples, confectionery, and custom branded products."
+    },
+    "gallery": {
+      "totalLabel": "Total",
+      "totalCount": "{{count}} samples",
+      "orderCustom": "Order custom design"
+    },
+    "cta": {
+      "title": "Do you also need custom-sized packaging?",
+      "description": "Our engineers will calculate the suitable shape, flute type, and flexo-printing design for your product for free.",
+      "button": "Leave a request"
+    },
+    "lightbox": {
+      "close": "Close",
+      "prev": "Previous sample",
+      "next": "Next sample",
+      "orderThis": "Order this type of packaging"
+    },
+    "itemAlt": "KWF corrugated container and packaging sample #{{num}}",
+    "itemLabel": "KWF Sample #{{num}}"
+  },
+  "contactPage": {
+    "managers": [
+      {
+        "role": "Head of Commercial Department"
+      },
+      {
+        "role": "Sales Manager"
+      },
+      {
+        "role": "Sales Manager"
+      },
+      {
+        "role": "Sales Manager"
+      }
+    ],
+    "hero": {
+      "subtitle": "CONTACT AND INQUIRIES",
+      "title": "Contact us",
+      "description": "Use the direct communication channels below to get packaging advice, request a commercial quote, or place an order."
+    },
+    "main": {
+      "title": "Factory address and request submission"
+    },
+    "map": {
+      "title": "Karton Works Factory - Urgench"
+    },
+    "form": {
+      "source": "Contact page",
+      "successTitle": "Your application is accepted",
+      "successDesc": "Our specialist will contact you shortly.",
+      "sendNew": "Send new request",
+      "title": "Leave a request",
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Email address",
+      "phonePlaceholder": "Phone number *",
+      "messagePlaceholder": "Packaging parameters, volume or comments",
+      "submitBtn": "Send message",
+      "submitting": "Sending..."
+    },
+    "legal": {
+      "nameLabel": "Legal name",
+      "nameValue": "\"KARTON WORKS\" LLC",
+      "innLabel": "TIN (INN)",
+      "okedLabel": "NCEA (OKED)",
+      "okedValue": "17210 (Corrugated cardboard and paper packaging)",
+      "soatoLabel": "SOATO",
+      "soatoValue": "1733401 (Urgench city)"
+    }
+  }
+}

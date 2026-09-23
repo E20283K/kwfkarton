@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Logo from './Logo';
 
 interface NavbarProps {
@@ -11,6 +12,12 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const [scrollProgress, setScrollProgress] = useState(0);
+  const { t, i18n } = useTranslation();
+
+  const currentLang = i18n.resolvedLanguage || i18n.language || 'uz';
+  const isUz = currentLang.startsWith('uz');
+  const isRu = currentLang.startsWith('ru');
+  const isEn = currentLang.startsWith('en');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,17 +44,26 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
           <div className="hidden sm:flex items-center space-x-5 shrink-0 select-none">
             {/* Minimal Language Switcher */}
             <div className="flex items-center space-x-3 text-[11px] font-black tracking-widest text-slate-400 mt-0.5">
-              <button className="text-[#C6893F] cursor-default flex items-center gap-1.5">
+              <button 
+                onClick={() => i18n.changeLanguage('uz')} 
+                className={`${isUz ? 'text-[#C6893F] cursor-default' : 'hover:text-slate-800 transition-colors cursor-pointer'} flex items-center gap-1.5`}
+              >
                 <img src="https://flagcdn.com/w20/uz.png" alt="UZ" className="w-4 h-auto rounded-[2px]" />
                 UZ
               </button>
               <span>/</span>
-              <button className="hover:text-slate-800 transition-colors cursor-pointer flex items-center gap-1.5">
+              <button 
+                onClick={() => i18n.changeLanguage('ru')} 
+                className={`${isRu ? 'text-[#C6893F] cursor-default' : 'hover:text-slate-800 transition-colors cursor-pointer'} flex items-center gap-1.5`}
+              >
                 <img src="https://flagcdn.com/w20/ru.png" alt="RU" className="w-4 h-auto rounded-[2px]" />
                 RU
               </button>
               <span>/</span>
-              <button className="hover:text-slate-800 transition-colors cursor-pointer flex items-center gap-1.5">
+              <button 
+                onClick={() => i18n.changeLanguage('en')} 
+                className={`${isEn ? 'text-[#C6893F] cursor-default' : 'hover:text-slate-800 transition-colors cursor-pointer'} flex items-center gap-1.5`}
+              >
                 <img src="https://flagcdn.com/w20/gb.png" alt="EN" className="w-4 h-auto rounded-[2px]" />
                 EN
               </button>
@@ -55,14 +71,14 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
 
             {/* Socials & Address */}
             <div className="flex items-center space-x-3 text-slate-600">
-              <a href="https://maps.app.goo.gl/qLtyXVBd8t14qiSz8" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title="Manzil: Urganch sh., Ashxobod MFY">
-                <img src="/google-maps.png" alt="Xarita" className="w-6 h-6 object-contain" />
+              <a href="https://maps.app.goo.gl/qLtyXVBd8t14qiSz8" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title={t('navbar.addressShort')}>
+                <img src="/google-maps.png" alt={t('navbar.map')} className="w-6 h-6 object-contain" />
               </a>
-              <a href="https://t.me/kwf_uz" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title="Telegram">
-                <img src="/telegram.png" alt="Telegram" className="w-6 h-6 object-contain" />
+              <a href="https://t.me/kwf_uz" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title={t('navbar.telegram')}>
+                <img src="/telegram.png" alt={t('navbar.telegram')} className="w-6 h-6 object-contain" />
               </a>
-              <a href="https://www.instagram.com/kwf_uz" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title="Instagram">
-                <img src="/instagram.png" alt="Instagram" className="w-6 h-6 object-contain" />
+              <a href="https://www.instagram.com/kwf_uz" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title={t('navbar.instagram')}>
+                <img src="/instagram.png" alt={t('navbar.instagram')} className="w-6 h-6 object-contain" />
               </a>
             </div>
 
@@ -80,7 +96,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
                   +998 99 560-61-66
                 </a>
                 <span className="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">
-                  Dush-Shan 09:00-18:00
+                  {t('navbar.workingHours')}
                 </span>
               </div>
             </div>
@@ -90,7 +106,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="sm:hidden p-1.5 text-neutral-700 hover:text-[#C6893F] transition-colors cursor-pointer"
-            aria-label="Menyuni ochish"
+            aria-label={t('navbar.openMenu')}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -112,7 +128,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
                     : 'text-slate-800 hover:text-[#C6893F]'
                 }`}
               >
-                BOSH SAHIFA
+                {t('navbar.home')}
               </Link>
             </li>
 
@@ -126,7 +142,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
                     : 'text-slate-800 hover:text-[#C6893F]'
                 }`}
               >
-                XIZMATLAR
+                {t('navbar.services')}
               </Link>
             </li>
 
@@ -139,7 +155,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
                     : 'text-slate-800 hover:text-[#C6893F]'
                 }`}
               >
-                KOMPANIYA HAQIDA
+                {t('navbar.about')}
               </Link>
             </li>
 
@@ -152,7 +168,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
                     : 'text-slate-800 hover:text-[#C6893F]'
                 }`}
               >
-                PORTFOLIO
+                {t('navbar.portfolio')}
               </Link>
             </li>
 
@@ -165,7 +181,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
                     : 'text-slate-800 hover:text-[#C6893F]'
                 }`}
               >
-                BOG'LANISH
+                {t('navbar.contact')}
               </Link>
             </li>
 
@@ -190,7 +206,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               onClick={() => setIsMenuOpen(false)}
               className={`py-2.5 px-3 rounded-lg font-extrabold ${location.pathname === '/' ? 'text-[#C6893F] bg-[#C6893F]/10' : 'text-slate-800 hover:text-[#C6893F] hover:bg-slate-50'} transition-colors`}
             >
-              BOSH SAHIFA
+              {t('navbar.home')}
             </Link>
 
             <Link
@@ -198,43 +214,52 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               onClick={() => setIsMenuOpen(false)}
               className={`py-2.5 px-3 rounded-lg font-extrabold ${location.pathname === '/services' ? 'text-[#C6893F] bg-[#C6893F]/10' : 'text-slate-800 hover:text-[#C6893F] hover:bg-slate-50'} transition-colors`}
             >
-              XIZMATLAR
+              {t('navbar.services')}
             </Link>
             <Link
               to="/about"
               onClick={() => setIsMenuOpen(false)}
               className={`py-2.5 px-3 rounded-lg font-extrabold ${location.pathname === '/about' ? 'text-[#C6893F] bg-[#C6893F]/10' : 'text-slate-800 hover:text-[#C6893F] hover:bg-slate-50'} transition-colors`}
             >
-              KOMPANIYA HAQIDA
+              {t('navbar.about')}
             </Link>
             <Link
               to="/portfolio"
               onClick={() => setIsMenuOpen(false)}
               className={`py-2.5 px-3 rounded-lg font-extrabold ${location.pathname === '/portfolio' ? 'text-[#C6893F] bg-[#C6893F]/10' : 'text-slate-800 hover:text-[#C6893F] hover:bg-slate-50'} transition-colors`}
             >
-              PORTFOLIO
+              {t('navbar.portfolio')}
             </Link>
             <Link
               to="/contact"
               onClick={() => setIsMenuOpen(false)}
               className={`py-2.5 px-3 rounded-lg font-extrabold ${location.pathname === '/contact' ? 'text-[#C6893F] bg-[#C6893F]/10' : 'text-slate-800 hover:text-[#C6893F] hover:bg-slate-50'} transition-colors`}
             >
-              BOG'LANISH
+              {t('navbar.contact')}
             </Link>
           </div>
 
           {/* Mobile Language Switcher */}
           <div className="mt-4 pt-4 border-t border-slate-200/80">
             <div className="flex items-center space-x-6 text-[11px] font-black tracking-widest text-slate-400">
-              <button className="text-[#C6893F] cursor-default border-b-2 border-[#C6893F] pb-1 flex items-center gap-1.5">
+              <button 
+                onClick={() => i18n.changeLanguage('uz')} 
+                className={`${isUz ? 'text-[#C6893F] cursor-default border-b-2 border-[#C6893F]' : 'hover:text-slate-800 transition-colors cursor-pointer'} pb-1 flex items-center gap-1.5`}
+              >
                 <img src="https://flagcdn.com/w20/uz.png" alt="UZ" className="w-4 h-auto rounded-[2px]" />
                 UZB
               </button>
-              <button className="hover:text-slate-800 transition-colors pb-1 cursor-pointer flex items-center gap-1.5">
+              <button 
+                onClick={() => i18n.changeLanguage('ru')} 
+                className={`${isRu ? 'text-[#C6893F] cursor-default border-b-2 border-[#C6893F]' : 'hover:text-slate-800 transition-colors cursor-pointer'} pb-1 flex items-center gap-1.5`}
+              >
                 <img src="https://flagcdn.com/w20/ru.png" alt="RU" className="w-4 h-auto rounded-[2px]" />
                 RUS
               </button>
-              <button className="hover:text-slate-800 transition-colors pb-1 cursor-pointer flex items-center gap-1.5">
+              <button 
+                onClick={() => i18n.changeLanguage('en')} 
+                className={`${isEn ? 'text-[#C6893F] cursor-default border-b-2 border-[#C6893F]' : 'hover:text-slate-800 transition-colors cursor-pointer'} pb-1 flex items-center gap-1.5`}
+              >
                 <img src="https://flagcdn.com/w20/gb.png" alt="EN" className="w-4 h-auto rounded-[2px]" />
                 ENG
               </button>
@@ -244,12 +269,12 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
           {/* Mobile Contacts */}
           <div className="mt-4 pt-4 border-t border-slate-200/80 space-y-3">
             <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
-              Biz bilan bog'lanish:
+              {t('navbar.contactUs')}
             </div>
             
             <div className="flex items-center justify-between py-1 border-b border-slate-100">
               <div>
-                <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">Telefon</div>
+                <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">{t('navbar.phone')}</div>
                 <a href="tel:+998995606166" className="text-sm font-extrabold shine-number">
                   +998 99 560-61-66
                 </a>
@@ -261,37 +286,37 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
 
             <div className="flex items-center justify-between py-1 border-b border-slate-100">
               <div>
-                <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">Telegram</div>
+                <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">{t('navbar.telegram')}</div>
                 <a href="https://t.me/kwf_uz" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-slate-700 hover:text-[#C6893F]">
-                  Bizning kanal
+                  {t('navbar.ourChannel')}
                 </a>
               </div>
               <a href="https://t.me/kwf_uz" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
-                <img src="/telegram.png" alt="Telegram" className="w-7 h-7 object-contain" />
+                <img src="/telegram.png" alt={t('navbar.telegram')} className="w-7 h-7 object-contain" />
               </a>
             </div>
 
             <div className="flex items-center justify-between py-1 border-b border-slate-100">
               <div>
-                <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">Instagram</div>
+                <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">{t('navbar.instagram')}</div>
                 <a href="https://www.instagram.com/kwf_uz" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-slate-700 hover:text-[#C6893F]">
-                  Bizning sahifa
+                  {t('navbar.ourPage')}
                 </a>
               </div>
               <a href="https://www.instagram.com/kwf_uz" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
-                <img src="/instagram.png" alt="Instagram" className="w-7 h-7 object-contain" />
+                <img src="/instagram.png" alt={t('navbar.instagram')} className="w-7 h-7 object-contain" />
               </a>
             </div>
 
             <div className="flex items-center justify-between py-1">
               <div className="pr-4">
-                <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">Manzil</div>
+                <div className="text-[10px] text-[#C6893F] font-bold uppercase tracking-wider">{t('navbar.address')}</div>
                 <a href="https://maps.app.goo.gl/qLtyXVBd8t14qiSz8" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-600 leading-tight block mt-0.5">
-                  Xorazm vil., Urganch sh., Ashxobod MFY, Sanoatchilar ko'chasi
+                  {t('navbar.addressFull')}
                 </a>
               </div>
               <a href="https://maps.app.goo.gl/qLtyXVBd8t14qiSz8" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity shrink-0">
-                <img src="/google-maps.png" alt="Xarita" className="w-7 h-7 object-contain" />
+                <img src="/google-maps.png" alt={t('navbar.map')} className="w-7 h-7 object-contain" />
               </a>
             </div>
           </div>
@@ -300,7 +325,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             onClick={() => { setIsMenuOpen(false); onOpenQuote(); }}
             className="w-full mt-4 bg-[#C6893F] hover:bg-[#B37830] text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 cursor-pointer"
           >
-            <span>Ariza qoldirish</span>
+            <span>{t('navbar.submitRequest')}</span>
           </button>
         </div>
       )}

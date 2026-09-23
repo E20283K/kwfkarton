@@ -3,39 +3,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { CheckCircle2, Phone, Send, Loader2 } from 'lucide-react';
 import { sendLeadToTelegram } from '../services/telegram';
-
-const MANAGERS = [
-  {
-    role: "Tijorat bo'limi boshlig'i",
-    phone: "+998 99 560-61-66",
-    telegram: "@manager_kwf",
-    telegramUrl: "https://t.me/manager_kwf",
-    isHead: true,
-  },
-  {
-    role: "Sotuv menejeri",
-    phone: "+998 99 560-00-96",
-    telegram: "@KWF_sales_manager",
-    telegramUrl: "https://t.me/KWF_sales_manager",
-    isHead: false,
-  },
-  {
-    role: "Sotuv menejeri",
-    phone: "+998 99 560-66-11",
-    telegram: "@Manager_SnP_KWF",
-    telegramUrl: "https://t.me/Manager_SnP_KWF",
-    isHead: false,
-  },
-  {
-    role: "Sotuv menejeri",
-    phone: "+998 99 560-03-06",
-    telegram: "@sharifa_kwf1",
-    telegramUrl: "https://t.me/sharifa_kwf1",
-    isHead: false,
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function ContactPage() {
+  const { t } = useTranslation('contact');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -43,9 +14,79 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSent, setIsSent] = useState(false);
 
+  const MANAGERS = [
+    {
+      role: t('managers.0.role'),
+      phone: "+998 99 560-61-66",
+      telegram: "@manager_kwf",
+      telegramUrl: "https://t.me/manager_kwf",
+      isHead: true,
+    },
+    {
+      role: t('managers.1.role'),
+      phone: "+998 99 560-00-96",
+      telegram: "@KWF_sales_manager",
+      telegramUrl: "https://t.me/KWF_sales_manager",
+      isHead: false,
+    },
+    {
+      role: t('managers.2.role'),
+      phone: "+998 99 560-66-11",
+      telegram: "@Manager_SnP_KWF",
+      telegramUrl: "https://t.me/Manager_SnP_KWF",
+      isHead: false,
+    },
+    {
+      role: t('managers.3.role'),
+      phone: "+998 99 560-03-06",
+      telegram: "@sharifa_kwf1",
+      telegramUrl: "https://t.me/sharifa_kwf1",
+      isHead: false,
+    },
+  ];
+
   const handleOpenQuote = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const SOCIAL_LINKS = [
+    {
+      name: 'Instagram',
+      href: 'https://www.instagram.com/kwf_uz',
+      icon: (
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'Facebook',
+      href: 'https://www.facebook.com/kwf.uz',
+      icon: (
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M9 8H7v3h2v9h4v-9h3.61l.39-3H13V6c0-.88.45-1 1-1h2V1h-3c-2.9 0-5 1.88-5 5v2z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'YouTube',
+      href: 'https://www.youtube.com/@KWF_Packaging',
+      icon: (
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'Telegram',
+      href: 'https://t.me/kwf_uz',
+      icon: (
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.717-.98 4.793-1.386 6.812-.172.853-.51 1.14-.836 1.168-.71.063-1.25-.427-1.938-.838-1.077-.645-1.686-1.045-2.733-1.674-1.21-.726-.426-1.127.264-1.785.18-.172 3.324-2.812 3.385-3.048.007-.033.014-.157-.063-.223-.078-.066-.192-.043-.275-.026-.118.025-2.003 1.178-5.655 3.486-.535.337-1.02.503-1.455.49-.48-.014-1.402-.256-2.087-.463-.84-.253-1.507-.387-1.45-.817.03-.224.364-.454 1.002-.693 3.93-1.597 6.55-2.65 7.86-3.16 3.743-1.45 4.52-1.702 5.027-1.71.112-.002.362.023.524.145.137.103.175.247.19.352.015.106.033.325.018.491z" />
+        </svg>
+      ),
+    },
+  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,7 +98,7 @@ export default function ContactPage() {
       phone,
       email,
       message,
-      source: "Bog'lanish sahifasi",
+      source: t('form.source'),
     });
     setIsSubmitting(false);
     setIsSent(true);
@@ -71,15 +112,95 @@ export default function ContactPage() {
       <section className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-10 sm:py-14">
           <div className="max-w-3xl">
-            <span className="text-xs font-bold text-[#C6893F] uppercase tracking-wider block mb-2 font-sans">
-              ALOQA VA MUROJAAT
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight leading-tight mb-3">
-              Biz bilan bog'lanish
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight leading-tight">
+              {t('hero.title')}
             </h1>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              Qadoqlash bo'yicha maslahat olish, tijorat taklifi so'rash yoki buyurtma berish uchun quyidagi to'g'ridan-to'g'ri aloqa kanallaridan foydalaning.
-            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 4-Column Quick Contacts Bar (Address, Phone, Email, Social Media) + Legal Info */}
+      <section className="bg-white border-b border-slate-200/80 py-8 sm:py-10">
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 space-y-6 sm:space-y-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-10 items-start">
+            {/* 1. Address */}
+            <div className="space-y-1.5">
+              <span className="text-xs sm:text-sm font-medium text-slate-500 block">
+                {t('info.addressLabel', 'Manzil')}
+              </span>
+              <p className="text-sm sm:text-base lg:text-[17px] font-bold text-neutral-900 leading-snug">
+                {t('info.addressValue')}
+              </p>
+            </div>
+
+            {/* 2. Phone */}
+            <div className="space-y-1.5">
+              <span className="text-xs sm:text-sm font-medium text-slate-500 block">
+                {t('info.phoneLabel', 'Telefon')}
+              </span>
+              <a
+                href="tel:+998995606166"
+                className="text-base sm:text-lg lg:text-xl font-bold text-neutral-900 hover:text-[#C6893F] transition-colors inline-block tracking-tight"
+              >
+                {t('info.phoneValue', '(+998) 99 560-61-66')}
+              </a>
+            </div>
+
+            {/* 3. Email */}
+            <div className="space-y-1.5">
+              <span className="text-xs sm:text-sm font-medium text-slate-500 block">
+                {t('info.emailLabel', 'Pochta')}
+              </span>
+              <a
+                href="mailto:kwf.sales1@matpap.uz"
+                className="text-sm sm:text-base lg:text-lg font-bold text-neutral-900 hover:text-[#C6893F] transition-colors inline-block break-all"
+              >
+                {t('info.emailValue', 'kwf.sales1@matpap.uz')}
+              </a>
+            </div>
+
+            {/* 4. Social Networks */}
+            <div className="space-y-1.5">
+              <span className="text-xs sm:text-sm font-medium text-slate-500 block">
+                {t('info.socialLabel', 'Ijtimoiy tarmoqlar')}
+              </span>
+              <div className="flex items-center space-x-4 pt-1 text-neutral-900">
+                {SOCIAL_LINKS.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.name}
+                    className="text-neutral-900 hover:text-[#C6893F] hover:scale-115 transition-all duration-200"
+                  >
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Corporate Legal Info Box */}
+          <div className="bg-[#F8F9FA] border border-slate-200/90 rounded-2xl p-5 sm:p-6 text-xs sm:text-sm text-slate-600">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <div>
+                <span className="font-bold text-neutral-900 block mb-0.5">{t('legal.nameLabel')}</span>
+                <span className="text-slate-600">{t('legal.nameValue')}</span>
+              </div>
+              <div>
+                <span className="font-bold text-neutral-900 block mb-0.5">{t('legal.innLabel')}</span>
+                <span className="text-slate-600">300472900</span>
+              </div>
+              <div>
+                <span className="font-bold text-neutral-900 block mb-0.5">{t('legal.okedLabel')}</span>
+                <span className="text-slate-600">{t('legal.okedValue')}</span>
+              </div>
+              <div>
+                <span className="font-bold text-neutral-900 block mb-0.5">{t('legal.soatoLabel')}</span>
+                <span className="text-slate-600">{t('legal.soatoValue')}</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -143,7 +264,7 @@ export default function ContactPage() {
       <main className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-10 sm:py-14">
         <div className="mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-3xl font-black text-[#C6893F] tracking-tight">
-            Zavod manzili va ariza qoldirish
+            {t('main.title')}
           </h2>
         </div>
 
@@ -152,7 +273,7 @@ export default function ContactPage() {
           {/* Left: Native Google Maps Embed */}
           <div className="relative w-full h-[360px] sm:h-[420px] lg:h-full min-h-[360px] lg:min-h-[480px]">
             <iframe
-              title="Karton Works Factory - Urganch"
+              title={t('map.title')}
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2704.2400274302618!2d60.62964897686588!3d41.53037797128148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfc9003b97a65b%3A0x1bd5f3cac93bf538!2sKarton%20Works%20Factory!5e0!3m2!1suz!2suz!4v1710672000000!5m2!1suz!2suz"
               className="absolute inset-0 w-full h-full border-0"
               loading="lazy"
@@ -169,10 +290,10 @@ export default function ContactPage() {
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-bold text-neutral-900 mb-1.5">
-                  Arizangiz qabul qilindi
+                  {t('form.successTitle')}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500 mb-5">
-                  Mutaxassisimiz tez orada siz bilan bog'lanadi.
+                  {t('form.successDesc')}
                 </p>
                 <button
                   onClick={() => {
@@ -184,13 +305,13 @@ export default function ContactPage() {
                   }}
                   className="text-xs sm:text-sm font-bold text-[#C6893F] hover:underline cursor-pointer"
                 >
-                  Yangi ariza yuborish
+                  {t('form.sendNew')}
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-[#C6893F] tracking-tight mb-2">
-                  Ariza qoldirish
+                  {t('form.title')}
                 </h3>
 
                 <div>
@@ -198,7 +319,7 @@ export default function ContactPage() {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Ismingiz"
+                    placeholder={t('form.namePlaceholder')}
                     className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#C6893F] focus:bg-white transition-all"
                   />
                 </div>
@@ -208,7 +329,7 @@ export default function ContactPage() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Elektron pochta"
+                    placeholder={t('form.emailPlaceholder')}
                     className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#C6893F] focus:bg-white transition-all"
                   />
                 </div>
@@ -219,7 +340,7 @@ export default function ContactPage() {
                     required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="Telefon raqam *"
+                    placeholder={t('form.phonePlaceholder')}
                     className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#C6893F] focus:bg-white transition-all"
                   />
                 </div>
@@ -229,7 +350,7 @@ export default function ContactPage() {
                     rows={4}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Qadoq parametrlari, hajmi yoki izoh"
+                    placeholder={t('form.messagePlaceholder')}
                     className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#C6893F] focus:bg-white transition-all resize-none"
                   />
                 </div>
@@ -243,10 +364,10 @@ export default function ContactPage() {
                     {isSubmitting ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin" />
-                        <span>Yuborilmoqda...</span>
+                        <span>{t('form.submitting')}</span>
                       </>
                     ) : (
-                      <span>Xabar yuborish</span>
+                      <span>{t('form.submitBtn')}</span>
                     )}
                   </button>
                 </div>
@@ -256,27 +377,6 @@ export default function ContactPage() {
 
         </div>
 
-        {/* Corporate Legal Info Box */}
-        <div className="mt-8 bg-white border border-slate-200/90 rounded-xl p-5 sm:p-6 text-xs sm:text-sm text-slate-600">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div>
-              <span className="font-bold text-neutral-900 block mb-0.5">Yuridik nomi</span>
-              <span>"KARTON WORKS" MCHJ</span>
-            </div>
-            <div>
-              <span className="font-bold text-neutral-900 block mb-0.5">STIR (INN)</span>
-              <span>300472900</span>
-            </div>
-            <div>
-              <span className="font-bold text-neutral-900 block mb-0.5">IFUT (OKED)</span>
-              <span>17210 (Gofrokarton va qog'oz qadoq)</span>
-            </div>
-            <div>
-              <span className="font-bold text-neutral-900 block mb-0.5">SOATO</span>
-              <span>1733401 (Urganch shahri)</span>
-            </div>
-          </div>
-        </div>
       </main>
 
       <Footer onOpenQuote={handleOpenQuote} />

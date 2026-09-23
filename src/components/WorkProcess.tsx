@@ -1,35 +1,39 @@
+import { useTranslation } from "react-i18next";
+
 interface WorkProcessProps {
   onOpenQuote?: () => void;
 }
 
 export default function WorkProcess({ onOpenQuote }: WorkProcessProps) {
+  const { t } = useTranslation();
+
   const steps = [
     {
       num: "1",
-      title: "Buyurtma berish",
-      p1: "Telefon yoki telegram orqali biz bilan bog'lanib, o'z buyurtmangizni qoldirasiz.",
+      title: t("workProcess.step1.title"),
+      p1: t("workProcess.step1.desc"),
     },
     {
       num: "2",
-      title: "Hisob-kitob va taklif",
-      p1: "So'rovingiz asosida mahsulot narxi hisoblanib, sizga batafsil tijorat taklifi taqdim etiladi.",
+      title: t("workProcess.step2.title"),
+      p1: t("workProcess.step2.desc"),
     },
     {
       num: "3",
-      title: "Ishlab chiqarish va nazorat",
-      p1: "Kelishuvga asosan (100% yoki ishlab chiqarishdan oldin 50% to'lov) mahsulot tayyorlanadi va qat'iy sifat nazoratidan o'tkaziladi.",
+      title: t("workProcess.step3.title"),
+      p1: t("workProcess.step3.desc"),
     },
     {
       num: "4",
-      title: "Yetkazib berish",
-      p1: "Tayyor mahsulot manzilingizga yetkazib beriladi (agar 50% to'lov qilingan bo'lsa, qolgan qismi to'langandan so'ng).",
+      title: t("workProcess.step4.title"),
+      p1: t("workProcess.step4.desc"),
     },
   ];
 
   return (
     <section className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-14">
       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight mb-6 sm:mb-8">
-        Ishlash tartibi
+        {t("workProcess.title")}
       </h2>
 
       <div className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-10 lg:p-12 shadow-xs">
@@ -78,13 +82,13 @@ export default function WorkProcess({ onOpenQuote }: WorkProcessProps) {
         {/* Bottom CTA bar inside Scheme */}
         <div className="mt-10 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs sm:text-sm text-slate-600 text-center sm:text-left">
-            Individual o'lchamlar bo'yicha maslahatlashishga yoki partiyani hisoblashga tayyormisiz?
+            {t("workProcess.ctaText")}
           </p>
           <button
             onClick={onOpenQuote}
             className="bg-[#C6893F] hover:bg-[#B37830] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-lg shadow-md transition-all cursor-pointer shrink-0 active:scale-95"
           >
-            Hisob-kitobga ariza qoldirish
+            {t("workProcess.ctaButton")}
           </button>
         </div>
 

@@ -3,86 +3,109 @@ import Logo from './Logo';
 
 interface LoadingScreenProps {
   onComplete: () => void;
+  assets?: string[];
+  minDisplayTime?: number;
 }
 
-export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
-  const [variant, setVariant] = useState<'default' | 'blue'>('default');
-  const [progress, setProgress] = useState(0);
+const DEFAULT_ASSETS = [
+  '/hero.png',
+  '/values/engineering.svg',
+  '/values/economy.svg',
+  '/values/speed.svg',
+  '/values/white.svg',
+  '/values/srp.svg',
+];
+
+export default function LoadingScreen({
+  onComplete,
+  assets,
+  minDisplayTime = 1000,
+}: LoadingScreenProps) {
+  const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    // Cross-fade animation for the logo
-    const interval = setInterval(() => {
-      setVariant((v) => (v === 'default' ? 'blue' : 'default'));
-    }, 800);
-    return () => clearInterval(interval);
-  }, []);
+    const assetsToPreload = assets && assets.length > 0 ? assets : DEFAULT_ASSETS;
 
-  useEffect(() => {
-    // Preload critical and requested assets
-    const portfolioImages = Array.from({ length: 54 }, (_, i) => {
-      const num = i + 1;
-      const pad = String(num).padStart(2, '0');
-      const ext = num <= 5 ? 'png' : 'jpg';
-      return `/portfolio/kwf-portfolio-${pad}.${ext}`;
-    });
+    let hasCompleted = false;
+    const startTime = Date.now();
 
-    const assetsToPreload = [
-      '/hero.png',
-      '/values/engineering.svg',
-      '/values/economy.svg',
-      '/values/speed.svg',
-      '/values/white.svg',
-      '/values/srp.svg',
-      ...portfolioImages,
-    ];
+    const finishLoading = () => {
+      if (hasCompleted) return;
+      hasCompleted = true;
+
+      const elapsed = Date.now() - startTime;
+      const remainingTime = Math.max(0, minDisplayTime - elapsed);
+
+      setTimeout(() => {
+        setIsExiting(true);
+        setTimeout(() => {
+          onComplete();
+        }, 400); // Graceful 400ms fade-out
+      }, remainingTime);
+    };
 
     let loadedCount = 0;
     const total = assetsToPreload.length;
 
+    if (total === 0) {
+      finishLoading();
+      return;
+    }
+
     const handleAssetLoad = () => {
       loadedCount++;
-      setProgress(Math.round((loadedCount / total) * 100));
-      
       if (loadedCount >= total) {
-        // Small delay to ensure smooth transition at 100%
-        setTimeout(() => {
-          onComplete();
-        }, 600);
+        finishLoading();
       }
     };
 
     assetsToPreload.forEach((src) => {
       const img = new Image();
-      img.onload = handleAssetLoad;
-      img.onerror = handleAssetLoad; // Proceed even if an image fails to load
+      let resolved = false;
+
+      const onDone = () => {
+        if (resolved) return;
+        resolved = true;
+        if ('decode' in img) {
+          img.decode().then(handleAssetLoad).catch(handleAssetLoad);
+        } else {
+          handleAssetLoad();
+        }
+      };
+
+      img.onload = onDone;
+      img.onerror = () => {
+        if (resolved) return;
+        resolved = true;
+        handleAssetLoad();
+      };
       img.src = src;
+
+      if (img.complete) {
+        onDone();
+      }
     });
 
-    // Fallback: If network is extremely slow, allow continuing after 15 seconds
-    const fallbackTimeout = setTimeout(() => {
-      onComplete();
-    }, 15000);
+    // Fallback: If network is slow, proceed after 8 seconds
+    const fallbackTimeout = setTimeout(finishLoading, 8000);
 
     return () => clearTimeout(fallbackTimeout);
-  }, [onComplete]);
+  }, [onComplete, assets, minDisplayTime]);
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-[#F8F9FA] flex flex-col items-center justify-center">
-      {/* Animated Logo */}
-      <div className="w-48 sm:w-64 md:w-80 relative flex items-center justify-center">
-        <Logo variant={variant} className="w-full h-auto" />
-      </div>
+    <div
+      className={`fixed inset-0 z-[9999] bg-[#F8F9FA] flex flex-col items-center justify-center transition-opacity duration-400 ease-out select-none ${
+        isExiting ? 'opacity-0 pointer-events-none' : 'opacity-100'
+      }`}
+    >
+      <div className="relative flex flex-col items-center justify-center">
+        {/* Bouncing Logo Icon changing color from default to blue */}
+        <div className="animate-loader-bounce">
+          <Logo iconOnly variant="pulse" className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28" />
+        </div>
 
-      {/* Progress Bar Container */}
-      <div className="mt-12 w-48 sm:w-64 h-1.5 bg-slate-200 rounded-full overflow-hidden">
-        <div 
-          className="h-full bg-[#C6893F] transition-all duration-300 ease-out rounded-full"
-          style={{ width: `${progress}%` }}
-        />
-      </div>
-      
-      <div className="mt-4 text-[#C6893F] font-bold tracking-widest uppercase text-xs sm:text-sm font-mono text-center">
-        <span>{progress}%</span>
+        {/* Dynamic floor shadow synchronized with the bounce */}
+        <div className="mt-2 w-14 sm:w-16 h-2 bg-slate-400/25 rounded-[100%] blur-[2px] animate-loader-shadow" />
       </div>
     </div>
   );

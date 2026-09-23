@@ -1,51 +1,45 @@
+import { useTranslation } from 'react-i18next';
+
 interface AdvantagesProps {
   onOpenQuote: () => void;
 }
 
-const advantages = [
+const advantagesKeys = [
   {
-    keyword: "ENGINEERING",
-    title: "Muhandislik yondashuvi",
-    desc: "Har bir quti mahsulot, logistika va laboratoriya ma'lumotlari asosida loyihalanadi.",
+    id: "engineering",
     icon: "/values/engineering.svg",
   },
   {
-    keyword: "ECONOMY",
-    title: "Iqtisodiy yechim",
-    desc: "Material, logistika va shikastlanish xarajatlarini minimallashtiramiz.",
+    id: "economy",
     icon: "/values/economy.svg",
   },
   {
-    keyword: "SPEED",
-    title: "Tez ishlab chiqarish",
-    desc: "50 000 tagacha qutini 2–3 ish kunida. Takroriy buyurtmalar — 24 soat ichida.",
+    id: "speed",
     icon: "/values/speed.svg",
   },
   {
-    keyword: "WHITE",
-    title: "Premium oq qadoqlash",
-    desc: "Oq liner bilan yorqin CMYK bosma. Brend qiymatini oshiradi.",
+    id: "white",
     icon: "/values/white.svg",
   },
   {
-    keyword: "SRP",
-    title: "Shelf Ready Packaging",
-    desc: "Ombordan to'g'ridan-to'g'ri peshtaxtaga — tez merchandising.",
+    id: "srp",
     icon: "/values/srp.svg",
   },
 ];
 
 export default function Advantages({ onOpenQuote }: AdvantagesProps) {
+  const { t } = useTranslation();
+
   return (
     <section id="advantages" className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-14 scroll-mt-20">
       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight mb-6 sm:mb-10">
-        Bizning afzalliklarimiz
+        {t('advantages.sectionTitle')}
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-        {advantages.map(({ keyword, title, desc, icon }) => (
+        {advantagesKeys.map(({ id, icon }) => (
           <div
-            key={keyword}
+            key={id}
             className="group relative bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-xs hover:shadow-xl hover:border-[#C6893F]/50 transition-all duration-300 flex flex-col justify-between overflow-hidden min-h-[260px] sm:min-h-[290px]"
           >
             {/* Ambient Watermark Icon (faint huge graphic in the bottom-right corner) */}
@@ -65,24 +59,24 @@ export default function Advantages({ onOpenQuote }: AdvantagesProps) {
                 <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 select-none group-hover:scale-110 transition-transform duration-300">
                   <img
                     src={icon}
-                    alt={`${keyword} - ${title}`}
+                    alt={`${t(`advantages.items.${id}.keyword`)} - ${t(`advantages.items.${id}.title`)}`}
                     className="w-full h-full object-contain drop-shadow-xs"
                     loading="lazy"
                   />
                 </div>
                 <span className="text-xs sm:text-sm font-black tracking-wider text-[#C6893F] uppercase font-mono">
-                  {keyword}
+                  {t(`advantages.items.${id}.keyword`)}
                 </span>
               </div>
 
               {/* Big Bold Title */}
               <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-neutral-900 leading-snug tracking-tight mb-2.5 group-hover:text-[#C6893F] transition-colors">
-                {title}
+                {t(`advantages.items.${id}.title`)}
               </h3>
 
               {/* Description */}
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                {desc}
+                {t(`advantages.items.${id}.desc`)}
               </p>
             </div>
           </div>
@@ -95,13 +89,13 @@ export default function Advantages({ onOpenQuote }: AdvantagesProps) {
 
           <div className="relative z-10">
             <span className="text-xs font-black uppercase tracking-widest text-white/75 block mb-3 font-mono">
-              INDIVIDUAL BUYURTMA
+              {t('advantages.cta.tag')}
             </span>
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white leading-tight mb-3 tracking-tight">
-              Optimal qadoq yechimini tayyorlaymiz
+              {t('advantages.cta.title')}
             </h3>
             <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
-              O'lchamlar, qalinlik va logistika talablari bo'yicha mutaxassislarimiz bepul konsultatsiya beradi.
+              {t('advantages.cta.desc')}
             </p>
           </div>
 
@@ -110,7 +104,7 @@ export default function Advantages({ onOpenQuote }: AdvantagesProps) {
               onClick={onOpenQuote}
               className="w-full sm:w-auto text-xs sm:text-sm font-bold text-[#C6893F] bg-white rounded-xl px-6 py-3.5 hover:bg-white/95 transition-all duration-200 cursor-pointer shadow-sm active:scale-95 uppercase tracking-wider text-center"
             >
-              So'rov yuborish
+              {t('advantages.cta.button')}
             </button>
           </div>
         </div>

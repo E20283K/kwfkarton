@@ -2,9 +2,10 @@
 
 const TELEGRAM_BOT_TOKEN = "8727227121:AAFOz-n8WgwtyO21FNaY9xI01AZFAqsF4Ak";
 
-// List of recipient chat IDs (can be personal user IDs or group IDs like "-100...")
+// List of recipient chat IDs (can be personal user IDs or group IDs)
 const TELEGRAM_CHAT_IDS = [
-  "5775687766",
+  "-5578754950", // KWF - Web Ariza guruhi
+  "5775687766",  // Admin
 ];
 
 export interface LeadFormData {

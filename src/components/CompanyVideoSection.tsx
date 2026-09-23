@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Play } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface CompanyVideoSectionProps {
   videoId?: string;
@@ -8,9 +9,12 @@ interface CompanyVideoSectionProps {
 
 export default function CompanyVideoSection({
   videoId = "dB00WnCtxcQ",
-  title = "Ishlab chiqarish jarayoni",
+  title,
 }: CompanyVideoSectionProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const { t } = useTranslation();
+
+  const displayTitle = title || t('companyVideo.defaultTitle');
 
   // High quality YouTube thumbnail
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
@@ -21,7 +25,7 @@ export default function CompanyVideoSection({
       {/* Minimalist Section Header — exactly matching site pattern */}
       <div className="mb-6 sm:mb-8">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight">
-          {title}
+          {displayTitle}
         </h2>
       </div>
 
@@ -31,7 +35,7 @@ export default function CompanyVideoSection({
           <iframe
             className="w-full h-full border-0"
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
-            title="Karton Works Factory - Ishlab chiqarish jarayoni"
+            title={t('companyVideo.iframeTitle')}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
@@ -46,7 +50,7 @@ export default function CompanyVideoSection({
                 setIsPlaying(true);
               }
             }}
-            aria-label="Videoni tomosha qilish"
+            aria-label={t('companyVideo.ariaLabel')}
           >
             {/* Poster Thumbnail Image */}
             <img
@@ -54,7 +58,7 @@ export default function CompanyVideoSection({
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src = fallbackThumbnailUrl;
               }}
-              alt="Karton Works Factory ishlab chiqarish"
+              alt={t('companyVideo.altText')}
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-103 transition-transform duration-500 ease-out brightness-90 group-hover:brightness-95"
               loading="lazy"
             />

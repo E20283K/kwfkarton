@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 interface FooterProps {
   onOpenQuote?: () => void;
@@ -29,10 +30,17 @@ const SOCIAL = [
   },
 ];
 
-export default function Footer(_props?: FooterProps) {
+export default function Footer({ onOpenQuote }: FooterProps = {}) {
+  const { t, i18n } = useTranslation();
+  if (false as boolean) onOpenQuote?.();
   const [clickCount, setClickCount] = useState(0);
   const [showEasterEgg, setShowEasterEgg] = useState(false);
   const clickTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const currentLang = i18n.resolvedLanguage || i18n.language || 'uz';
+  const isUz = currentLang.startsWith('uz');
+  const isRu = currentLang.startsWith('ru');
+  const isEn = currentLang.startsWith('en');
 
   const handleLogoClick = () => {
     const newCount = clickCount + 1;
@@ -56,7 +64,7 @@ export default function Footer(_props?: FooterProps) {
   };
 
   return (
-    <footer id="footer" className="bg-[#3D4046] text-white font-sans">
+    <footer id="footer" key={currentLang} className="bg-[#3D4046] text-white font-sans">
       {/* Easter Egg Overlay */}
       {showEasterEgg && (
         <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/90 transition-opacity duration-300 select-none pointer-events-none">
@@ -67,7 +75,7 @@ export default function Footer(_props?: FooterProps) {
       {/* Upper Footer Container: 5 Columns matching screenshot */}
       <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pt-12 pb-14">
 
-        {/* Social Network Icons Bar at the top of the footer */}
+        {/* Social Network Icons & Language Bar at the top of the footer */}
         <div className="flex flex-col sm:flex-row items-center justify-between pb-8 mb-10 border-b border-white/10 gap-4 select-none">
           <div className="flex items-center space-x-3">
             <img
@@ -78,26 +86,51 @@ export default function Footer(_props?: FooterProps) {
               draggable="false"
             />
             <span className="text-xs text-slate-400 font-medium hidden sm:inline border-l border-white/15 pl-3 py-1 select-none">
-              Gofroqadoq ishlab chiqarish zavodi
+              {t('footer.subtitle')}
             </span>
           </div>
 
-          {/* Social Network Icons */}
-          <div className="flex items-center space-x-2">
-            {SOCIAL.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={s.label}
-                className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#C6893F]/20 border border-white/10 hover:border-[#C6893F] flex items-center justify-center text-slate-300 hover:text-white transition-all duration-200"
+          {/* Social Network Icons & Quick Language Switcher */}
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 text-[11px] font-bold text-slate-400 border-r border-white/15 pr-4">
+              <button
+                onClick={() => i18n.changeLanguage('uz')}
+                className={`${isUz ? 'text-[#C6893F] font-black' : 'hover:text-white text-slate-400'} cursor-pointer transition-colors`}
               >
-                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                  <path d={s.path} />
-                </svg>
-              </a>
-            ))}
+                UZ
+              </button>
+              <span>/</span>
+              <button
+                onClick={() => i18n.changeLanguage('ru')}
+                className={`${isRu ? 'text-[#C6893F] font-black' : 'hover:text-white text-slate-400'} cursor-pointer transition-colors`}
+              >
+                RU
+              </button>
+              <span>/</span>
+              <button
+                onClick={() => i18n.changeLanguage('en')}
+                className={`${isEn ? 'text-[#C6893F] font-black' : 'hover:text-white text-slate-400'} cursor-pointer transition-colors`}
+              >
+                EN
+              </button>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              {SOCIAL.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#C6893F]/20 border border-white/10 hover:border-[#C6893F] flex items-center justify-center text-slate-300 hover:text-white transition-all duration-200"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d={s.path} />
+                  </svg>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -107,46 +140,46 @@ export default function Footer(_props?: FooterProps) {
           {/* Column 1: BO'LIMLAR */}
           <div className="space-y-3">
             <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
-              BO'LIMLAR
+              {t('footer.sections')}
             </h3>
             <ul className="space-y-2 text-slate-300 font-normal">
               <li>
                 <Link to="/" className="hover:text-white transition-colors">
-                  Bosh sahifa
+                  {t('footer.nav.home')}
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="hover:text-white transition-colors">
-                  Xizmatlar
+                  {t('footer.nav.services')}
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="hover:text-white transition-colors">
-                  Kompaniya haqida
+                  {t('footer.nav.about')}
                 </Link>
               </li>
               <li>
                 <Link to="/#gallery" className="hover:text-white transition-colors">
-                  Ishlab chiqarish
+                  {t('footer.nav.production')}
                 </Link>
               </li>
               <li>
                 <Link to="/portfolio" className="hover:text-white transition-colors">
-                  Portfolio
+                  {t('footer.nav.portfolio')}
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-white transition-colors">
-                  Bog'lanish va aloqa
+                  {t('footer.nav.contact')}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: BOG'LANISH */}
+          {/* Column 2: BOG'LANISH */}
           <div className="space-y-3">
             <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
-              BOG'LANISH
+              {t('footer.contact')}
             </h3>
             <div className="space-y-3 text-slate-300 font-normal">
 
@@ -154,9 +187,9 @@ export default function Footer(_props?: FooterProps) {
               <div className="flex items-start space-x-2.5">
                 <MapPin className="w-4 h-4 text-[#C6893F] shrink-0 mt-0.5" />
                 <div className="leading-snug">
-                  Xorazm viloyati, Urganch sh.,<br />
-                  Ashxobod MFY, Sanoatchilar ko'chasi,<br />
-                  19/2-uy, A-korpus
+                  {t('footer.address.line1')}<br />
+                  {t('footer.address.line2')}<br />
+                  {t('footer.address.line3')}
                 </div>
               </div>
 
@@ -185,18 +218,18 @@ export default function Footer(_props?: FooterProps) {
             </div>
           </div>
 
-          {/* Column 4: REKVIZITLAR */}
+          {/* Column 3: REKVIZITLAR */}
           <div className="space-y-3">
             <h3 className="font-extrabold uppercase text-white tracking-wider text-xs sm:text-sm">
-              REKVIZITLAR
+              {t('footer.requisites')}
             </h3>
             <div className="space-y-1.5 text-slate-300 font-normal leading-relaxed">
               <div className="font-semibold text-white">
-                "KARTON WORKS" MCHJ
+                {t('footer.company')}
               </div>
-              <div>STIR (INN): <span className="text-white font-medium">300472900</span></div>
-              <div>IFUT (OKED): <span className="text-white font-medium">17210</span></div>
-              <div>SOATO: <span className="text-white font-medium">1733401</span></div>
+              <div>{t('footer.inn')} <span className="text-white font-medium">300472900</span></div>
+              <div>{t('footer.oked')} <span className="text-white font-medium">17210</span></div>
+              <div>{t('footer.soato')} <span className="text-white font-medium">1733401</span></div>
             </div>
           </div>
 
@@ -208,10 +241,10 @@ export default function Footer(_props?: FooterProps) {
       <div className="border-t border-white/10 py-3.5 sm:py-4 bg-[#2B2E33]">
         <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
           <p className="font-medium text-slate-300">
-            © 2025-2026 - "KARTON WORKS" MCHJ
+            {t('footer.copyright')}
           </p>
           <p className="text-[11px] text-slate-400">
-            Barcha huquqlar himoyalangan
+            {t('footer.rights')}
           </p>
         </div>
       </div>

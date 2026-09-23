@@ -128,3 +128,49 @@ body {
   filter: drop-shadow(0 0 6px rgba(198, 137, 63, 0.5));
   transform: translateY(-1px);
 }
+
+/* Loading screen bouncing & color shifting animations */
+@keyframes loader-bounce {
+  0%, 100% {
+    transform: translateY(-24px);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes loader-shadow {
+  0%, 100% {
+    transform: scale(0.6);
+    opacity: 0.2;
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.5;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes logo-color-shift {
+  0%, 100% {
+    fill: #C6893F;
+  }
+  50% {
+    fill: #00A3E0;
+  }
+}
+
+.animate-loader-bounce {
+  animation: loader-bounce 1.2s infinite;
+}
+
+.animate-loader-shadow {
+  animation: loader-shadow 1.2s infinite;
+}
+
+.animate-logo-color {
+  animation: logo-color-shift 2.4s ease-in-out infinite;
+}

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ExternalLink, Calendar, Heart, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
 function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -25,10 +25,10 @@ interface InstagramPost {
   comments?: number;
 }
 
-const DEFAULT_POSTS: InstagramPost[] = [
+const getDefaultPosts = (t: any): InstagramPost[] => [
   {
     id: "1",
-    caption: "Qadoq tanlashda qaysi omil siz uchun eng muhimi? KartonWorks har bir biznesning o'ziga xos talablarini o'rganadi. BCT va ECT ko'rsatkichlari orqali maksimal mustahkamlikni hisoblaymiz.",
+    caption: t("newsSection.posts.1.caption"),
     mediaUrl: "/hero_factory.png",
     permalink: "https://instagram.com/kwf_uz",
     timestamp: "11 Sentabr, 2026",
@@ -37,7 +37,7 @@ const DEFAULT_POSTS: InstagramPost[] = [
   },
   {
     id: "2",
-    caption: "Vitrinada mahsulot o'zini o'zi sotishi uchun nima kerak? To'g'ri ishlab chiqilgan gofrokarton qadoq savdo hajmiga bevosita ta'sir ko'rsatadi.",
+    caption: t("newsSection.posts.2.caption"),
     mediaUrl: "/assets/upaksnab/cat_4_lotki.png",
     permalink: "https://instagram.com/kwf_uz",
     timestamp: "6 Sentabr, 2026",
@@ -46,7 +46,7 @@ const DEFAULT_POSTS: InstagramPost[] = [
   },
   {
     id: "3",
-    caption: "Mustaqillikning 35 yilligi muborak bo'lsin! 35 yil — mustaqil rivojlanish, mehnat va yaratuvchanlik yili. Karton Works Factory jamoasi barcha hamkorlarini tabriklaydi.",
+    caption: t("newsSection.posts.3.caption"),
     mediaUrl: "/testing_laboratory.png",
     permalink: "https://instagram.com/kwf_uz",
     timestamp: "1 Sentabr, 2026",
@@ -55,7 +55,7 @@ const DEFAULT_POSTS: InstagramPost[] = [
   },
   {
     id: "4",
-    caption: "Raqibingiz qadoqchi tanlashda 'omadga' tayanmoqda. Siz esa — BCT va ECT raqamlariga. KWF da har bir quti laboratoriya sinovidan o'tadi.",
+    caption: t("newsSection.posts.4.caption"),
     mediaUrl: "/premium_packaging.png",
     permalink: "https://instagram.com/kwf_uz",
     timestamp: "28 Avgust, 2026",
@@ -64,7 +64,7 @@ const DEFAULT_POSTS: InstagramPost[] = [
   },
   {
     id: "5",
-    caption: "Uzoq tranzit yo'llarida mahsulotingizning 100% butun yetib borishini kafolatlaymiz. Har bir palet standartlar asosida zich o'raladi.",
+    caption: t("newsSection.posts.5.caption"),
     mediaUrl: "/hero_factory.png",
     permalink: "https://instagram.com/kwf_uz",
     timestamp: "26 Avgust, 2026",
@@ -73,7 +73,7 @@ const DEFAULT_POSTS: InstagramPost[] = [
   },
   {
     id: "6",
-    caption: "O'zbekistonning barcha hududlariga sifatli gofrotara mahsulotlarini tezkor va o'z vaqtida yetkazib berish xizmati yo'lga qo'yilgan.",
+    caption: t("newsSection.posts.6.caption"),
     mediaUrl: "/assets/upaksnab/cat_4_lotki.png",
     permalink: "https://instagram.com/kwf_uz",
     timestamp: "20 Avgust, 2026",
@@ -83,6 +83,8 @@ const DEFAULT_POSTS: InstagramPost[] = [
 ];
 
 export default function NewsSection() {
+  const { t, i18n } = useTranslation();
+  const DEFAULT_POSTS = getDefaultPosts(t);
   const [posts, setPosts] = useState<InstagramPost[]>(DEFAULT_POSTS);
   const [profileUrl, setProfileUrl] = useState<string>("https://instagram.com/kwf_uz");
   const [username, setUsername] = useState<string>("kwf_uz");
@@ -117,7 +119,6 @@ export default function NewsSection() {
       .then((data) => {
         if (!data) return;
 
-        // Support both Behold object schema ({ username, posts: [...] }) and raw array schema
         const rawPosts = Array.isArray(data) ? data : data.posts;
         if (data.username) {
           setUsername(data.username);
@@ -127,8 +128,7 @@ export default function NewsSection() {
         if (Array.isArray(rawPosts) && rawPosts.length > 0) {
           const mapped: InstagramPost[] = rawPosts.map((p: any) => ({
             id: p.id || Math.random().toString(),
-            caption: p.prunedCaption || p.caption || "Karton Works Factory yangiliklari",
-            // Use Behold CDN high-res image (1080x1440 original ratio), fallback to medium or direct url
+            caption: p.prunedCaption || p.caption || t("newsSection.defaultCaption"),
             mediaUrl:
               p.sizes?.large?.mediaUrl ||
               p.sizes?.full?.mediaUrl ||
@@ -138,7 +138,7 @@ export default function NewsSection() {
               "/hero_factory.png",
             permalink: p.permalink || `https://instagram.com/${data.username || "kwf_uz"}`,
             timestamp: p.timestamp
-              ? new Date(p.timestamp).toLocaleDateString("uz-UZ", {
+              ? new Date(p.timestamp).toLocaleDateString(i18n.language === 'uz' ? "uz-UZ" : i18n.language === 'ru' ? "ru-RU" : "en-US", {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
@@ -159,17 +159,10 @@ export default function NewsSection() {
     <section id="news" className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-14 scroll-mt-24">
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
-        <div className="flex flex-wrap items-center gap-3">
+        <div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight">
-            Yangiliklar
+            {t("newsSection.title")}
           </h2>
-          <Link
-            to="/portfolio"
-            className="text-xs sm:text-sm font-extrabold text-slate-500 hover:text-[#C6893F] transition-colors inline-flex items-center gap-1 border-l border-slate-300 pl-3 ml-1"
-          >
-            <span>Barcha namunalar (Portfolio)</span>
-            <ChevronRight className="w-4 h-4 text-[#C6893F]" />
-          </Link>
         </div>
 
         <div className="flex items-center space-x-3 shrink-0">
@@ -184,7 +177,7 @@ export default function NewsSection() {
                   ? "bg-white text-slate-800 shadow-xs hover:bg-slate-50 cursor-pointer active:scale-95"
                   : "text-slate-300 cursor-not-allowed"
               }`}
-              aria-label="Oldingi yangiliklar"
+              aria-label={t("newsSection.prev")}
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
@@ -197,7 +190,7 @@ export default function NewsSection() {
                   ? "bg-white text-slate-800 shadow-xs hover:bg-slate-50 cursor-pointer active:scale-95"
                   : "text-slate-300 cursor-not-allowed"
               }`}
-              aria-label="Keyingi yangiliklar"
+              aria-label={t("newsSection.next")}
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -248,7 +241,7 @@ export default function NewsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center text-white space-x-3"
-                aria-label="Instagram'da ochish"
+                aria-label={t("newsSection.openInstagram")}
               >
                 {post.likes !== undefined && (
                   <div className="flex items-center space-x-1 font-bold text-xs">
@@ -286,7 +279,7 @@ export default function NewsSection() {
                   rel="noopener noreferrer"
                   className="text-xs font-bold text-[#C6893F] group-hover:text-[#B37830] inline-flex items-center space-x-1 hover:underline"
                 >
-                  <span>Batafsil o'qish</span>
+                  <span>{t("newsSection.readMore")}</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
                 <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">

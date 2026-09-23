@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Maximize2, Eye } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface ProductionGalleryProps {
   onOpenQuote: () => void;
@@ -13,52 +14,55 @@ interface GalleryPhoto {
   category: string;
 }
 
-const GALLERY_PHOTOS: GalleryPhoto[] = [
+const getGalleryPhotos = (t: any): GalleryPhoto[] => [
   {
     id: 1,
     src: "/gallery/photo_2026-09-16_15-28-37.jpg",
-    title: "Avtomatlashtirilgan gofroagregat liniyasi",
-    desc: "3 va 5 qatlamli gofrokarton ishlab chiqarishning uzluksiz texnologik jarayoni",
-    category: "Gofroagregat",
+    title: t("productionGallery.photos.1.title"),
+    desc: t("productionGallery.photos.1.desc"),
+    category: t("productionGallery.photos.1.category"),
   },
   {
     id: 2,
     src: "/gallery/photo_2026-09-16_15-28-40.jpg",
-    title: "Gofrolistlarni formatlash va kesish uchastkasi",
-    desc: "Yuqori aniqlikdagi pichoqlar bilan talab qilingan o'lchamlarga moslash",
-    category: "Formatlash",
+    title: t("productionGallery.photos.2.title"),
+    desc: t("productionGallery.photos.2.desc"),
+    category: t("productionGallery.photos.2.category"),
   },
   {
     id: 3,
     src: "/gallery/photo_2026-09-16_15-28-42.jpg",
-    title: "Qutilarni buklash va yelimlash agregatlari",
-    desc: "Avtomatlashtirilgan tezkor buklash va yelimlash mashinalari",
-    category: "Buklash va yelimlash",
+    title: t("productionGallery.photos.3.title"),
+    desc: t("productionGallery.photos.3.desc"),
+    category: t("productionGallery.photos.3.category"),
   },
   {
     id: 4,
     src: "/gallery/photo_2026-09-16_15-28-44.jpg",
-    title: "Ishlab chiqarish sexining umumiy ko'rinishi",
-    desc: "Karton Works Factory zamonaviy ishlab chiqarish va texnologik quvvatlari",
-    category: "Asosiy sex",
+    title: t("productionGallery.photos.4.title"),
+    desc: t("productionGallery.photos.4.desc"),
+    category: t("productionGallery.photos.4.category"),
   },
   {
     id: 5,
     src: "/gallery/photo_2026-09-16_15-28-46.jpg",
-    title: "Xomashyo va mahsulotlar logistika maydoni",
-    desc: "Sifat nazoratidan o'tgan partiyalarni omborga tizimli joylash",
-    category: "Logistika",
+    title: t("productionGallery.photos.5.title"),
+    desc: t("productionGallery.photos.5.desc"),
+    category: t("productionGallery.photos.5.category"),
   },
   {
     id: 6,
     src: "/gallery/photo_2026-09-16_15-28-48.jpg",
-    title: "Tayyor gofroqutilarni palletlash va saralash",
-    desc: "Mijozlarga xavfsiz yetkazib berish uchun standart palletlarga joylash",
-    category: "Palletlash",
+    title: t("productionGallery.photos.6.title"),
+    desc: t("productionGallery.photos.6.desc"),
+    category: t("productionGallery.photos.6.category"),
   },
 ];
 
 export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProps) {
+  const { t } = useTranslation();
+  const GALLERY_PHOTOS = getGalleryPhotos(t);
+
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const [viewerIdx, setViewerIdx] = useState(0);
@@ -153,7 +157,7 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
       {/* Header */}
       <div className="mb-6 sm:mb-8">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#C6893F] tracking-tight">
-          Fotogalereya
+          {t("productionGallery.title")}
         </h2>
       </div>
 
@@ -229,13 +233,13 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
           {/* Technology Description Text */}
           <div className="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed bg-white p-4 sm:p-5 rounded-xl border border-slate-200/80 shadow-xs">
             <h4 className="text-neutral-900 font-bold text-sm">
-              Uzluksiz siklli zamonaviy quvvatlar
+              {t("productionGallery.descTitle")}
             </h4>
             <p>
-              Zavod 3 va 5 qatlamli gofrokarton ishlab chiqarish uchun yuqori aniqlikdagi avtomatlashtirilgan agregatlar, lazerli qirqish va ko'p rangli flekso-bosma uskunalari bilan jihozlangan.
+              {t("productionGallery.desc1")}
             </p>
             <p className="text-slate-500 text-xs">
-              Har bir xomashyo partiyasi va tayyor qutilar qat'iy standartlar bo'yicha laboratoriya sinovidan (ECT, BCT, namlik darajasi) o'tadi.
+              {t("productionGallery.desc2")}
             </p>
           </div>
 
@@ -277,8 +281,8 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
                 onClick={handleZoomIn}
                 disabled={zoomLevel >= 3}
                 className="p-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-                title="Kattalashtirish (+)"
-                aria-label="Kattalashtirish"
+                title={t('productionGallery.zoomIn')}
+                aria-label={t('productionGallery.zoomIn')}
               >
                 <ZoomIn className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
@@ -289,8 +293,8 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
                 onClick={handleZoomOut}
                 disabled={zoomLevel <= 1}
                 className="p-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-                title="Kichraytirish (-)"
-                aria-label="Kichraytirish"
+                title={t('productionGallery.zoomOut')}
+                aria-label={t('productionGallery.zoomOut')}
               >
                 <ZoomOut className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
@@ -301,8 +305,8 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
                   type="button"
                   onClick={handleResetZoom}
                   className="p-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white transition-colors cursor-pointer"
-                  title="O'lchamni tiklash"
-                  aria-label="O'lchamni tiklash"
+                  title={t('productionGallery.resetZoom')}
+                  aria-label={t('productionGallery.resetZoom')}
                 >
                   <Maximize2 className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
@@ -314,8 +318,8 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white transition-colors cursor-pointer"
-                title="Asl nusxani ochish"
-                aria-label="Asl nusxani ochish"
+                title={t('productionGallery.viewOriginal')}
+                aria-label={t('productionGallery.viewOriginal')}
               >
                 <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
@@ -325,8 +329,8 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
                 type="button"
                 onClick={closeViewer}
                 className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors ml-1 cursor-pointer"
-                title="Yopish (Esc)"
-                aria-label="Yopish"
+                title={t('productionGallery.close')}
+                aria-label={t('productionGallery.close')}
               >
                 <X className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
@@ -345,8 +349,8 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
               type="button"
               onClick={(e) => { e.stopPropagation(); prevSlide(); }}
               className="absolute left-2 sm:left-6 z-20 p-3 sm:p-4 rounded-full bg-black/60 hover:bg-black/85 text-white/90 hover:text-white backdrop-blur-md transition-all duration-200 hover:scale-105 active:scale-95 shadow-xl cursor-pointer"
-              title="Oldingi rasm (Chap strelka)"
-              aria-label="Oldingi rasm"
+              title={t('productionGallery.prevPhoto')}
+              aria-label={t('productionGallery.prevPhoto')}
             >
               <ChevronLeft className="w-5 h-5 sm:w-7 sm:h-7" />
             </button>
@@ -369,8 +373,8 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
               type="button"
               onClick={(e) => { e.stopPropagation(); nextSlide(); }}
               className="absolute right-2 sm:right-6 z-20 p-3 sm:p-4 rounded-full bg-black/60 hover:bg-black/85 text-white/90 hover:text-white backdrop-blur-md transition-all duration-200 hover:scale-105 active:scale-95 shadow-xl cursor-pointer"
-              title="Keyingi rasm (O'ng strelka)"
-              aria-label="Keyingi rasm"
+              title={t('productionGallery.nextPhoto')}
+              aria-label={t('productionGallery.nextPhoto')}
             >
               <ChevronRight className="w-5 h-5 sm:w-7 sm:h-7" />
             </button>
@@ -412,7 +416,7 @@ export default function ProductionGallery({ onOpenQuote }: ProductionGalleryProp
               }}
               className="shrink-0 bg-[#C6893F] hover:bg-[#B37830] text-white font-bold text-xs px-5 py-2.5 rounded-lg transition-all shadow-md active:scale-95 cursor-pointer"
             >
-              Ishlab chiqarish bo'yicha konsultatsiya olish
+              {t("productionGallery.consultationBtn")}
             </button>
           </div>
 

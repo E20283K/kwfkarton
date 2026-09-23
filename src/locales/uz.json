@@ -1,0 +1,669 @@
+{
+  "navbar": {
+    "workingHours": "Dush-Shan 09:00-18:00",
+    "openMenu": "Menyuni ochish",
+    "home": "BOSH SAHIFA",
+    "services": "XIZMATLAR",
+    "about": "KOMPANIYA HAQIDA",
+    "portfolio": "PORTFOLIO",
+    "contact": "BOG'LANISH",
+    "contactUs": "Biz bilan bog'lanish:",
+    "phone": "Telefon",
+    "telegram": "Telegram",
+    "ourChannel": "Bizning kanal",
+    "instagram": "Instagram",
+    "ourPage": "Bizning sahifa",
+    "address": "Manzil",
+    "addressFull": "Xorazm vil., Urganch sh., Ashxobod MFY, Sanoatchilar ko'chasi",
+    "submitRequest": "Ariza qoldirish",
+    "addressShort": "Manzil: Urganch sh., Ashxobod MFY",
+    "map": "Xarita"
+  },
+  "footer": {
+    "subtitle": "Gofroqadoq ishlab chiqarish zavodi",
+    "sections": "BO'LIMLAR",
+    "nav": {
+      "home": "Bosh sahifa",
+      "services": "Xizmatlar",
+      "about": "Kompaniya haqida",
+      "production": "Ishlab chiqarish",
+      "portfolio": "Portfolio",
+      "contact": "Bog'lanish va aloqa"
+    },
+    "contact": "BOG'LANISH",
+    "address": {
+      "line1": "Xorazm viloyati, Urganch sh.,",
+      "line2": "Ashxobod MFY, Sanoatchilar ko'chasi,",
+      "line3": "19/2-uy, A-korpus"
+    },
+    "requisites": "REKVIZITLAR",
+    "company": "\"KARTON WORKS\" MCHJ",
+    "inn": "STIR (INN):",
+    "oked": "IFUT (OKED):",
+    "soato": "SOATO:",
+    "copyright": "© 2025-2026 - \"KARTON WORKS\" MCHJ",
+    "rights": "Barcha huquqlar himoyalangan"
+  },
+  "heroBanner": {
+    "title1": "QADOQLASH MAHSULOTLARI",
+    "title2": "ishlab chiqarish",
+    "subtitle": "Individual o'lchamlar bo'yicha qadoqlar tayyorlash",
+    "cta": "Ariza qoldirish",
+    "altText": "Karton Works Factory qadoqlash materiallari ishlab chiqarish zavodi (O'zbekiston)"
+  },
+  "productCatalog": {
+    "sectionTitle": "Mahsulotlar katalogi",
+    "products": {
+      "transport": "Transportirovka (tashish) uchun",
+      "fruits": "Meva-sabzavot eksporti uchun",
+      "confectionery": "Qandolat va shirinliklar uchun",
+      "food": "Ovqat yetkazish uchun",
+      "drinks": "Ichimliklar uchun",
+      "industrial": "Sanoat mahsulotlari uchun",
+      "thick": "Qalin kartonli qadoqlar",
+      "bags": "Karton sumkalar"
+    },
+    "whiteSuffix": "- oq"
+  },
+  "advantages": {
+    "sectionTitle": "Bizning afzalliklarimiz",
+    "items": {
+      "engineering": {
+        "keyword": "ENGINEERING",
+        "title": "Muhandislik yondashuvi",
+        "desc": "Har bir quti mahsulot, logistika va laboratoriya ma'lumotlari asosida loyihalanadi."
+      },
+      "economy": {
+        "keyword": "ECONOMY",
+        "title": "Iqtisodiy yechim",
+        "desc": "Material, logistika va shikastlanish xarajatlarini minimallashtiramiz."
+      },
+      "speed": {
+        "keyword": "SPEED",
+        "title": "Tez ishlab chiqarish",
+        "desc": "50 000 tagacha qutini 2–3 ish kunida. Takroriy buyurtmalar — 24 soat ichida."
+      },
+      "white": {
+        "keyword": "WHITE",
+        "title": "Premium oq qadoqlash",
+        "desc": "Oq liner bilan yorqin CMYK bosma. Brend qiymatini oshiradi."
+      },
+      "srp": {
+        "keyword": "SRP",
+        "title": "Shelf Ready Packaging",
+        "desc": "Ombordan to'g'ridan-to'g'ri peshtaxtaga — tez merchandising."
+      }
+    },
+    "cta": {
+      "tag": "INDIVIDUAL BUYURTMA",
+      "title": "Optimal qadoq yechimini tayyorlaymiz",
+      "desc": "O'lchamlar, qalinlik va logistika talablari bo'yicha mutaxassislarimiz bepul konsultatsiya beradi.",
+      "button": "So'rov yuborish"
+    }
+  },
+  "companyVideo": {
+    "defaultTitle": "Ishlab chiqarish jarayoni",
+    "iframeTitle": "Karton Works Factory - Ishlab chiqarish jarayoni",
+    "ariaLabel": "Videoni tomosha qilish",
+    "altText": "Karton Works Factory ishlab chiqarish"
+  },
+  "workProcess": {
+    "title": "Ishlash tartibi",
+    "step1": {
+      "title": "Buyurtma berish",
+      "desc": "Telefon yoki telegram orqali biz bilan bog'lanib, o'z buyurtmangizni qoldirasiz."
+    },
+    "step2": {
+      "title": "Hisob-kitob va taklif",
+      "desc": "So'rovingiz asosida mahsulot narxi hisoblanib, sizga batafsil tijorat taklifi taqdim etiladi."
+    },
+    "step3": {
+      "title": "Ishlab chiqarish va nazorat",
+      "desc": "Kelishuvga asosan mahsulot tayyorlanadi va qat'iy sifat nazoratidan o'tkaziladi."
+    },
+    "step4": {
+      "title": "Yetkazib berish",
+      "desc": "Tayyor mahsulot manzilingizga xavfsiz va o'z vaqtida yetkazib beriladi."
+    },
+    "ctaText": "Individual o'lchamlar bo'yicha maslahatlashishga yoki partiyani hisoblashga tayyormisiz?",
+    "ctaButton": "Hisob-kitobga ariza qoldirish"
+  },
+  "productionGallery": {
+    "title": "Fotogalereya",
+    "descTitle": "Uzluksiz siklli zamonaviy quvvatlar",
+    "desc1": "Zavod 3 va 5 qatlamli gofrokarton ishlab chiqarish uchun yuqori aniqlikdagi avtomatlashtirilgan agregatlar, lazerli qirqish va ko'p rangli flekso-bosma uskunalari bilan jihozlangan.",
+    "desc2": "Har bir xomashyo partiyasi va tayyor qutilar qat'iy standartlar bo'yicha laboratoriya sinovidan (ECT, BCT, namlik darajasi) o'tadi.",
+    "consultationBtn": "Ishlab chiqarish bo'yicha konsultatsiya olish",
+    "zoomIn": "Kattalashtirish (+)",
+    "zoomOut": "Kichraytirish (-)",
+    "resetZoom": "O'lchamni tiklash",
+    "viewOriginal": "Asl nusxani ochish",
+    "close": "Yopish (Esc)",
+    "prevPhoto": "Oldingi rasm",
+    "nextPhoto": "Keyingi rasm",
+    "photoCount": "Rasm {{current}} / {{total}}",
+    "photos": {
+      "1": {
+        "title": "Avtomatlashtirilgan gofroagregat liniyasi",
+        "desc": "3 va 5 qatlamli gofrokarton ishlab chiqarishning uzluksiz texnologik jarayoni",
+        "category": "Gofroagregat"
+      },
+      "2": {
+        "title": "Gofrolistlarni formatlash va kesish uchastkasi",
+        "desc": "Yuqori aniqlikdagi pichoqlar bilan talab qilingan o'lchamlarga moslash",
+        "category": "Formatlash"
+      },
+      "3": {
+        "title": "Qutilarni buklash va yelimlash agregatlari",
+        "desc": "Avtomatlashtirilgan tezkor buklash va yelimlash mashinalari",
+        "category": "Buklash va yelimlash"
+      },
+      "4": {
+        "title": "Ishlab chiqarish sexining umumiy ko'rinishi",
+        "desc": "Karton Works Factory zamonaviy ishlab chiqarish va texnologik quvvatlari",
+        "category": "Asosiy sex"
+      },
+      "5": {
+        "title": "Xomashyo va mahsulotlar logistika maydoni",
+        "desc": "Sifat nazoratidan o'tgan partiyalarni omborga tizimli joylash",
+        "category": "Logistika"
+      },
+      "6": {
+        "title": "Tayyor gofroqutilarni palletlash va saralash",
+        "desc": "Mijozlarga xavfsiz yetkazib berish uchun standart palletlarga joylash",
+        "category": "Palletlash"
+      }
+    }
+  },
+  "newsSection": {
+    "title": "Yangiliklar",
+    "portfolioLink": "Barcha namunalar (Portfolio)",
+    "prev": "Oldingi yangiliklar",
+    "next": "Keyingi yangiliklar",
+    "openInstagram": "Instagram'da ochish",
+    "readMore": "Batafsil o'qish",
+    "defaultCaption": "Karton Works Factory yangiliklari",
+    "posts": {
+      "1": {
+        "caption": "Qadoq tanlashda qaysi omil siz uchun eng muhimi? KartonWorks har bir biznesning o'ziga xos talablarini o'rganadi. BCT va ECT ko'rsatkichlari orqali maksimal mustahkamlikni hisoblaymiz."
+      },
+      "2": {
+        "caption": "Vitrinada mahsulot o'zini o'zi sotishi uchun nima kerak? To'g'ri ishlab chiqilgan gofrokarton qadoq savdo hajmiga bevosita ta'sir ko'rsatadi."
+      },
+      "3": {
+        "caption": "Mustaqillikning 35 yilligi muborak bo'lsin! 35 yil — mustaqil rivojlanish, mehnat va yaratuvchanlik yili. Karton Works Factory jamoasi barcha hamkorlarini tabriklaydi."
+      },
+      "4": {
+        "caption": "Raqibingiz qadoqchi tanlashda 'omadga' tayanmoqda. Siz esa — BCT va ECT raqamlariga. KWF da har bir quti laboratoriya sinovidan o'tadi."
+      },
+      "5": {
+        "caption": "Uzoq tranzit yo'llarida mahsulotingizning 100% butun yetib borishini kafolatlaymiz. Har bir palet standartlar asosida zich o'raladi."
+      },
+      "6": {
+        "caption": "O'zbekistonning barcha hududlariga sifatli gofrotara mahsulotlarini tezkor va o'z vaqtida yetkazib berish xizmati yo'lga qo'yilgan."
+      }
+    }
+  },
+  "partners": {
+    "title": "Bizga ishongan kompaniyalar",
+    "logo_alt": "logotipi",
+    "become_partner": {
+      "title": "Hamkorlik qilish"
+    },
+    "categories": {
+      "uztex": "Tekstil va to'qimachilik klasteri",
+      "bahmal": "Yengil sanoat va matolar",
+      "cotton-fabric": "Paxta va gazlama ishlab chiqarish",
+      "gurlan": "To'qimachilik sanoati",
+      "osiyoshirin": "Qandolat va oziq-ovqat mahsulotlari",
+      "tatcola": "Salqin ichimliklar sanoati",
+      "hvara": "Sanoat va maishiy mahsulotlar",
+      "jazz": "Iste'mol tovarlari",
+      "nmt": "Ishlab chiqarish va ta'minot",
+      "humo": "Tekstil mahsulotlari",
+      "silver-green": "Choy va oziq-ovqat mahsulotlari"
+    }
+  },
+  "factoryLocation": {
+    "title": "Zavod manzili va aloqa",
+    "success": {
+      "title": "Arizangiz qabul qilindi",
+      "desc": "Mutaxassisimiz tez orada siz bilan bog'lanadi.",
+      "new_request": "Yangi ariza yuborish"
+    },
+    "form": {
+      "source": "Bosh sahifa (Xarita yonidagi forma)",
+      "title": "Ariza qoldirish",
+      "name": "Ism",
+      "email": "Elektron pochta",
+      "phone": "Telefon *",
+      "message": "Xabar yoki izoh",
+      "submitting": "Yuborilmoqda...",
+      "submit": "Xabar yuborish"
+    }
+  },
+  "about": {
+    "stats": [
+      {
+        "value": "5 Qatlam",
+        "label": "Maxsus gofroliniya",
+        "desc": "Mintaqadagi yagona 5 qavatli ishlab chiqarish"
+      },
+      {
+        "value": "50 000",
+        "label": "Quti / 48 soatda",
+        "desc": "Yirik partiyalarni qisqa muddatda bajarish"
+      },
+      {
+        "value": "100%",
+        "label": "Lab nazorati",
+        "desc": "BCT va ECT standartlari bo'yicha sinov"
+      },
+      {
+        "value": "24–48 soat",
+        "label": "Tezkor logistika",
+        "desc": "O'zbekiston bo'ylab o'z transportimizda yetkazish"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Mintaqaviy logistika afzalligi",
+        "desc": "Yirik transport va savdo yo'llariga yaqin joylashuv mahsulotni minimal vaqt va optimal logistika narxida yetkazib berish imkonini beradi."
+      },
+      {
+        "title": "To'liq avtomatlashtirilgan agregatlar",
+        "desc": "Zamonaviy gofroagregat va lazerli formatlash tizimlari orqali xatolik ehtimoli minimallashtirilgan va o'lchamlar aniqligi kafolatlangan."
+      },
+      {
+        "title": "100% Ekologik va qayta ishlanuvchi",
+        "desc": "Tabiiy xomashyo va ekologik xavfsiz kraxmallı yelimlar qo'llaniladi. Barcha mahsulotlar to'liq utilizatsiya qilinishi mumkin."
+      },
+      {
+        "title": "Individual muhandislik yondashuvi",
+        "desc": "Mahsulot og'irligi, transport turi va saqlash sharoitlariga mos holda qog'oz zichligi (GSM) hamda to'lqin turi tanlanadi."
+      }
+    ],
+    "specsTable": [
+      {
+        "property": "Gofrokarton turi",
+        "spec": "3 qatlamli (T-toifa) va 5 qatlamli (P-toifa)"
+      },
+      {
+        "property": "To'lqin profillari",
+        "spec": "A-Flute (baland), B-Flute (o'rta), C-Flute"
+      },
+      {
+        "property": "Liner turlari",
+        "spec": "Tabiiy Kraftliner va Premium oq OqLayner"
+      },
+      {
+        "property": "Siqilishga chidamlilik (BCT)",
+        "spec": "4.8 kN dan 6.2 kN gacha (laboratoriya sertifikatlangan)"
+      },
+      {
+        "property": "Flekso-bosma imkoniyati",
+        "spec": "1 dan 4 ranggacha yuqori aniqlikdagi bosma"
+      },
+      {
+        "property": "Minimal partiya",
+        "spec": "1 000 donadan boshlab ulgurji partiyalar"
+      }
+    ],
+    "qualityControl": [
+      {
+        "type": "Bursting Strength Tester"
+      },
+      {
+        "type": "Crush tester"
+      },
+      {
+        "type": "Box Compression Tester"
+      }
+    ],
+    "hero": {
+      "subtitle": "Karton Works Factory",
+      "title": "Kompaniya haqida",
+      "description": "Karton Works Factory (KWF) — Xorazm viloyatida joylashgan zamonaviy gofroqadoq ishlab chiqarish korxonasi. Biz yirik ishlab chiqaruvchilar, eksportchilar va distribyutorlar uchun yuqori sifatli 3 va 5 qatlamli gofrokarton qutilarni loyihalashtiramiz va ishlab chiqaramiz."
+    },
+    "mission": {
+      "title": "Ishlab chiqarish quvvati va missiyamiz",
+      "p1": "Biz nafaqat quti ishlab chiqaramiz, balki mijozlarimizning ta'minot zanjiri xavfsizligini ta'minlaymiz. Har bir mahsulot tashish jarayonida shikastlanmasligi, yuk ortish standartlariga to'liq javob berishi uchun muhandislik hisob-kitoblari asosida tayyorlanadi.",
+      "p2": "Zavodimizda oziq-ovqat, to'qimachilik, qishloq xo'jaligi mahsulotlari (meva-sabzavot eksporti), kimyo va og'ir sanoat korxonalari uchun qadoqlar ishlab chiqarilmoqda.",
+      "cta": "Bog'lanish va buyurtma"
+    },
+    "images": {
+      "mainAlt": "Ishlab chiqarish sexining umumiy ko'rinishi",
+      "sub1Title": "Avtomatlashtirilgan gofroagregat",
+      "sub1Alt": "Avtomatlashtirilgan gofroagregat",
+      "sub2Title": "Formatlash va kesish uchastkasi",
+      "sub2Alt": "Formatlash va kesish uchastkasi",
+      "sub3Title": "Tayyor gofroqutilarni palletlash",
+      "sub3Alt": "Tayyor gofroqutilarni palletlash"
+    },
+    "advantagesSection": {
+      "title": "Nega aynan Karton Works Factory?"
+    },
+    "specsSection": {
+      "title": "Ishlab chiqarish va texnik parametrlari",
+      "subtitle": "B2B mijozlar uchun tasdiqlangan sanoat standartlari"
+    },
+    "qualitySection": {
+      "title": "Sifat nazorati va laboratoriya",
+      "description": "Barcha qadoqlarimiz eng zamonaviy maxsus sifat nazorati qurilmalarida sinovdan o'tkaziladi. Bu mahsulotlaringiz xavfsiz va mustahkam yetib borishini ta'minlaydi."
+    }
+  },
+  "portfolio": {
+    "hero": {
+      "subtitle": "Biz bajargan ishlar",
+      "title": "Portfolio",
+      "description": "Karton Works Factory tomonidan ishlab chiqarilgan 3 va 5 qatlamli gofrokarton qutilar, eksport tara namunalari, qandolat va individual brendlangan mahsulotlar galereyasi."
+    },
+    "gallery": {
+      "totalLabel": "Jami",
+      "totalCount": "{{count}} ta namuna",
+      "orderCustom": "Shaxsiy dizayn buyurtma qilish"
+    },
+    "cta": {
+      "title": "Sizga ham maxsus o'lchamdagi qadoq kerakmi?",
+      "description": "Muhandislarimiz sizning mahsulotingizga mos shakl, to'lqin turi va flekso-bosma dizaynini bepul hisoblab berishadi.",
+      "button": "Ariza qoldirish"
+    },
+    "lightbox": {
+      "close": "Yopish",
+      "prev": "Oldingi namuna",
+      "next": "Keyingi namuna",
+      "orderThis": "Ushbu turdagi qadoqqa buyurtma berish"
+    },
+    "itemAlt": "KWF gofrotara va qadoqlash namunasi #{{num}}",
+    "itemLabel": "KWF Namuna #{{num}}"
+  },
+  "contact": {
+    "managers": [
+      {
+        "role": "Tijorat bo'limi boshlig'i"
+      },
+      {
+        "role": "Sotuv menejeri"
+      },
+      {
+        "role": "Sotuv menejeri"
+      },
+      {
+        "role": "Sotuv menejeri"
+      }
+    ],
+    "hero": {
+      "subtitle": "ALOQA VA MUROJAAT",
+      "title": "Biz bilan bog'lanish",
+      "description": "Qadoqlash bo'yicha maslahat olish, tijorat taklifi so'rash yoki buyurtma berish uchun quyidagi to'g'ridan-to'g'ri aloqa kanallaridan foydalaning."
+    },
+    "info": {
+      "addressLabel": "Manzil",
+      "addressValue": "Xorazm vil., Urganch sh., Ashxobod MFY, Sanoatchilar ko'chasi, 19/2",
+      "phoneLabel": "Telefon",
+      "phoneValue": "(+998) 99 560-61-66",
+      "emailLabel": "Pochta",
+      "emailValue": "kwf.sales1@matpap.uz",
+      "socialLabel": "Ijtimoiy tarmoqlar"
+    },
+    "main": {
+      "title": "Zavod manzili va ariza qoldirish"
+    },
+    "map": {
+      "title": "Karton Works Factory - Urganch"
+    },
+    "form": {
+      "source": "Bog'lanish sahifasi",
+      "successTitle": "Arizangiz qabul qilindi",
+      "successDesc": "Mutaxassisimiz tez orada siz bilan bog'lanadi.",
+      "sendNew": "Yangi ariza yuborish",
+      "title": "Ariza qoldirish",
+      "namePlaceholder": "Ismingiz",
+      "emailPlaceholder": "Elektron pochta",
+      "phonePlaceholder": "Telefon raqam *",
+      "messagePlaceholder": "Qadoq parametrlari, hajmi yoki izoh",
+      "submitBtn": "Xabar yuborish",
+      "submitting": "Yuborilmoqda..."
+    },
+    "legal": {
+      "nameLabel": "Yuridik nomi",
+      "nameValue": "\"KARTON WORKS\" MCHJ",
+      "innLabel": "STIR (INN)",
+      "okedLabel": "IFUT (OKED)",
+      "okedValue": "17210 (Gofrokarton va qog'oz qadoq)",
+      "soatoLabel": "SOATO",
+      "soatoValue": "1733401 (Urganch shahri)"
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "subtitle": "Xizmatlar va yechimlar",
+      "title": "Gofroqadoq xizmatlari",
+      "desc": "Loyihalashdan tortib tayyor mahsulotni omboringizgacha yetkazib berishgacha bo'lgan to'liq sikl. Har bir biznes tarmog'i uchun xarajatni kamaytiruvchi va himoyani oshiruvchi yechimlar."
+    },
+    "services_section": {
+      "title": "Asosiy xizmat yo'nalishlarimiz",
+      "action": "Ariza yuborish"
+    },
+    "services": [
+      {
+        "title": "Gofroquti ishlab chiqarish",
+        "desc": "3 va 5 qatlamli gofrokartondan standart hamda nostandart o'lchamdagi qutilar. Tashish, saqlash va mahsulot xavfsizligini ta'minlovchi konstruksiyalar.",
+        "badge": "Asosiy yo'nalish"
+      },
+      {
+        "title": "Premium oq qadoqlash (OqLayner)",
+        "desc": "Tashqi qatlami oq liner bilan qoplangan premium qutilar. Yuqori aniqlikdagi flekso-bosma bilan brending va vizual nufuzni oshiradi.",
+        "badge": "Brending"
+      },
+      {
+        "title": "Shelf Ready Packaging (SRP)",
+        "desc": "Ombordan to'g'ridan-to'g'ri savdo rastalariga joylashtiriladigan perforatsiyali qutilar. Merchandising vaqtini 50% gacha tejaydi.",
+        "badge": "Retail yechim"
+      },
+      {
+        "title": "Ekspress partiyalar (48 soat)",
+        "desc": "Shoshilinch buyurtmalar uchun 50 000 donagacha qutini 2-3 ish kunida tayyorlash va jo'natish xizmati. Takroriy buyurtmalar — 24 soatda.",
+        "badge": "Tezkor yetkazish"
+      }
+    ],
+    "industries_section": {
+      "title": "Biz xizmat ko'rsatadigan sohalar",
+      "desc": "Har bir yo'nalish uchun mahsulot xususiyatiga mos qadoqlash parametrlari"
+    },
+    "industries": [
+      "Meva va sabzavotlar (eksport)",
+      "To'qimachilik va tikuvchilik",
+      "Qandolat va oziq-ovqat",
+      "Poyabzal va charm mahsulotlari",
+      "Salqin ichimliklar va sharbatlar",
+      "Qurilish va sanoat mollari",
+      "Farmatsevtika va gigiyena",
+      "Yetkazib berish (e-commerce)"
+    ]
+  },
+  "aboutPage": {
+    "stats": [
+      {
+        "value": "5 Qatlam",
+        "label": "Maxsus gofroliniya",
+        "desc": "Mintaqadagi yagona 5 qavatli ishlab chiqarish"
+      },
+      {
+        "value": "50 000",
+        "label": "Quti / 48 soatda",
+        "desc": "Yirik partiyalarni qisqa muddatda bajarish"
+      },
+      {
+        "value": "100%",
+        "label": "Lab nazorati",
+        "desc": "BCT va ECT standartlari bo'yicha sinov"
+      },
+      {
+        "value": "24–48 soat",
+        "label": "Tezkor logistika",
+        "desc": "O'zbekiston bo'ylab o'z transportimizda yetkazish"
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Mintaqaviy logistika afzalligi",
+        "desc": "Yirik transport va savdo yo'llariga yaqin joylashuv mahsulotni minimal vaqt va optimal logistika narxida yetkazib berish imkonini beradi."
+      },
+      {
+        "title": "To'liq avtomatlashtirilgan agregatlar",
+        "desc": "Zamonaviy gofroagregat va lazerli formatlash tizimlari orqali xatolik ehtimoli minimallashtirilgan va o'lchamlar aniqligi kafolatlangan."
+      },
+      {
+        "title": "100% Ekologik va qayta ishlanuvchi",
+        "desc": "Tabiiy xomashyo va ekologik xavfsiz kraxmallı yelimlar qo'llaniladi. Barcha mahsulotlar to'liq utilizatsiya qilinishi mumkin."
+      },
+      {
+        "title": "Individual muhandislik yondashuvi",
+        "desc": "Mahsulot og'irligi, transport turi va saqlash sharoitlariga mos holda qog'oz zichligi (GSM) hamda to'lqin turi tanlanadi."
+      }
+    ],
+    "specsTable": [
+      {
+        "property": "Gofrokarton turi",
+        "spec": "3 qatlamli (T-toifa) va 5 qatlamli (P-toifa)"
+      },
+      {
+        "property": "To'lqin profillari",
+        "spec": "A-Flute (baland), B-Flute (o'rta), C-Flute"
+      },
+      {
+        "property": "Liner turlari",
+        "spec": "Tabiiy Kraftliner va Premium oq OqLayner"
+      },
+      {
+        "property": "Siqilishga chidamlilik (BCT)",
+        "spec": "4.8 kN dan 6.2 kN gacha (laboratoriya sertifikatlangan)"
+      },
+      {
+        "property": "Flekso-bosma imkoniyati",
+        "spec": "1 dan 4 ranggacha yuqori aniqlikdagi bosma"
+      },
+      {
+        "property": "Minimal partiya",
+        "spec": "1 000 donadan boshlab ulgurji partiyalar"
+      }
+    ],
+    "qualityControl": [
+      {
+        "type": "Bursting Strength Tester"
+      },
+      {
+        "type": "Crush tester"
+      },
+      {
+        "type": "Box Compression Tester"
+      }
+    ],
+    "hero": {
+      "subtitle": "Karton Works Factory",
+      "title": "Kompaniya haqida",
+      "description": "Karton Works Factory (KWF) — Xorazm viloyatida joylashgan zamonaviy gofroqadoq ishlab chiqarish korxonasi. Biz yirik ishlab chiqaruvchilar, eksportchilar va distribyutorlar uchun yuqori sifatli 3 va 5 qatlamli gofrokarton qutilarni loyihalashtiramiz va ishlab chiqaramiz."
+    },
+    "mission": {
+      "title": "Ishlab chiqarish quvvati va missiyamiz",
+      "p1": "Biz nafaqat quti ishlab chiqaramiz, balki mijozlarimizning ta'minot zanjiri xavfsizligini ta'minlaymiz. Har bir mahsulot tashish jarayonida shikastlanmasligi, yuk ortish standartlariga to'liq javob berishi uchun muhandislik hisob-kitoblari asosida tayyorlanadi.",
+      "p2": "Zavodimizda oziq-ovqat, to'qimachilik, qishloq xo'jaligi mahsulotlari (meva-sabzavot eksporti), kimyo va og'ir sanoat korxonalari uchun qadoqlar ishlab chiqarilmoqda.",
+      "cta": "Bog'lanish va buyurtma"
+    },
+    "images": {
+      "mainAlt": "Ishlab chiqarish sexining umumiy ko'rinishi",
+      "sub1Title": "Avtomatlashtirilgan gofroagregat",
+      "sub1Alt": "Avtomatlashtirilgan gofroagregat",
+      "sub2Title": "Formatlash va kesish uchastkasi",
+      "sub2Alt": "Formatlash va kesish uchastkasi",
+      "sub3Title": "Tayyor gofroqutilarni palletlash",
+      "sub3Alt": "Tayyor gofroqutilarni palletlash"
+    },
+    "advantagesSection": {
+      "title": "Nega aynan Karton Works Factory?"
+    },
+    "specsSection": {
+      "title": "Ishlab chiqarish va texnik parametrlari",
+      "subtitle": "B2B mijozlar uchun tasdiqlangan sanoat standartlari"
+    },
+    "qualitySection": {
+      "title": "Sifat nazorati va laboratoriya",
+      "description": "Barcha qadoqlarimiz eng zamonaviy maxsus sifat nazorati qurilmalarida sinovdan o'tkaziladi. Bu mahsulotlaringiz xavfsiz va mustahkam yetib borishini ta'minlaydi."
+    }
+  },
+  "portfolioPage": {
+    "hero": {
+      "subtitle": "Biz bajargan ishlar",
+      "title": "Portfolio",
+      "description": "Karton Works Factory tomonidan ishlab chiqarilgan 3 va 5 qatlamli gofrokarton qutilar, eksport tara namunalari, qandolat va individual brendlangan mahsulotlar galereyasi."
+    },
+    "gallery": {
+      "totalLabel": "Jami",
+      "totalCount": "{{count}} ta namuna",
+      "orderCustom": "Shaxsiy dizayn buyurtma qilish"
+    },
+    "cta": {
+      "title": "Sizga ham maxsus o'lchamdagi qadoq kerakmi?",
+      "description": "Muhandislarimiz sizning mahsulotingizga mos shakl, to'lqin turi va flekso-bosma dizaynini bepul hisoblab berishadi.",
+      "button": "Ariza qoldirish"
+    },
+    "lightbox": {
+      "close": "Yopish",
+      "prev": "Oldingi namuna",
+      "next": "Keyingi namuna",
+      "orderThis": "Ushbu turdagi qadoqqa buyurtma berish"
+    },
+    "itemAlt": "KWF gofrotara va qadoqlash namunasi #{{num}}",
+    "itemLabel": "KWF Namuna #{{num}}"
+  },
+  "contactPage": {
+    "managers": [
+      {
+        "role": "Tijorat bo'limi boshlig'i"
+      },
+      {
+        "role": "Sotuv menejeri"
+      },
+      {
+        "role": "Sotuv menejeri"
+      },
+      {
+        "role": "Sotuv menejeri"
+      }
+    ],
+    "hero": {
+      "subtitle": "ALOQA VA MUROJAAT",
+      "title": "Biz bilan bog'lanish",
+      "description": "Qadoqlash bo'yicha maslahat olish, tijorat taklifi so'rash yoki buyurtma berish uchun quyidagi to'g'ridan-to'g'ri aloqa kanallaridan foydalaning."
+    },
+    "main": {
+      "title": "Zavod manzili va ariza qoldirish"
+    },
+    "map": {
+      "title": "Karton Works Factory - Urganch"
+    },
+    "form": {
+      "source": "Bog'lanish sahifasi",
+      "successTitle": "Arizangiz qabul qilindi",
+      "successDesc": "Mutaxassisimiz tez orada siz bilan bog'lanadi.",
+      "sendNew": "Yangi ariza yuborish",
+      "title": "Ariza qoldirish",
+      "namePlaceholder": "Ismingiz",
+      "emailPlaceholder": "Elektron pochta",
+      "phonePlaceholder": "Telefon raqam *",
+      "messagePlaceholder": "Qadoq parametrlari, hajmi yoki izoh",
+      "submitBtn": "Xabar yuborish",
+      "submitting": "Yuborilmoqda..."
+    },
+    "legal": {
+      "nameLabel": "Yuridik nomi",
+      "nameValue": "\"KARTON WORKS\" MCHJ",
+      "innLabel": "STIR (INN)",
+      "okedLabel": "IFUT (OKED)",
+      "okedValue": "17210 (Gofrokarton va qog'oz qadoq)",
+      "soatoLabel": "SOATO",
+      "soatoValue": "1733401 (Urganch shahri)"
+    }
+  }
+}
