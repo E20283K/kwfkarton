@@ -46,7 +46,7 @@
   },
   "heroBanner": {
     "title1": "QADOQLASH MAHSULOTLARI",
-    "title2": "ishlab chiqarish",
+    "title2": "",
     "subtitle": "Individual o'lchamlar bo'yicha qadoqlar tayyorlash",
     "cta": "Ariza qoldirish",
     "altText": "Karton Works Factory qadoqlash materiallari ishlab chiqarish zavodi (O'zbekiston)"
@@ -55,12 +55,12 @@
     "sectionTitle": "Mahsulotlar katalogi",
     "products": {
       "transport": "Transportirovka (tashish) uchun",
-      "fruits": "Meva-sabzavot eksporti uchun",
+      "fruits": "Meva va sabzavotlar uchun",
       "confectionery": "Qandolat va shirinliklar uchun",
-      "food": "Ovqat yetkazish uchun",
+      "food": "Oziq-ovqat mahsulotlari uchun",
       "drinks": "Ichimliklar uchun",
       "industrial": "Sanoat mahsulotlari uchun",
-      "thick": "Qalin kartonli qadoqlar",
+      "thick": "Monokarton qadoqlar",
       "bags": "Karton sumkalar"
     },
     "whiteSuffix": "- oq"
@@ -290,7 +290,7 @@
       },
       {
         "property": "To'lqin profillari",
-        "spec": "A-Flute (baland), B-Flute (o'rta), C-Flute"
+        "spec": "A-Flute (baland), B-Flute (o'rta), C-Flute, D-Flute, Nano-Flute"
       },
       {
         "property": "Liner turlari",
@@ -301,8 +301,8 @@
         "spec": "4.8 kN dan 6.2 kN gacha (laboratoriya sertifikatlangan)"
       },
       {
-        "property": "Flekso-bosma imkoniyati",
-        "spec": "1 dan 4 ranggacha yuqori aniqlikdagi bosma"
+        "property": "Bosma imkoniyatlari",
+        "spec": "Flekso va ofset bosma"
       },
       {
         "property": "Minimal partiya",
@@ -365,7 +365,7 @@
     },
     "cta": {
       "title": "Sizga ham maxsus o'lchamdagi qadoq kerakmi?",
-      "description": "Muhandislarimiz sizning mahsulotingizga mos shakl, to'lqin turi va flekso-bosma dizaynini bepul hisoblab berishadi.",
+      "description": "Menejerlarimiz sizning mahsulotingizga mos shakl, to'lqin turi va bosma dizaynini bepul hisoblab berishadi.",
       "button": "Ariza qoldirish"
     },
     "lightbox": {
@@ -530,7 +530,7 @@
       },
       {
         "property": "To'lqin profillari",
-        "spec": "A-Flute (baland), B-Flute (o'rta), C-Flute"
+        "spec": "A-Flute (baland), B-Flute (o'rta), C-Flute, D-Flute, Nano-Flute"
       },
       {
         "property": "Liner turlari",
@@ -541,8 +541,8 @@
         "spec": "4.8 kN dan 6.2 kN gacha (laboratoriya sertifikatlangan)"
       },
       {
-        "property": "Flekso-bosma imkoniyati",
-        "spec": "1 dan 4 ranggacha yuqori aniqlikdagi bosma"
+        "property": "Bosma imkoniyatlari",
+        "spec": "Flekso va ofset bosma"
       },
       {
         "property": "Minimal partiya",
@@ -605,7 +605,7 @@
     },
     "cta": {
       "title": "Sizga ham maxsus o'lchamdagi qadoq kerakmi?",
-      "description": "Muhandislarimiz sizning mahsulotingizga mos shakl, to'lqin turi va flekso-bosma dizaynini bepul hisoblab berishadi.",
+      "description": "Menejerlarimiz sizning mahsulotingizga mos shakl, to'lqin turi va bosma dizaynini bepul hisoblab berishadi.",
       "button": "Ariza qoldirish"
     },
     "lightbox": {

@@ -46,7 +46,7 @@
   },
   "heroBanner": {
     "title1": "PACKAGING PRODUCTS",
-    "title2": "manufacturing",
+    "title2": "",
     "subtitle": "Custom sized packaging production",
     "cta": "Leave a request",
     "altText": "Karton Works Factory packaging materials production plant (Uzbekistan)"
@@ -55,12 +55,12 @@
     "sectionTitle": "Product Catalog",
     "products": {
       "transport": "For transportation",
-      "fruits": "For fruit and vegetable export",
+      "fruits": "For fruits and vegetables",
       "confectionery": "For confectionery and sweets",
-      "food": "For food delivery",
+      "food": "For food products",
       "drinks": "For beverages",
       "industrial": "For industrial products",
-      "thick": "Thick cardboard packaging",
+      "thick": "Monocarton packaging",
       "bags": "Cardboard bags"
     },
     "whiteSuffix": "- white"
@@ -290,7 +290,7 @@
       },
       {
         "property": "Flute profiles",
-        "spec": "A-Flute (high), B-Flute (medium), C-Flute"
+        "spec": "A-Flute (high), B-Flute (medium), C-Flute, D-Flute, Nano-Flute"
       },
       {
         "property": "Liner types",
@@ -301,8 +301,8 @@
         "spec": "From 4.8 kN to 6.2 kN (lab certified)"
       },
       {
-        "property": "Flexo-printing capacity",
-        "spec": "High precision printing from 1 to 4 colors"
+        "property": "Printing capabilities",
+        "spec": "Flexo and offset printing"
       },
       {
         "property": "Minimum batch",
@@ -365,7 +365,7 @@
     },
     "cta": {
       "title": "Do you also need custom-sized packaging?",
-      "description": "Our engineers will calculate the suitable shape, flute type, and flexo-printing design for your product for free.",
+      "description": "Our managers will calculate the suitable shape, flute type, and print design for your product for free.",
       "button": "Leave a request"
     },
     "lightbox": {
@@ -530,7 +530,7 @@
       },
       {
         "property": "Flute profiles",
-        "spec": "A-Flute (high), B-Flute (medium), C-Flute"
+        "spec": "A-Flute (high), B-Flute (medium), C-Flute, D-Flute, Nano-Flute"
       },
       {
         "property": "Liner types",
@@ -541,8 +541,8 @@
         "spec": "From 4.8 kN to 6.2 kN (lab certified)"
       },
       {
-        "property": "Flexo-printing capacity",
-        "spec": "High precision printing from 1 to 4 colors"
+        "property": "Printing capabilities",
+        "spec": "Flexo and offset printing"
       },
       {
         "property": "Minimum batch",
@@ -605,7 +605,7 @@
     },
     "cta": {
       "title": "Do you also need custom-sized packaging?",
-      "description": "Our engineers will calculate the suitable shape, flute type, and flexo-printing design for your product for free.",
+      "description": "Our managers will calculate the suitable shape, flute type, and print design for your product for free.",
       "button": "Leave a request"
     },
     "lightbox": {

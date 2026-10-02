@@ -25,10 +25,15 @@ export default function HeroBanner({ onOpenQuote }: HeroBannerProps) {
         <div className="max-w-2xl flex flex-col items-start justify-center">
           
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-[1.08] mb-3 select-none">
-            {t('heroBanner.title1')} <br />
-            <span className="font-extrabold normal-case text-2xl sm:text-4xl lg:text-5xl text-white">
-              {t('heroBanner.title2')}
-            </span>
+            {t('heroBanner.title1')}
+            {t('heroBanner.title2') ? (
+              <>
+                <br />
+                <span className="font-extrabold normal-case text-2xl sm:text-4xl lg:text-5xl text-white">
+                  {t('heroBanner.title2')}
+                </span>
+              </>
+            ) : null}
           </h1>
 
           <p className="text-white/90 text-sm sm:text-base lg:text-lg font-normal mb-8 max-w-xl leading-relaxed">
